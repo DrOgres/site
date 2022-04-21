@@ -1,0 +1,47 @@
+@use '../abstracts'as *;
+
+.btn {
+    font-weight: 600;
+    color: $orange-3;
+    padding: 0.6rem 2rem 0.6rem;
+    text-shadow: 1px 1px $neutral-1;
+}
+
+
+
+.hamburger {
+    position: fixed;
+    padding: 0;
+    display: none;
+    background-repeat: no-repeat;
+    
+}
+
+@media (max-width: 40em) {
+    .hamburger {
+        cursor: pointer;
+        padding: 0;
+        display: block;
+        position: fixed;
+        height: 6rem;
+        top: 0rem;
+        bottom: 2rem;
+        left: 1rem;
+        background-position: center;
+        background-color: $neutral-5;
+        background-image: url(assets/hamburger.svg);
+        width: 2rem;
+        aspect-ratio: 1;
+        z-index: 9999;
+        border: none;
+        filter: drop-shadow(.001em .001em 1px $neutral-1);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 49% 80%, 0 100%);
+    }
+
+    .hamburger[aria-expanded="true"]{
+        
+        background-image: url(assets/hamburger-close.svg)
+    }
+}
+
+

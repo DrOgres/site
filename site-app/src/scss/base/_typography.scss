@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
+
+
+h1{
+    font-size: var(--fs-800);
+    line-height: var(--fs-700);
+  }
+
+  h2{
+    font-size: var(--fs-600);
+    line-height: var(--fs-600);
+    color: $orange-3;
+    text-transform: uppercase;
+    border-bottom: 2px solid $orange-3;
+  }
+
+  h3{
+    font-size: var(--fs-400);
+    line-height: var(--fs-300);
+    color: $orange-2;
+    text-transform: uppercase;
+  }
+
+
+.sr-only{
+  font-size: .2rem;
+}
+  .medalion{
+     padding: 2rem;
+      position: relative;
+      @include text3d($neutral-4);
+      -webkit-text-stroke: 2px $orange-4;
+      background: border-box radial-gradient(circle, rgba(255, 135, 253, 0.38) 0%, rgba(110, 9, 121, 0.175) 45%, rgba(0,0,0,0) 60%); 
+      
+    }
+
+  .quote-text{
+      font-size: var(--fs-200);
+      color: $orange-4;
+      justify-content: start;
+      background-color: transparent;
+  }
+
+  .rotated{
+    padding-top: 10vh;
+    padding-bottom: 1em;
+    margin-left: -20%;
+    transform: rotate(-30deg);
+    max-width: fit-content;
+  }
+
+
+  .nav-item{
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 40em){
+    .nav-item{
+     align-self: end;
+     padding-left: min(8%, 4rem);
+    }
+  }

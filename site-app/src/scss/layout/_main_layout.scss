@@ -1,0 +1,78 @@
+@use '../abstracts/' as *;
+
+
+section{
+    min-height: 50vh;
+}
+
+.content{
+    max-width: 85ch;
+}
+
+.home{
+    max-width: 55ch;
+}
+.break-1{
+    margin: 0 auto;
+    width: 100%;
+    background-color: $neutral-2;
+    clip-path: polygon(0 100%, 100% calc(100% - 5vw), 100% 100%, 0% 100%);
+    padding: 3em;
+
+}
+
+.break-2{
+   margin-top: -6em;
+    width: 100%;
+    background-color: $neutral-3;
+    clip-path: polygon(0 calc(100% - 5vw), 100% 100%, 100% 100%, 0% 100%);
+    padding: 3em;
+
+}
+
+.break-3{
+    margin-top: -6em;
+     width: 100%;
+     background-color: $neutral-4;
+     clip-path: polygon(0 100%, 100% calc(100% - 5vw), 100% 100%, 0% 100%);
+     padding: 3em;
+ 
+ }
+ 
+
+.work{
+    margin-top: -0.01em;
+    padding-top: 2em;
+    padding-bottom: 10em;
+    width: 100%;
+    background-color: $neutral-2;
+    min-height: max-content;
+    & .content{
+        margin: 0 auto;    
+    }
+
+}
+
+
+.about{
+    width: 100%;
+    margin-top: -0.001em;
+    background-color: $neutral-3;
+    & .content{
+        max-width: 55ch;
+        margin: 0 auto;
+        
+    }
+
+}
+
+.contact{
+    width: 100%;
+    background-color: $neutral-4;
+    & .content{
+        max-width: 55ch;
+        margin: 0 auto;
+      
+    }
+
+}
