@@ -3,17 +3,6 @@ import React, { useState } from "react";
 
 
 const ContactForm = () => {
-    const [submitted, setSubmitted] = useState(false);
-  
-
-    if (submitted) {
-        return (
-            <>
-                <h2>Thank you!</h2>
-                <div>We'll be in touch soon.</div>
-            </>
-        );
-    }
 
     return (
         <form name="contact" method="POST" data-netlify="true">
