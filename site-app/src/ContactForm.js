@@ -3,44 +3,40 @@ import React, { useState } from "react";
 const FORM_ENDPOINT = "https://public.herotofu.com/v1/7a51f830-c0a2-11ec-abfb-2b5c80ae2a8a";
 
 const ContactForm = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = () => {
-      
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 100);
-  };
+    const [submitted, setSubmitted] = useState(false);
+    const handleSubmit = () => {
 
-  if (submitted) {
+        setTimeout(() => {
+            setSubmitted(true);
+        }, 100);
+    };
+
+    if (submitted) {
+        return (
+            <>
+                <h2>Thank you!</h2>
+                <div>We'll be in touch soon.</div>
+            </>
+        );
+    }
+
     return (
-      <>
-        <h2>Thank you!</h2>
-        <div>We'll be in touch soon.</div>
-      </>
+        <form name="contact" method="POST" data-netlify="true">
+            <p>
+                <label>Your Name: <input type="text" name="name" /></label>
+            </p>
+            <p>
+                <label>Your Email: <input type="email" name="email" /></label>
+            </p>
+           
+            <p>
+                <label>Tell me about it: <textarea name="message"></textarea></label>
+            </p>
+            <p>
+                <button type="submit">Send</button>
+            </p>
+        </form>
     );
-  }
-
-  return (
-    <form
-      action={FORM_ENDPOINT}
-      onSubmit={handleSubmit}
-      method="POST"
-      target="_blank"
-    >
-      <div>
-        <input type="text" placeholder="Your name" name="name" required />
-      </div>
-      <div>
-        <input type="email" placeholder="Email" name="email" required />
-      </div>
-      <div>
-        <textarea placeholder="Your message" name="message" required />
-      </div>
-      <div>
-        <button type="submit"> Send a message </button>
-      </div>
-    </form>
-  );
 };
 
 export default ContactForm;
