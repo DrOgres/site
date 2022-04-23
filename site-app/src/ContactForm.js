@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = "https://public.herotofu.com/v1/7a51f830-c0a2-11ec-abfb-2b5c80ae2a8a";
+
 
 const ContactForm = () => {
     const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = () => {
-
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 100);
-    };
+  
 
     if (submitted) {
         return (
