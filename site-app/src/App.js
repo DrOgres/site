@@ -1,6 +1,7 @@
 
 import './App.css';
 import ContactForm from "./ContactForm";
+import DeckBox from './DeckBox';
 
 import MenuContainer from './MenuContainer';
 
@@ -30,38 +31,7 @@ function App() {
                     <h2>Work</h2>
                     <h3>Client: Free League Publishing</h3>
                 </div>
-
-                <div className="card hero flex-col">
-                    <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
-                        alt="vaesen screen shot" width='100%' />
-                    <div className="card-content">
-                        <h2>Vaesen system for Foundry VTT</h2>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maiores
-                            dolorem beatae nisi libero ullam voluptatem, expedita alias, minus cupiditate a amet
-                            suscipit
-                            perferendis similique? Accusantium dignissimos voluptatem culpa iusto!</p>
-                    </div>
-                </div>
-                <div className="card side-kick flex-col">
-                    <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
-                        alt="vaesen screen shot" width="70%" />
-                    <div className="card-content">
-                        <h3>A secondary Card</h3>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maiores
-                            dolorem beatae nisi libero ullam voluptatem, expedita alias, minus cupiditate a amet
-                            suscipit perferendis similique? Accusantium dignissimos voluptatem culpa iusto!</p>
-                    </div>
-                </div>
-                <div className="card side-kick flex-col">
-                    <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
-                       alt="vaesen screen shot" width="70%" />
-                    <div className="card-content">
-                        <h3>A secondary Card</h3>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maiores
-                            dolorem beatae nisi libero ullam voluptatem, expedita alias, minus cupiditate a amet
-                            suscipit perferendis similique? Accusantium dignissimos voluptatem culpa iusto!</p>
-                    </div>
-                </div>
+                 <DeckBox /> 
             </div>
         </section>
         <div className="break-2"></div>

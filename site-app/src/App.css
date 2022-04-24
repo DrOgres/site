@@ -391,7 +391,6 @@ nav a {
     cursor: pointer;
     padding: 0;
     display: block;
-    position: fixed;
     height: 6rem;
     top: 0rem;
     bottom: 2rem;
@@ -403,9 +402,9 @@ nav a {
     aspect-ratio: 1;
     z-index: 9999;
     border: none;
-    filter: drop-shadow(0.001em 0.001em 1px hsl(210deg, 12%, 15%));
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 49% 80%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 49% 80%, 0 100%);
+    filter: drop-shadow(0.001em 0.001em 1px crimson);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
   }
 
   .hamburger[aria-expanded=true] {

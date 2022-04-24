@@ -11,10 +11,12 @@ class MenuToggle extends Component {
     }
 
     return(
-      <button aria-controls="navigation" aria-expanded={visible} className="hamburger" 
+      <div className="banner-outside">
+      <button aria-controls="navigation" aria-expanded={visible} className="hamburger banner-inside" 
          onMouseDown={this.props.handleMouseDown}>
           <span className="sr-only">Menu</span>
       </button>
+      </div>
     );
   }
 }
