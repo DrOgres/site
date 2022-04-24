@@ -35,7 +35,7 @@ class ContactForm extends React.Component {
         if (this.state.submitted) {
             return (
                 <div className="response">
-                    <h3>Thanks for reaching out!</h3>
+                    <h4>Thanks for reaching out!</h4>
                     <p>I will get back to you as soon as possible!</p>
                 </div>
             );

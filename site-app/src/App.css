@@ -236,15 +236,22 @@ h1 {
 h2 {
   font-size: var(--fs-600);
   line-height: var(--fs-600);
-  color: hsl(33deg, 100%, 50%);
+  color: hsl(33deg, 100%, 70%);
   text-transform: uppercase;
   border-bottom: 2px solid hsl(33deg, 100%, 50%);
 }
 
 h3 {
+  font-size: var(--fs-500);
+  line-height: var(--fs-400);
+  color: hsl(33deg, 100%, 50%);
+  text-transform: uppercase;
+}
+
+h4 {
   font-size: var(--fs-400);
-  line-height: var(--fs-300);
-  color: hsl(33deg, 100%, 30%);
+  line-height: car(--fs-400);
+  color: hsl(313deg, 56%, 70%);
   text-transform: uppercase;
 }
 

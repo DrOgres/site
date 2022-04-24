@@ -12,15 +12,22 @@ h1{
   h2{
     font-size: var(--fs-600);
     line-height: var(--fs-600);
-    color: $orange-3;
+    color: $orange-4;
     text-transform: uppercase;
     border-bottom: 2px solid $orange-3;
   }
 
   h3{
+    font-size: var(--fs-500);
+    line-height: var(--fs-400);
+    color: $orange-3;
+    text-transform: uppercase;
+  }
+
+  h4{
     font-size: var(--fs-400);
-    line-height: var(--fs-300);
-    color: $orange-2;
+    line-height: car(--fs-400);
+    color: $magenta-4;
     text-transform: uppercase;
   }
 
