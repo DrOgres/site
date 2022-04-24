@@ -1,0 +1,26 @@
+{
+    "01": {
+        "type": "hero",
+        "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
+        "alt": "Vaesen System Screen Shot",
+        "title": "Vaesen System for Foundry VTT",
+        "text": "lorem ipsum",
+        "tags": ["html", "css", "javascript", "handlebars", "jquery", "project lead" ],
+        "site": "https://foundryvtt.com/packages/vaesen",
+        "git": "https://github.com/fvtt-fria-ligan/vaesen-foundry-vtt"        
+    },
+
+    "02": {
+        "type": "sidekick",
+        "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
+        "alt": "Vaesen System Screen Shot",
+        "title": "Vaesen System for Foundry VTT",
+        "text": "lorem ipsum",
+        "tags": ["html", "css", "javascript", "handlebars", "jquery" ],
+        "site": "https://freeleaguepublishing.com/en/store/?product_id=7092046200981",
+        "client": "https://freeleaguepublishing.com/wp-content/themes/frialigan/img/logo_en.jpg",
+        "client-alt": "free league publishing logo"        
+    }
+
+
+}

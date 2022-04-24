@@ -5,7 +5,7 @@ class DeckBox extends Component {
 render(){
     // TODO get data from json and build each card in deck box from data
     return(
-        <div className="deck-box">
+        <div className="deck-box content flex-row wrap gap">
             
             <div className="card hero flex-col">
                     <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
