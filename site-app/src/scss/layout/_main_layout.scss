@@ -33,7 +33,7 @@ section{
 .break-3{
     margin-top: -6em;
      width: 100%;
-     background-color: $neutral-4;
+     background-color: $neutral-2;
      clip-path: polygon(0 100%, 100% calc(100% - 5vw), 100% 100%, 0% 100%);
      padding: 3em;
  
@@ -68,7 +68,8 @@ section{
 
 .contact{
     width: 100%;
-    background-color: $neutral-4;
+    margin-top: -0.1em;
+    background-color: $neutral-2;
     & .content{
         max-width: 55ch;
         margin: 0 auto;
