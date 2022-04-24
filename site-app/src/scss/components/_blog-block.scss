@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.blog-block{
+    border-radius: 12px;
+    padding: 2em;
+    margin-top: 3em;
+    margin-bottom: 6em;
+    background-color: $neutral-5;
+
+   
+}

@@ -10,19 +10,13 @@
 }
 
 .card {
-    background-color: white;
+    background-color: $neutral-5;
 
     border: {
         radius: 12px;
     }
 
-    box-shadow:
-    /* inner white */
-    0 0 0.15em 0.04em white,
-    /* middle magenta */
-    0 0 0.2em 0.05em $pink-5,
-    /* outer pink */
-    0 0 0.9em 0.09em $purple-5;
+
 
     .card-text {
         max-width: 65ch;
@@ -37,10 +31,7 @@
         }
     }
 
-    h2 {
-        color: $neutral-1;
-        font-size: 1.5rem;
-    }
+    
 
     img {
         display: block;

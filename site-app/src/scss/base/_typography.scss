@@ -27,8 +27,26 @@ h1{
   h4{
     font-size: var(--fs-300);
     line-height: car(--fs-300);
-    color: $purple-5;
+    color: $magenta-2;
     text-transform: uppercase;
+  }
+
+  .card{
+    h2 {
+      color: $magenta-1;
+      font-size: var(--fs-500);
+      line-height: var(--fs-500);
+      border-bottom: 2px solid $magenta-4;    
+  }
+
+  
+  h3{
+    font-size: var(--fs-300);
+    line-height: var(--fs-200);
+    color: $magenta-1;
+    text-transform: uppercase;
+    border-bottom: 2px solid $magenta-4;   
+  }
   }
 
 
@@ -73,5 +91,14 @@ h1{
 
   .blog-text{
     color: $magenta-1;
-    
+    max-width: 45ch;
+    margin-left: 2ch;
+    text-align: justify;
+    text-justify: inter-word;
   }
+
+  label{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $magenta-2;
+}

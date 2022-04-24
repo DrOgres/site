@@ -72,6 +72,10 @@ body {
   flex-shrink: 2;
 }
 
+.full{
+ width: 100%;
+}
+
 .gap {
   gap: var(--gap, 3rem);
 }
@@ -99,4 +103,5 @@ body {
 .sr-only {
   visibility: hidden;
 }
+
 

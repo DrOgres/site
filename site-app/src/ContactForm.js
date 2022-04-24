@@ -44,22 +44,34 @@ class ContactForm extends React.Component {
         if (!this.state.submitted) {
             const { name, email, message } = this.state;
             return (
-                <form onSubmit={this.handleSubmit}>
-                    <p>
-                        <label>
-                            Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Message: <textarea name="message" value={message} onChange={this.handleChange} />
-                        </label>
-                    </p>
+                <form onSubmit={this.handleSubmit} className="flex-col nowrap full">
+                    <div className="form-row">
+                        <div className="col-25">
+                            <label htmlFor="name">
+                                Your Name:</label>
+                        </div>
+                        <div className="col-75">
+                            <input type="text" name="name" id="name" value={name} placeholder="Your Name" onChange={this.handleChange} />
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="col-25">
+                            <label htmlFor="email">
+                                Your Email:</label>
+                        </div>
+                        <div className="col-75">
+                            <input type="email" name="email" id="email" value={email} placeholder="Your Email Address" onChange={this.handleChange} />
+                        </div>
+
+                    </div>
+                    <div className="form-row">
+                        <div className="col-25">
+                            <label htmlFor="message">
+                                Message: </label>
+                        </div>
+                        <div className="col-75"><textarea name="message" id="message" value={message} placeholder="Some Details..." onChange={this.handleChange} />
+                        </div>
+                    </div>
                     <p>
                         <button type="submit">Send</button>
                     </p>

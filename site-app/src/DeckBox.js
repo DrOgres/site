@@ -7,7 +7,7 @@ render(){
     return(
         <div className="deck-box content flex-row wrap gap">
             
-            <div className="card hero flex-col">
+            <div className="card hero flex-col glow-border">
                     <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
                         alt="vaesen screen shot" width='100%' />
                     <div className="card-content">
@@ -18,7 +18,7 @@ render(){
                             perferendis similique? Accusantium dignissimos voluptatem culpa iusto!</p>
                     </div>
                 </div>
-                <div className="card side-kick flex-col">
+                <div className="card side-kick flex-col glow-border">
                     <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
                         alt="vaesen screen shot" width="70%" />
                     <div className="card-content">
@@ -28,7 +28,7 @@ render(){
                             suscipit perferendis similique? Accusantium dignissimos voluptatem culpa iusto!</p>
                     </div>
                 </div>
-                <div className="card side-kick flex-col">
+                <div className="card side-kick flex-col glow-border">
                     <img src="https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png"
                        alt="vaesen screen shot" width="70%" />
                     <div className="card-content">
