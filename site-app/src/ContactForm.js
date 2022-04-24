@@ -12,7 +12,7 @@ const encode = (data) => {
 class ContactForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { name: "", email: "", message: "", submitted: "false" }
+        this.state = { name: "", email: "", message: "" }
     }
 
     
@@ -32,7 +32,7 @@ class ContactForm extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
     render(){
-    const { name, email, message, submitted } = this.state;
+    const { name, email, message } = this.state;
     return (
         <form onSubmit={this.handleSubmit}>
           <p>
