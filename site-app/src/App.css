@@ -197,7 +197,7 @@ h3 {
 h4 {
   font-size: var(--fs-300);
   line-height: car(--fs-300);
-  color: hsl(279deg, 86%, 50%);
+  color: hsl(279deg, 84%, 90%);
   text-transform: uppercase;
 }
 
@@ -241,6 +241,10 @@ h4 {
     padding-left: min(8%, 4rem);
   }
 }
+.blog-text {
+  color: hsl(314deg, 56%, 15%);
+}
+
 section {
   min-height: 50vh;
 }
@@ -312,6 +316,12 @@ section {
 .contact .content {
   max-width: 55ch;
   margin: 0 auto;
+}
+
+.blog-block {
+  padding: 2em;
+  margin-top: 3em;
+  background-color: hsl(210deg, 12%, 90%);
 }
 
 .grid {

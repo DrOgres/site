@@ -27,7 +27,7 @@ h1{
   h4{
     font-size: var(--fs-300);
     line-height: car(--fs-300);
-    color: $purple-3;
+    color: $purple-5;
     text-transform: uppercase;
   }
 
@@ -69,4 +69,9 @@ h1{
      align-self: end;
      padding-left: min(8%, 4rem);
     }
+  }
+
+  .blog-text{
+    color: $magenta-1;
+    
   }
