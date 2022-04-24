@@ -174,60 +174,6 @@ body {
   visibility: hidden;
 }
 
-.nav-list {
-  position: fixed;
-  top: 1rem;
-  padding: 1em 3em;
-  background-color: hsla(210deg, 12%, 25%, 0.875);
-  -webkit-backdrop-filter: blur(0.8rem);
-          backdrop-filter: blur(0.8rem);
-  z-index: 1000;
-}
-
-@supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
-  .nav-list {
-    border-right: none;
-    background: hsla(0deg, 0%, 100%, 0.1);
-    -webkit-backdrop-filter: blur(0.8rem);
-            backdrop-filter: blur(0.8rem);
-  }
-}
-@media (max-width: 40em) {
-  .nav-list {
-    inset: 0 70% 0 0;
-    flex-direction: column;
-    padding: min(20vh, 6rem) 2em;
-    margin-bottom: 0;
-    overflow-y: auto;
-    background: hsla(210deg, 12%, 15%, 0.875);
-    border-right: 1px solid hsl(33deg, 100%, 50%);
-    transform: translateX(-100%);
-    transition: transform 350ms ease-out;
-  }
-
-  @supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
-    .nav-list {
-      border-right: none;
-      background: hsla(0deg, 0%, 100%, 0.1);
-      -webkit-backdrop-filter: blur(0.8rem);
-              backdrop-filter: blur(0.8rem);
-    }
-  }
-  .nav-list[data-visible=true] {
-    transform: translateX(0%);
-  }
-}
-nav {
-  padding: 0;
-  margin: 0;
-}
-nav ul {
-  text-decoration: none;
-}
-nav a {
-  text-decoration: none;
-}
-
 h1 {
   font-size: var(--fs-800);
   line-height: var(--fs-700);
@@ -370,6 +316,60 @@ section {
 
 .grid {
   display: grid;
+}
+
+.nav-list {
+  position: fixed;
+  top: 1rem;
+  padding: 1em 3em;
+  background-color: hsla(210deg, 12%, 25%, 0.875);
+  -webkit-backdrop-filter: blur(0.8rem);
+          backdrop-filter: blur(0.8rem);
+  z-index: 1000;
+}
+
+@supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
+  .nav-list {
+    border-right: none;
+    background: hsla(0deg, 0%, 100%, 0.1);
+    -webkit-backdrop-filter: blur(0.8rem);
+            backdrop-filter: blur(0.8rem);
+  }
+}
+@media (max-width: 40em) {
+  .nav-list {
+    inset: 0 50% 0 0;
+    flex-direction: column;
+    padding: min(20vh, 6rem) 2em;
+    margin-bottom: 0;
+    overflow-y: auto;
+    background: hsla(210deg, 12%, 15%, 0.875);
+    border-right: 1px solid hsl(33deg, 100%, 50%);
+    transform: translateX(-100%);
+    transition: transform 350ms ease-out;
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
+    .nav-list {
+      border-right: none;
+      background: hsla(0deg, 0%, 100%, 0.1);
+      -webkit-backdrop-filter: blur(0.8rem);
+              backdrop-filter: blur(0.8rem);
+    }
+  }
+  .nav-list[data-visible=true] {
+    transform: translateX(0%);
+  }
+}
+nav {
+  padding: 0;
+  margin: 0;
+}
+nav ul {
+  text-decoration: none;
+}
+nav a {
+  text-decoration: none;
 }
 
 .btn {
