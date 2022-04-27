@@ -18,8 +18,7 @@
 }
 
 @media (max-width: 40em) {
-
-
+   
     .hamburger {
         cursor: pointer;
         padding: 0;
@@ -30,7 +29,7 @@
         bottom: 2rem;
         left: 1rem;
         background-position: center;
-        background-color: $neutral-5;
+        background-color: $blue-5;
         background-image: url(assets/hamburger.svg);
         width: 2rem;
         aspect-ratio: 1;

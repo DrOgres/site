@@ -433,7 +433,7 @@ nav a {
     bottom: 2rem;
     left: 1rem;
     background-position: center;
-    background-color: hsl(210deg, 12%, 90%);
+    background-color: hsl(228deg, 60%, 90%);
     background-image: url(assets/hamburger.svg);
     width: 2rem;
     aspect-ratio: 1;
@@ -456,6 +456,11 @@ nav a {
   max-width: calc(50% - 2em);
 }
 
+@media (max-width: 40em) {
+  .side-kick {
+    max-width: 100%;
+  }
+}
 .card {
   background-color: hsl(210deg, 12%, 90%);
   border-radius: 12px;

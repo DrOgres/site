@@ -1,26 +1,59 @@
 {
-    "01": {
-        "type": "hero",
-        "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
-        "alt": "Vaesen System Screen Shot",
-        "title": "Vaesen System for Foundry VTT",
-        "text": "lorem ipsum",
-        "tags": ["html", "css", "javascript", "handlebars", "jquery", "project lead" ],
-        "site": "https://foundryvtt.com/packages/vaesen",
-        "git": "https://github.com/fvtt-fria-ligan/vaesen-foundry-vtt"        
-    },
-
-    "02": {
-        "type": "sidekick",
-        "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
-        "alt": "Vaesen System Screen Shot",
-        "title": "Vaesen System for Foundry VTT",
-        "text": "lorem ipsum",
-        "tags": ["html", "css", "javascript", "handlebars", "jquery" ],
-        "site": "https://freeleaguepublishing.com/en/store/?product_id=7092046200981",
-        "client": "https://freeleaguepublishing.com/wp-content/themes/frialigan/img/logo_en.jpg",
-        "client-alt": "free league publishing logo"        
-    }
-
-
+   
+          "01":  {
+            "id": "1",
+            "type": "hero",
+            "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
+            "alt": "Vaesen System Screen Shot",
+            "title": "Vaesen System for Foundry VTT",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maiores dolorem beatae nisi libero ullam voluptatem, expedita alias, minus cupiditate a amet suscipit perferendis similique? Accusantium dignissimos voluptatem culpa iusto!",
+            "tags": [
+                "html",
+                "css",
+                "javascript",
+                "handlebars",
+                "jquery",
+                "project lead"
+            ],
+            "site": "https://foundryvtt.com/packages/vaesen",
+            "git": "https://github.com/fvtt-fria-ligan/vaesen-foundry-vtt"
+        },
+        "02":
+        {"id": "2",
+            "type": "side-kick",
+            "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
+            "alt": "Vaesen System Screen Shot",
+            "title": "Vaesen System for Foundry VTT",
+            "text": "lorem ipsum",
+            "tags": [
+                "html",
+                "css",
+                "javascript",
+                "handlebars",
+                "jquery"
+            ],
+            "site": "https://freeleaguepublishing.com/en/store/?product_id=7092046200981",
+            "client": "https://freeleaguepublishing.com/wp-content/themes/frialigan/img/logo_en.jpg",
+            "client-alt": "free league publishing logo"
+        },
+        "03":
+        {"id": "3",
+            "type": "side-kick",
+            "img": "https://raw.githubusercontent.com/fvtt-fria-ligan/vaesen-foundry-vtt/master/asset/screen_shot.png",
+            "alt": "Vaesen System Screen Shot",
+            "title": "Vaesen System for Foundry VTT",
+            "text": "lorem ipsum",
+            "tags": [
+                "html",
+                "css",
+                "javascript",
+                "handlebars",
+                "jquery"
+            ],
+            "site": "https://freeleaguepublishing.com/en/store/?product_id=7092046200981",
+            "client": "https://freeleaguepublishing.com/wp-content/themes/frialigan/img/logo_en.jpg",
+            "client-alt": "free league publishing logo"
+        }
+   
+    
 }
