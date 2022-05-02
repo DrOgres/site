@@ -37,8 +37,7 @@ const CardContainer = () => {
             element.gitLink = <div className="card-link"><a href={element.git} target="_blank" rel="noreferrer" ><i className="fa-brands fa-github-square"></i></a></div>
         }
 
-        element.siteLink=""
-        console.log(element.site);
+        element.siteLink="" 
         if (element.site) {
             element.siteLink = <div className="card-link"><a href={element.site} target="_blank" rel="noreferrer" ><i class="fa-regular fa-window-maximize"></i></a></div>
         }
