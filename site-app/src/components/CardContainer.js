@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import cards from "../data/cards.json";
 
 
@@ -29,7 +30,7 @@ const CardContainer = () => {
         }
 
         if (element.pageLink) {
-            element.more = <a href={element.pageLink}>more<i className="fa-solid fa-angles-right"></i></a>;
+            element.more = <Link to={element.pageLink}>more<i className="fa-solid fa-angles-right"></i></Link>;
         }
 
         element.gitLink="";
