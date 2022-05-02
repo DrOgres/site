@@ -1,5 +1,9 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
+/**
+ * @description toggles the aria-expanded state which is used by the css to set the correct SVG
+ * as well as toggle the visiblity of the menu.
+ */
 
 class MenuToggle extends Component {
   render(){

@@ -6,7 +6,7 @@
 }
 
 .side-kick {
-    max-width: calc(50% - 2em);
+    max-width: calc(50% - 3em);
 }
 
 @media (max-width: 40em) {
@@ -17,6 +17,7 @@
 
 .card {
     background-color: $neutral-5;
+    margin-inline: .5rem;
 
     border: {
         radius: 12px;
@@ -26,6 +27,7 @@
 
     .card-text {
         max-width: 65ch;
+        padding: .1em;
     }
 
     .card-content {
@@ -33,7 +35,7 @@
             top: 0.5em;
             bottom: 1em;
             left: 3em;
-            right: 3em;
+            right: 0;
         }
     }
 
@@ -53,3 +55,14 @@
 
     position: relative;
 }
+
+
+.card-sidebar{
+    min-width: 15vw;
+}
+
+@media (min-width: 40em){
+    .card-sidebar{
+        min-width: 5vw;
+    }
+  }

@@ -42,63 +42,6 @@ body {
   margin: 0;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-center{
-  justify-content: center;
-}
-
-.nowrap {
-  flex-wrap: nowrap;
-}
-
-.wrap { 
-  flex-wrap: wrap;
-}
-
-.grow {
-  flex-grow: 2;
-}
-
-.shrink {
-  flex-shrink: 2;
-}
-
-.full{
- width: 100%;
-}
-
-.gap {
-  gap: var(--gap, 3rem);
-}
-
-.center {
-  align-content: center;
-}
-
-.auto-center {
-  margin: 0 auto;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-start {
-  justify-content: start;
-}
-
-.justify-end {
-  justify-content: end;
-}
 
 .sr-only {
   visibility: hidden;

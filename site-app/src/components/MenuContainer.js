@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import MenuToggle from "./MenuToggle";
 import Menu from "./Menu";
 
+/**
+ * @description Holds the Menu and the Menu toggle and handles all the logic to show/hide
+ * the menu when the screensize makes the hamburger visible.  the state here is used by 
+ * the menu and the toggle the visible state in those components.
+ * 
+ */
 
 class MenuContainer extends Component {
 

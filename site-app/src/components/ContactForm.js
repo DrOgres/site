@@ -1,4 +1,16 @@
-import React from "react";
+import { Component } from "react";
+
+/**
+ * @description Creates a contact form component compatible with the Netlify platform's 
+ * form processing.  The component is stateful depending if it has been submitted or not
+ * 
+ * @param {*} data all data encapsulated in the form as well as the state used in the encode arrow function
+ * to encode the data from the form for processing
+ * 
+ * 
+ * @returns either the form when the form has not been submitted this is a return early if statement
+ * or a confimration and 'thank you' message if the form has been sucessfully submitted.
+ */
 
 
 const encode = (data) => {
@@ -9,7 +21,7 @@ const encode = (data) => {
 
 
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
     constructor(props) {
         super(props);
         this.state = { name: "", email: "", message: "", submitted: false }
@@ -32,14 +44,7 @@ class ContactForm extends React.Component {
     handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
     render() {
-        if (this.state.submitted) {
-            return (
-                <div className="response">
-                    <h4>Thanks for reaching out!</h4>
-                    <p>I will get back to you as soon as possible!</p>
-                </div>
-            );
-        }
+
 
         if (!this.state.submitted) {
             const { name, email, message } = this.state;
@@ -78,6 +83,15 @@ class ContactForm extends React.Component {
                 </form>
             );
         }
+
+
+        return (
+            <div className="response">
+                <h4>Thanks for reaching out!</h4>
+                <p>I will get back to you as soon as possible!</p>
+            </div>
+        );
+
     }
 };
 
