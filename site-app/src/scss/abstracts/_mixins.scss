@@ -10,6 +10,15 @@
 }
 
 
+/* media query mixin for max-width */
+@mixin mqMax($key){
+    $size: map-get($breakpoints, $key );
+    @media only screen and (max-width: $size){
+        @content;
+    }
+}
+
+
 /* Start of text3d mixin */
 @mixin text3d ($color: $neutral-4, $x: 1, $y: -1,  $darken: 1) {
 	color: $color;

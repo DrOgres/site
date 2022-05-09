@@ -27,13 +27,18 @@ textarea{
   }
 
   button[type=submit] {
-    background-color: $magenta-2;
-    color: white;
+    background-color: $magenta-1;
+    color: $neutral-5;
     padding: .5em 1em;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     float: right;
+    margin-block: 5px;
+
+    &:hover, &:focus{
+      color: $orange-5;
+    }
   }
 
   .form-container {

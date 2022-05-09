@@ -32,22 +32,23 @@ h1{
   }
 
   a{
-    color: $orange-3;
+    // color: $orange-3;
     text-decoration: none;
     padding-bottom: 0;
   }
 
-  a:hover, a:focus{
-    border-bottom: 2px solid $orange-3;
-
+  a:visited{
+    color: $orange-4;
   }
+
+
 
   .card{
     h2 {
       color: $magenta-1;
       font-size: var(--fs-500);
       line-height: var(--fs-500);
-      border-bottom: 2px solid $magenta-4;    
+      border-bottom: 2px solid $magenta-5;    
   }
 
   
@@ -69,6 +70,7 @@ h1{
   .tag{
     text-transform: uppercase;
     font-size: var(--fs-100);
+
   }
   
 
@@ -103,15 +105,14 @@ h1{
 
   .nav-item{
     text-transform: uppercase;
-  }
+    @include mqMax("small"){
+      align-self: end;
+      padding-left: min(8%, 4rem);
 
-  @media (max-width: 40em){
-    .nav-item{
-     align-self: end;
-     padding-left: min(8%, 4rem);
     }
   }
 
+  
   .blog-text{
     color: $magenta-1;
     max-width: 45ch;
@@ -123,7 +124,12 @@ h1{
   label{
     text-transform: uppercase;
     font-weight: 600;
-    color: $magenta-2;
+    color: $magenta-1;
+}
+
+button[type="submit"]{
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 
@@ -139,4 +145,16 @@ h1{
   font-size: var(--fs-500);
   align-self: flex-start;
   margin-inline: auto;
+}
+
+.card-cta{
+  text-transform: uppercase;
+  font-size: --fs-300;
+  a{
+  color: $neutral-5;
+  }
+  a:hover{
+    color: $orange-5;
+  }
+
 }

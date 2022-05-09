@@ -1,6 +1,7 @@
 
 import DeckBox from "./DeckBox";
 import ContactForm from "./ContactForm";
+import Quotes from "./Quotes";
 
 
 /**
@@ -19,6 +20,7 @@ const Content = () => {
 
                 <div className="content rotated flex-col">
                     <h1 className="medalion">Dr.<br />Ogres</h1>
+                    <Quotes />
                     <div className="flex-row center nowrap ">
                         <div className="quote-text grow nowrap" id="witty-quote-container">
                         </div>

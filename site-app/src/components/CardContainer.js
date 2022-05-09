@@ -30,7 +30,7 @@ const CardContainer = () => {
         }
 
         if (element.pageLink) {
-            element.more = <Link to={element.pageLink}>more<i className="fa-solid fa-angles-right"></i></Link>;
+            element.more = <div className="card-cta"><Link to={element.pageLink}>more<i className="fa-solid fa-angles-right"></i></Link></div>;
         }
 
         element.gitLink="";
@@ -40,7 +40,7 @@ const CardContainer = () => {
 
         element.siteLink="" 
         if (element.site) {
-            element.siteLink = <div className="card-link"><a href={element.site} target="_blank" rel="noreferrer" ><i class="fa-regular fa-window-maximize"></i></a></div>
+            element.siteLink = <div className="card-link"><a href={element.site} target="_blank" rel="noreferrer" ><i className="fa-regular fa-window-maximize"></i></a></div>
         }
        
     });
@@ -54,14 +54,17 @@ const CardContainer = () => {
                     <div className="card-summary">
 
                         {data.head}
-                        <p className="card-text">{data.text} {data.more}
 
-                        </p>
                         <p className="tag-cloud flex-row wrap">{data.tags.map((tag) =>
                             <>
                                 <span className="tag" key={tag.toString()} value={tag}>{tag}</span>
                             </>
                         )} </p>
+
+                        <p className="card-text">{data.text}
+                        </p>
+                        {data.more}
+                        
 
                     </div>
                     <div className="card-sidebar flex-col">

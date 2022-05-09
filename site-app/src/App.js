@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/Content';
 import Create from './components/Create';
-import Case from './components/Case';
+import CaseDisplay from './components/CaseDisplay';
 
 import {
   BrowserRouter,
@@ -23,8 +23,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Content />} />
             <Route path="/create" element={<Create />} />
-            <Route path="pages" element={<Case />}>
-            <Route path=":id" element = {<Case />} />
+            <Route path="pages" element={<CaseDisplay />}>
+            <Route path=":id" element = {<CaseDisplay />} />
             </Route>
           </Routes>
         </div>

@@ -29,18 +29,18 @@ class Menu extends Component {
             <ul className="nav-list flex-row items-center justify-start gap" id="navigation" data-visible={visible}
            >
             <li className="nav-item">
-                <AnchorLink to="/#home" className="btn">home</AnchorLink>
+                <AnchorLink to="/#home" className="btn middle" >home</AnchorLink>
             </li>
             <li className="nav-item">
-                <AnchorLink to="/#work" className="btn">work</AnchorLink>
+                <AnchorLink to="/#work" className="btn middle" >work</AnchorLink>
             </li>
 
             <li className="nav-item" >
-                <AnchorLink to="/#about" className="btn">about</AnchorLink>
+                <AnchorLink to="/#about" className="btn middle">about</AnchorLink>
             </li>
 
             <li className="nav-item" >
-                <AnchorLink to="/#contact" className="btn">contact</AnchorLink>
+                <AnchorLink to="/#contact" className="btn middle">contact</AnchorLink>
             </li>
             </ul>
             </nav>

@@ -14,16 +14,11 @@
     padding: 0;
     display: none;
     background-repeat: no-repeat;
-    
-}
-
-@media (max-width: 40em) {
-   
-    .hamburger {
+    // makes the hamburger menu visible at small screem sizes using the max width media query
+    @include mqMax("small"){
         cursor: pointer;
         padding: 0;
         display: block;
-        
         height: 6rem;
         top: 0rem;
         bottom: 2rem;
@@ -38,11 +33,11 @@
         filter: drop-shadow(.001em .001em 1px crimson);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
     }
-
-    .hamburger[aria-expanded="true"]{
-        
-        background-image: url(assets/hamburger-close.svg)
-    }
 }
 
+
+.hamburger[aria-expanded="true"]{
+        
+    background-image: url(assets/hamburger-close.svg)
+}
 

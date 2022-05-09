@@ -1,9 +1,15 @@
-const PostList = ({cases, params}) => {
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
+
+const Post = ({cases, params, handleDelete}) => {
 
     return (
-        <div className="post-list">
+        <div className="post-list auto-center">
             {cases.map((post) => (
-                <div className="blog">
+                <div className="blog ">
                     <div className="case-preview" key={post.id}>
                         <h2>{post.title}</h2>
                         <div className="case-card" key={post.id}>
@@ -11,6 +17,7 @@ const PostList = ({cases, params}) => {
                         </div>
 
                     </div>
+                    <button onClick={()=> handleDelete(post.id)}>Delete Post</button>
                 </div>
             )
             )}
@@ -18,4 +25,4 @@ const PostList = ({cases, params}) => {
     );
 }
 
-export default PostList;
+export default Post;
