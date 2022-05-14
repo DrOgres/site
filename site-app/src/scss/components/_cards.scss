@@ -11,6 +11,11 @@
         max-width: 100%;
 
     }
+    transform: rotateZ(1deg);
+    transition: transform 300ms;
+    &:hover{
+        transform: rotateZ(0);
+    }
 }
 
 

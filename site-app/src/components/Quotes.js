@@ -1,20 +1,24 @@
-import { useState } from "react";
-import quotes from "../data/quotes.json";
-
-
-
+import { useState, useEffect } from "react";
+import sanityClient from "../client";
 
 
 
 const Quotes = () => {
-    // eslint-disable-next-line 
-    const [list, setQuotes] = useState(quotes.quotes); 
-  
-    let length = list.length - 1;
-    let use = Math.round(Math.random() * length);
-    let cursor = true;
-    const speed = 420;
+    const [quoteList, setQuoteList] = useState(null);
 
+    useEffect(() => {
+        sanityClient
+            .fetch(
+                `*[_type == "quote"]{ 
+                Quote
+            }`
+            )
+            .then((data) => setQuoteList(data))
+            .catch(console.error);
+    }, []);
+
+    let cursor = true;
+    const speed = 600;
 
     setInterval(() => {
         if (cursor) {
@@ -25,12 +29,22 @@ const Quotes = () => {
             cursor = true;
         }
     }, speed);
+    
 
+    if(quoteList){
+    let use = Math.round(Math.random() * (quoteList.length - 1));
     return (
 
         <>
-            <div className="quote-text">{list[use]}
-            <span className="cursor" id="cursor">_</span></div>
+            <div className="quote-text">{quoteList[use].Quote}
+                <span className="cursor" id="cursor" style={{ opacity: 1 }}>_</span></div>
+        </>
+    )
+    }
+    return (
+        <>
+            <div className="quote-text">Didn't we start the fire?
+                <span className="cursor" id="cursor" style={{ opacity: 1 }}>_</span></div>
         </>
     )
 

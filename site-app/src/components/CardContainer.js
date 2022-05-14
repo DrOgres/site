@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import sanityClient from "../client";
+import imageUrlBuilder from "@sanity/image-url";
 import { Link } from "react-router-dom";
-import cards from "../data/cards.json";
+import { PortableText } from '@portabletext/react'
 
 
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+    return builder.image(source);
+}
 
 const CardContainer = () => {
     /**
@@ -15,67 +22,112 @@ const CardContainer = () => {
      * 
      */
     // eslint-disable-next-line
-    const [deck, setDeck] = useState(cards.posts)
+    const [deck, setDeck] = useState(null)
+    const [cardTypes, setCardTypes] = useState(null)
 
-    // a small snippet of code to set conditional apects 
-    // of the desired template 
-    deck.forEach(element => {
-        const type = element.type;
-        element.classes = "card flex-col glow-border " + type;
-        
-        element.head = <h2>{element.title}</h2>
-        
-        if (type !== "hero") {
-            element.head = <h3>{element.title}</h3>
-        }
+    useEffect(() => {
+        sanityClient
+            .fetch(
+                `*[_type == "card"]{ 
+                gitRef,
+                image,
+                cardType,
+                logoImage{
+                    asset ->{
+                        _id,
+                        url
+                    },
+                    altText
+                },
+                name,
+                page,
+                projectRef,
+                tags,
+                text
+            }`
+            )
+            .then((data) => setDeck(data))
+            .catch(console.error);
+        sanityClient
+            .fetch(
+                `*[_type == "cardType"]{ 
+                _id,
+                cardType
+            }`
+            )
+            .then((cardTypes) => setCardTypes(cardTypes))
+            .catch(console.error);
+    }, []);
 
-        if (element.pageLink) {
-            element.more = <div className="card-cta"><Link to={element.pageLink}>more<i className="fa-solid fa-angles-right"></i></Link></div>;
-        }
 
-        element.gitLink="";
-        if (element.git) {
-            element.gitLink = <div className="card-link"><a href={element.git} target="_blank" rel="noreferrer" ><i className="fa-brands fa-github-square"></i></a></div>
-        }
+    if (deck != null) {
+        console.log(deck);
 
-        element.siteLink="" 
-        if (element.site) {
-            element.siteLink = <div className="card-link"><a href={element.site} target="_blank" rel="noreferrer" ><i className="fa-regular fa-window-maximize"></i></a></div>
-        }
-       
-    });
-    
-    return (
+        return (
 
-        deck.map((data) => (
-            <div className={data.classes} key={data.id} value={data.id}>
-                <img src={data.img} alt={data.alt} width={'100%'} />
-                <div className="card-content flex-row space-between">
-                    <div className="card-summary">
+            deck.map((data, index) => (
+                <>
+                    <div className={"card flex-col glow-border " + cardTypes.filter(heroId => heroId._id === data.cardType._ref)[0].cardType}
+                        key={index} value={index}>
 
-                        {data.head}
+                        <img
+                            src={urlFor(data.image).url()}
+                            alt={data.title}
 
-                        <p className="tag-cloud flex-row wrap">{data.tags.map((tag) =>
-                            <>
-                                <span className="tag" key={tag.toString()} value={tag}>{tag}</span>
-                            </>
-                        )} </p>
+                        />
 
-                        <p className="card-text">{data.text}
-                        </p>
-                        {data.more}
-                        
+                        <div className={"card-content flex-row space-between"}>
+                            <div className="card-summary">
 
+
+                                <h2>{data.name}</h2>
+
+                                <p className="tag-cloud flex-row wrap">{data.tags.map((tag) =>
+                                    <>
+                                        <span className="tag" key={tag.toString()} value={tag}>{tag}</span>
+                                    </>
+                                )} </p>
+
+                                <p className="card-text">
+                                    <PortableText
+                                        value={data.text}
+                                    />
+                                </p>
+
+                              
+                                { data.page != null &&
+                                       
+                                        <div className="card-cta"><Link to={data.page}>more<i className="fa-solid fa-angles-right"></i></Link></div>
+                                    }
+
+                               
+                            </div>
+                            <div className="card-sidebar flex-col">
+                               
+                                
+                                <div className="card-link">
+                                {data.gitRef != null &&
+                                 <a href={data.gitRef} target="_blank" rel="noreferrer" ><i className="fa-brands fa-github-square"></i></a>
+                                
+                                
+                                }
+                                </div>
+                               
+                                <div className="card-link">   
+                                    { data.projectRef != null && <a href={data.projectRef} target="_blank" rel="noreferrer" ><i className="fa-solid fa-globe"></i></a> } 
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div className="card-sidebar flex-col">
-                        {data.gitLink}
-                        {data.siteLink}
-                    </div>
-                </div>
-            </div>
-        ))
 
-    );
+                </>
+
+            ))
+        );
+    };
+
+    return (<>Data failed to Load</>);
 }
 
 export default CardContainer;

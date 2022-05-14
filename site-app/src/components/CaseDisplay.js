@@ -16,8 +16,9 @@ import Post from "./Post";
  *  />
  * 
  * if no id is sent an list of all case posts will be displayed instead.
- * 
  * In the case of a full list filtering is done to prevent standard Blog Posts from showing here.
+ * 
+ * TODO test ID sent if out of range default to full list
  * 
  * @returns A page template for a Case Study blog page
  * 

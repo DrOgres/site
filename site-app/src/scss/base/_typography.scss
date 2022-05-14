@@ -4,157 +4,171 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
 
 
-h1{
-    font-size: var(--fs-800);
-    line-height: var(--fs-700);
+h1 {
+  font-size: var(--fs-800);
+  line-height: var(--fs-700);
+}
+
+h2 {
+  font-size: var(--fs-600);
+  line-height: var(--fs-600);
+  color: $orange-4;
+  text-transform: uppercase;
+  border-bottom: 2px solid $orange-3;
+}
+
+h3 {
+  font-size: var(--fs-400);
+  line-height: var(--fs-300);
+  color: $orange-3;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: var(--fs-300);
+  line-height: car(--fs-300);
+  color: $magenta-2;
+  text-transform: uppercase;
+}
+
+a {
+  // color: $orange-3;
+  text-decoration: none;
+  padding-bottom: 0;
+}
+
+a:visited {
+  color: $orange-4;
+}
+
+
+
+.card {
+  h2 {
+    color: $magenta-1;
+    font-size: var(--fs-500);
+    line-height: var(--fs-500);
+    border-bottom: 2px solid $magenta-5;
   }
 
-  h2{
-    font-size: var(--fs-600);
-    line-height: var(--fs-600);
-    color: $orange-4;
-    text-transform: uppercase;
-    border-bottom: 2px solid $orange-3;
-  }
 
-  h3{
-    font-size: var(--fs-400);
-    line-height: var(--fs-300);
-    color: $orange-3;
-    text-transform: uppercase;
-  }
-
-  h4{
-    font-size: var(--fs-300);
-    line-height: car(--fs-300);
-    color: $magenta-2;
-    text-transform: uppercase;
-  }
-
-  a{
-    // color: $orange-3;
-    text-decoration: none;
-    padding-bottom: 0;
-  }
-
-  a:visited{
-    color: $orange-4;
-  }
-
-
-
-  .card{
-    h2 {
-      color: $magenta-1;
-      font-size: var(--fs-500);
-      line-height: var(--fs-500);
-      border-bottom: 2px solid $magenta-5;    
-  }
-
-  
-  h3{
+  h3 {
     font-size: var(--fs-300);
     line-height: var(--fs-200);
     color: $magenta-1;
     text-transform: uppercase;
-    border-bottom: 2px solid $magenta-4;   
+    border-bottom: 2px solid $magenta-4;
   }
+}
+
+.side-kick {
+  h2 {
+    font-size: var(--fs-400);
+    line-height: var(--fs-300);
   }
+}
 
-  .card-text{
-    font-size: var(--fs-200);
-    color: $neutral-2;
-    margin-bottom: 1rem;
-  }
+.card-text {
+  font-size: var(--fs-200);
+  color: $neutral-2;
+  margin-bottom: 1rem;
+}
 
-  .tag{
-    text-transform: uppercase;
-    font-size: var(--fs-100);
+.tag {
+  text-transform: uppercase;
+  font-size: var(--fs-100);
 
-  }
-  
+}
 
 
-.sr-only{
+
+.sr-only {
   font-size: .2rem;
 }
-  .medalion{
-     padding: 2rem;
-      position: relative;
-      @include text3d($neutral-4);
-      -webkit-text-stroke: 2px $orange-4;
-      background: border-box radial-gradient(circle, rgba(255, 135, 253, 0.38) 0%, rgba(110, 9, 121, 0.175) 35%, rgba(0,0,0,0) 60%); 
-      
-    }
 
-  .quote-text{
-      font-size: var(--fs-200);
-      color: $orange-4;
-      justify-content: start;
-      background-color: transparent;
-  }
+.medalion {
+  padding: 2rem;
+  position: relative;
+  @include text3d($neutral-4);
+  -webkit-text-stroke: 2px $orange-4;
+  background: border-box radial-gradient(circle, rgba(255, 135, 253, 0.38) 0%, rgba(110, 9, 121, 0.175) 35%, rgba(0, 0, 0, 0) 60%);
 
-  .rotated{
-    padding-top: 10vh;
-    padding-bottom: 1em;
-    margin-left: -20%;
-    transform: rotate(-30deg);
-    max-width: fit-content;
-  }
-
-
-  .nav-item{
-    text-transform: uppercase;
-    @include mqMax("small"){
-      align-self: end;
-      padding-left: min(8%, 4rem);
-
-    }
-  }
-
-  
-  .blog-text{
-    color: $magenta-1;
-    max-width: 45ch;
-    margin-left: 2ch;
-    text-align: justify;
-    text-justify: inter-word;
-  }
-
-  label{
-    text-transform: uppercase;
-    font-weight: 600;
-    color: $magenta-1;
 }
 
-button[type="submit"]{
+.quote-text {
+  font-size: var(--fs-200);
+  color: $orange-4;
+  justify-content: start;
+  background-color: transparent;
+}
+
+.rotated {
+  padding-top: 10vh;
+  padding-bottom: 1em;
+  margin-left: -20%;
+  transform: rotate(-30deg);
+  max-width: fit-content;
+}
+
+
+.nav-item {
+  text-transform: uppercase;
+
+  @include mqMax("small") {
+    align-self: end;
+    padding-left: min(8%, 4rem);
+
+  }
+}
+
+
+.blog-text {
+  color: $magenta-1;
+  max-width: 45ch;
+  margin-left: 2ch;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $magenta-1;
+}
+
+button[type="submit"] {
   text-transform: uppercase;
   font-weight: 500;
 }
 
 
-.card-link{
-  a{
-  color: $neutral-3;
+.card-link {
+  a {
+    color: $neutral-3;
   }
 
-  a:hover, a:focus{
+  a:hover,
+  a:focus {
     border-bottom: none;
     text-shadow: 0px 0px 3px $magenta-3;
   }
+
   font-size: var(--fs-500);
   align-self: flex-start;
   margin-inline: auto;
 }
 
-.card-cta{
+.card-cta {
   text-transform: uppercase;
   font-size: --fs-300;
-  a{
-  color: $neutral-5;
+
+  a {
+    color: $neutral-5;
   }
-  a:hover{
+
+  a:hover {
     color: $orange-5;
   }
 
 }
+

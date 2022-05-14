@@ -173,6 +173,11 @@ a:visited {
   border-bottom: 2px solid hsl(313deg, 56%, 70%);
 }
 
+.side-kick h2 {
+  font-size: var(--fs-400);
+  line-height: var(--fs-300);
+}
+
 .card-text {
   font-size: var(--fs-200);
   color: hsl(210deg, 12%, 30%);
@@ -251,7 +256,8 @@ button[type=submit] {
 .card-link a {
   color: hsl(210deg, 12%, 50%);
 }
-.card-link a:hover, .card-link a:focus {
+.card-link a:hover,
+.card-link a:focus {
   border-bottom: none;
   text-shadow: 0px 0px 3px hsl(313deg, 56%, 50%);
 }
@@ -536,11 +542,16 @@ nav a.middle:hover:before {
 
 .side-kick {
   max-width: calc(50% - 2.5rem);
+  transform: rotateZ(1deg);
+  transition: transform 300ms;
 }
 @media only screen and (max-width: 40em) {
   .side-kick {
     max-width: 100%;
   }
+}
+.side-kick:hover {
+  transform: rotateZ(0);
 }
 
 .card {

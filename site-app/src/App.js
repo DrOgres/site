@@ -17,6 +17,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
+     
       <div className="App">
         <Header />
         <div className="container flex-col">
@@ -30,6 +31,7 @@ function App() {
         </div>
         <Footer />
       </div>
+      <span className="cursor" id="cursor" style={{ opacity: 0 }}></span>
     </BrowserRouter>
 
   );

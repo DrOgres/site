@@ -31,8 +31,8 @@ const Content = () => {
             <section className="work auto-center">
                 <div className="content flex-row wrap gap">
                     <div className="section-head flex-col">
-                        <h2>Work</h2>
-                        <h3>Client: Free League Publishing</h3>
+                        <h2>Projects</h2>
+                        <h3>Personal and Professional maybe your project next!</h3>
                     </div>
                     <DeckBox />
                 </div>
