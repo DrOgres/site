@@ -6,20 +6,23 @@ import { Component } from "react";
  */
 
 class MenuToggle extends Component {
-  render(){
-
+  render() {
     let visible = "false";
 
-    if (this.props.menuVisibility){
-        visible ="true";
+    if (this.props.menuVisibility) {
+      visible = "true";
     }
 
-    return(
+    return (
       <div className="banner-outside">
-      <button aria-controls="navigation" aria-expanded={visible} className="hamburger banner-inside" 
-         onMouseDown={this.props.handleMouseDown}>
+        <button
+          aria-controls="navigation"
+          aria-expanded={visible}
+          className="hamburger banner-inside"
+          onMouseDown={this.props.handleMouseDown}
+        >
           <span className="sr-only">Menu</span>
-      </button>
+        </button>
       </div>
     );
   }
