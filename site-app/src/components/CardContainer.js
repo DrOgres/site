@@ -21,9 +21,9 @@ const CardContainer = () => {
      * map of the cards.json data
      * 
      */
-    // eslint-disable-next-line
+   
     const [deck, setDeck] = useState(null)
-    const [cardTypes, setCardTypes] = useState(null)
+  
 
     useEffect(() => {
         sanityClient
