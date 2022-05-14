@@ -70,7 +70,7 @@ const CaseDisplay = () => {
             <h4>Other Case Studies</h4>
             <ul>
               {cases.map((data) => (
-                <>{data.slug.current != useSlug && <li>{data.title}</li>}</>
+                <>{data.slug.current !== useSlug && <li>{data.title}</li>}</>
               ))}
             </ul>
           </div>
