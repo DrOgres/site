@@ -48,15 +48,6 @@ const CardContainer = () => {
             )
             .then((data) => setDeck(data))
             .catch(console.error);
-        sanityClient
-            .fetch(
-                `*[_type == "cardType"]{ 
-                _id,
-                cardType
-            }`
-            )
-            .then((cardTypes) => setCardTypes(cardTypes))
-            .catch(console.error);
     }, []);
 
 
@@ -67,7 +58,7 @@ const CardContainer = () => {
 
             deck.map((data, index) => (
                 <>
-                    <div className={"card flex-col glow-border " + cardTypes.filter(heroId => heroId._id === data.cardType._ref)[0].cardType}
+                    <div className={"card flex-col glow-border " + data.cardType}
                         key={index} value={index}>
 
                         <img

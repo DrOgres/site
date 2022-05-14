@@ -177,6 +177,12 @@ a:visited {
   font-size: var(--fs-400);
   line-height: var(--fs-300);
 }
+.side-kick a {
+  color: hsl(313deg, 56%, 30%);
+}
+.side-kick a:visited {
+  color: hsl(210deg, 12%, 50%);
+}
 
 .card-text {
   font-size: var(--fs-200);

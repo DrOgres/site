@@ -66,6 +66,14 @@ a:visited {
     font-size: var(--fs-400);
     line-height: var(--fs-300);
   }
+
+  a{
+    color: $magenta-2;
+
+    &:visited{
+      color: $neutral-3;
+    }
+  }
 }
 
 .card-text {
