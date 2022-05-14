@@ -9,6 +9,7 @@
     max-width: calc(50% - 2.5rem);
     @include mqMax("small"){
         max-width: 100%;
+        transform: rotateZ(0);
 
     }
     transform: rotateZ(1deg);

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap");
 /* media query mixin */
 /* media query mixin for max-width */
 /* Start of text3d mixin */
@@ -279,6 +280,15 @@ button[type=submit] {
   color: hsl(33deg, 100%, 90%);
 }
 
+.case-body blockquote {
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: var(--fs-200);
+  font-weight: 100;
+  color: hsl(33deg, 100%, 70%);
+  text-transform: capitalize;
+  text-indent: var(--fs-300);
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -351,11 +361,6 @@ section {
 
 .home {
   max-width: 55ch;
-}
-
-.case {
-  max-width: 55ch;
-  margin-top: 8rem;
 }
 
 .break-1 {
@@ -503,6 +508,23 @@ nav a.middle:hover:before {
   width: 100%;
 }
 
+.case {
+  max-width: 65ch;
+  margin-top: 8rem;
+}
+
+.sidebar {
+  max-width: 10vw;
+}
+
+.case-body {
+  width: 100%;
+}
+
+.case-content {
+  width: 100%;
+}
+
 .btn {
   font-weight: 600;
   color: hsl(33deg, 100%, 50%);
@@ -554,6 +576,7 @@ nav a.middle:hover:before {
 @media only screen and (max-width: 40em) {
   .side-kick {
     max-width: 100%;
+    transform: rotateZ(0);
   }
 }
 .side-kick:hover {

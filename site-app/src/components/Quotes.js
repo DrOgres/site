@@ -19,8 +19,15 @@ const Quotes = () => {
 
     let cursor = true;
     const speed = 600;
+    let blinkCursor;
 
-    setInterval(() => {
+    function startBlink(){
+        if(!blinkCursor){
+            blinkCursor = setInterval(cursorBlink, speed)
+        }
+    }
+
+    function cursorBlink(){
         if (cursor) {
             document.getElementById('cursor').style.opacity = 0;
             cursor = false;
@@ -28,11 +35,15 @@ const Quotes = () => {
             document.getElementById('cursor').style.opacity = 1;
             cursor = true;
         }
-    }, speed);
+    }
+
+  
     
 
     if(quoteList){
+    startBlink()
     let use = Math.round(Math.random() * (quoteList.length - 1));
+
     return (
 
         <>

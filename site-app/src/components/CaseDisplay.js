@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import pages from "../data/pages.json";
-import Post from "./Post";
+import sanityClient from "../client";
+import ReactMarkdown from 'react-markdown'
+
 
 
 /**
@@ -28,41 +29,78 @@ import Post from "./Post";
 const CaseDisplay = () => {
 
     let params = useParams();
+    // const slug = "vaesen-system-for-foundry-vtt";
     // eslint-disable-next-line
-    const [cases, setCases] = useState(pages.posts); 
+    const [cases, setCases] = useState(null);
+    const useSlug = params.id;
 
-    const handleDelete = (id)=>{
-        console.log("delte this post id:" + id +" -- hide this for non-logged user.")
 
+    useEffect(() => {
+
+        //This is a dirty little hack that
+        // stops the set interval on the cursor to prevent it 
+        //from getting new timers when we navigate back to root
+        for (let i = 0; i < 100; i++) {
+            window.clearInterval(i);
+        }
+
+        sanityClient
+            .fetch(
+                `*[_type == "case"]{ 
+            _id,
+            title,
+            text,
+            slug   
+        }`
+            )
+            .then((data) => setCases(data))
+            .catch(console.error);
+
+    }, [])
+
+    if (cases) {
+
+
+        return (
+            <div className="case-content" >
+                <section className="case auto-center flex-row" id="home">
+                    {cases.map((data) => (
+                        <div>
+                            {data.slug.current === useSlug &&
+
+                                <div className="case-body" key={data._id} value={data._id}>
+                                    <h2>{data.title}</h2>
+                                    <ReactMarkdown children={data.text} />
+                                </div>
+
+                            }
+                        </div>
+
+                    ))}
+                    <div className="case-list sidebar">
+                        <h4>Other Case Studies</h4>
+                        <ul>
+                            {cases.map((data) => (
+                                <>
+                                    {data.slug.current != useSlug &&
+                                        <li>{data.title}</li>
+                                    }
+                                </>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        );
     }
 
-    useEffect(()=>{
-        console.log('ran useEffect');
-
-    })
-
-    if(params.id !== undefined){
-       
-        return(
-            
-        <>
-        <div className="content" data-id={params.id}>
-            <section className="case auto-center" id="home">
-            {/* eslint-disable-next-line */}
-            <Post cases={cases.filter((post)=> post.id == params.id)} params={params} handleDelete={handleDelete}/>
-            </section>
-        </div>
-        </>
-        );
-        }
-     
     return (
         <>
             <div className="content" data-id={params.id}>
-            <section className="case autocenter" id="home">
-                <Post cases={cases.filter((post) => post.type === "case" )} params={params}/>
-            </section>
-        </div>
+                <section className="case auto-center" id="home">
+                    <p>Data Failed to Load</p>
+                </section>
+            </div>
         </>
     )
 

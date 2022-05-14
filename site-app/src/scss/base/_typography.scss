@@ -2,7 +2,7 @@
 
 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
 
 h1 {
   font-size: var(--fs-800);
@@ -180,3 +180,14 @@ button[type="submit"] {
 
 }
 
+
+.case-body{
+  blockquote{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: var(--fs-200);
+    font-weight: 100;
+    color: $orange-4;
+    text-transform: capitalize;
+    text-indent: var(--fs-300);
+  }
+}

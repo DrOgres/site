@@ -32,7 +32,7 @@ class Menu extends Component {
                 <AnchorLink to="/#home" className="btn middle" >home</AnchorLink>
             </li>
             <li className="nav-item">
-                <AnchorLink to="/#work" className="btn middle" >work</AnchorLink>
+                <AnchorLink to="/#work" className="btn middle" >projects</AnchorLink>
             </li>
 
             <li className="nav-item" >

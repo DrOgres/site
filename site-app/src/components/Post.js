@@ -17,7 +17,7 @@ const Post = ({cases, params, handleDelete}) => {
                         </div>
 
                     </div>
-                    <button onClick={()=> handleDelete(post.id)}>Delete Post</button>
+                
                 </div>
             )
             )}
