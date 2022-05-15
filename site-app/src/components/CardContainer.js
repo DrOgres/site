@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
-import { Link } from "react-router-dom";
+import * as reactRouterDom from "react-router-dom";
 import { PortableText } from "@portabletext/react";
+import Splitting from "splitting";
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import ScrollOut from "scroll-out";
+
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -21,6 +26,15 @@ const CardContainer = () => {
    * map of the cards.json data
    *
    */
+
+   Splitting({
+    target: "[data-splitting]",
+    by: "words",
+    key: null
+  });
+  ScrollOut({
+    targets: "[data-splitting]",
+  });
 
   const [deck, setDeck] = useState(null);
 
@@ -63,7 +77,7 @@ const CardContainer = () => {
 
           <div className={"card-content flex-row space-between"}>
             <div className="card-summary">
-              <h2>{data.name}</h2>
+              <h2 data-splitting>{data.name}</h2>
 
               <p className="tag-cloud flex-row wrap">
                 {data.tags.map((tag) => (
@@ -84,15 +98,15 @@ const CardContainer = () => {
               </div>
 
               {data.page != null && (
-                <div className="card-cta">
-                  <Link to={"pages/" + data.page}>
+                <div className="card-cta raise">
+                  <reactRouterDom.Link to={"pages/" + data.page}>
                     more<i className="fa-solid fa-angles-right"></i>
-                  </Link>
+                  </reactRouterDom.Link>
                 </div>
               )}
             </div>
             <div className="card-sidebar flex-col">
-              <div className="card-link">
+              <div className="card-link raise">
                 {data.gitRef != null && (
                   <a href={data.gitRef} target="_blank" rel="noreferrer">
                     <i className="fa-brands fa-github-square"></i>
@@ -100,7 +114,7 @@ const CardContainer = () => {
                 )}
               </div>
 
-              <div className="card-link">
+              <div className="card-link raise">
                 {data.projectRef != null && (
                   <a href={data.projectRef} target="_blank" rel="noreferrer">
                     <i className="fa-solid fa-globe"></i>

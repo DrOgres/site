@@ -1,5 +1,5 @@
 /**
- * @description The footer for the site whihc contains static links contact information
+ * @description The footer for the site which contains static links contact information
  * and other pertinent data.
  *
  */

@@ -1,17 +1,51 @@
+@use '../abstracts/' as *;
+
 .case{
-    max-width: 65ch;
+    max-width: 1000px;
     margin-top: 8rem;
+
+    h2{
+        padding-top: 1rem;
+    }
+
+    h3{
+        padding-top: 1rem;
+    }
     
 }
 
 .sidebar{
-    max-width: 10vw;
+    min-width: 30%;
+    max-height: 400px;
+    border-radius: 12px;
+    
+    ul{
+        padding: 0;
+        list-style: none;
+        
+    }
+
+    
 }
 
 .case-body{
-    width: 100%;
+    max-width: 65ch;
 }
 
 .case-content{
     width: 100%;
+}
+
+.case{
+    blockquote{
+        padding-bottom: 2rem;
+    }
+}
+
+.case-list{
+    margin-inline: 3rem;
+    padding: 1rem;
+    background: rgb(169,179,188);
+    background: linear-gradient(180deg, rgba(169,179,188,1) 0%, rgba(120,118,118,0.2413340336134454) 76%, rgba(0,0,0,0) 100%);
+    color: $neutral-1;
 }

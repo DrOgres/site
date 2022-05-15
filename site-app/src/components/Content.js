@@ -1,6 +1,10 @@
 import DeckBox from "./DeckBox";
 import ContactForm from "./ContactForm";
 import Quotes from "./Quotes";
+import Splitting from "splitting";
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import ScrollOut from "scroll-out";
 
 /**
  * @description The main component rendered at site index with anchors for the nav links.
@@ -9,11 +13,24 @@ import Quotes from "./Quotes";
  */
 
 const Content = () => {
+
+  Splitting({
+    /* target: String selector, Element, Array of Elements, or NodeList */
+    target: "[data-splitting]",
+    /* by: String of the plugin name */
+    by: "chars",
+    /* key: Optional String to prefix the CSS variables */
+    key: null
+  });
+  ScrollOut({
+    targets: "[data-splitting]",
+  });
   return (
     <>
+
       <section className="home auto-center" id="home">
         <div className="content rotated flex-col">
-          <h1 className="medalion">
+          <h1 data-splitting className="medalion">
             Dr.
             <br />
             Ogres
@@ -31,8 +48,8 @@ const Content = () => {
       <section className="work auto-center">
         <div className="content flex-row wrap gap">
           <div className="section-head flex-col">
-            <h2>Projects</h2>
-            <h3>Personal and Professional maybe your project next!</h3>
+            <h2 data-splitting>Projects</h2>
+            <h3 data-splitting>Personal and Professional maybe your project next!</h3>
           </div>
           <DeckBox />
         </div>
@@ -41,11 +58,11 @@ const Content = () => {
       <section className="about auto-center">
         <div className="content">
           <div className="section-head flex-col">
-            <h2>A bit about me</h2>
-            <h3>Ask me about music and cheese.</h3>
+            <h2 data-splitting>A bit about me</h2>
+            <h3 data-splitting>Ask me about music and cheese.</h3>
           </div>
           <div className="blog-block glow-border">
-            <h4>Code</h4>
+            <h4 data-splitting>Code</h4>
             <p className="blog-text">
               I've been coding since I was a wee tot. I enjoy the problem
               solving aspects of it and there is just nothing like the rush when
@@ -64,10 +81,10 @@ const Content = () => {
               designed book and capturing the same look and feel in code has
               been a fun challenge.
             </p>
-            <h4>Art</h4>
+            <h4 data-splitting>Art</h4>
             <p className="blog-text">
               I draw and paint both with both digital and traditional media. A
-              pencil to paper is a great way to get the old brain in motion. I
+              pencil to paper is a great way to get the brain in motion. I
               went to school for Fine Art, Illustration and Animation.
             </p>
             <p className="blog-text">
@@ -76,7 +93,7 @@ const Content = () => {
               thinking through a project as a visual puzzle is key to making
               things that are useful and useable
             </p>
-            <h4>Music</h4>
+            <h4 data-splitting>Music</h4>
             <p className="blog-text">
               I have often said that music is perhaps the most important thing
               humans have ever achieved. That bit of hyperbole is my way of
@@ -95,14 +112,29 @@ const Content = () => {
       <section className="contact auto-center">
         <div className="content">
           <div className="section-head flex-col">
-            <h2>Contact</h2>
-            <h3>I would love to hear about your project!</h3>
+            <h2 data-splitting>Contact</h2>
+            <h3 data-splitting>I would love to hear about your project!</h3>
           </div>
           <div className="form-container flex-col nowrap gap glow-border">
             <ContactForm />
           </div>
         </div>
       </section>
+
+      <svg width="0" height="0">
+      <defs>
+        <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
+          <path
+            d="M 0, 0.8
+            L 0, 0
+            L 1, 0
+            L 1, 0.8
+            C 0.65 1, 0.35 1, 0 0.8
+									Z"
+          />
+        </clipPath>
+      </defs>
+    </svg>
     </>
   );
 };

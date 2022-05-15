@@ -1,11 +1,11 @@
 import { Component } from "react";
-import { HashLink as AnchorLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
+// import { HashLink as AnchorLink } from "react-router-hash-link";
 
 /**
  * @description Builds out the items and sets up the links for the navigation menu at the head of the
  * site.
  *
- * note the AnchorLink items always link to site root and the anchor on that path.
  *
  * visible is the state set for small screen sizes to toggle the menu when the hamburger is clicked
  * Logic for menu show/hide is found in MenuContainer.js and is tied to the MenuToggle.js which
@@ -16,6 +16,10 @@ import { HashLink as AnchorLink } from "react-router-hash-link";
 class Menu extends Component {
   render() {
     let visible = "false";
+    // let activeClassName="selected"
+    // let activeStyle = {
+    //   textDecoration: "underline",
+    // };
 
     if (this.props.menuVisibility) {
       visible = "true";
@@ -29,26 +33,40 @@ class Menu extends Component {
           data-visible={visible}
         >
           <li className="nav-item">
-            <AnchorLink to="/#home" className="btn middle">
+            <NavLink
+              to="/#home"
+              className="nav-link btn middle"
+              
+            >
               home
-            </AnchorLink>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <AnchorLink to="/#work" className="btn middle">
+            <NavLink 
+            to="/#work" 
+            className="nav-link btn middle">
               projects
-            </AnchorLink>
+            </NavLink>
           </li>
 
           <li className="nav-item">
-            <AnchorLink to="/#about" className="btn middle">
+            <NavLink
+              to="/#about"
+              className="nav-link btn middle"
+            
+            >
               about
-            </AnchorLink>
+            </NavLink>
           </li>
 
           <li className="nav-item">
-            <AnchorLink to="/#contact" className="btn middle">
+            <NavLink
+              to="/#contact"
+              className="nav-link btn middle"
+             
+            >
               contact
-            </AnchorLink>
+            </NavLink>
           </li>
         </ul>
       </nav>

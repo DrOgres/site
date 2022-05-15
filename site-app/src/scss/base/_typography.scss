@@ -180,7 +180,25 @@ button[type="submit"] {
 
 }
 
+.sidebar{
+  h4{
+    font-size: var(--fs-200);
+    margin: 0 auto;
+    color: $orange-2;
+  }
+  
 
+  a{
+    color: $orange-4;
+    text-align: center;
+    margin: 0 auto;
+    &:hover{
+      color:$orange-5;
+      
+    }
+  }
+
+}
 .case-body{
   blockquote{
     font-family: 'PT Sans Caption', sans-serif;

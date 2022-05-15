@@ -47,4 +47,31 @@ body {
   visibility: hidden;
 }
 
+.splitting {
 
+
+ 
+  .char {
+    
+    transition: transform .3s cubic-bezier(.3, 0, .3, 1), opacity .3s linear;
+    transition-delay: calc( 20ms * var(--char-index) );
+
+  }
+
+  &[data-scroll="out"] .char {
+    opacity: 0.1;
+    transform: translateY( .25em );
+  }
+
+  .word {
+    
+    transition: transform .6s cubic-bezier(.6, 0, .6, 2), opacity .8s linear;
+    transition-delay: calc( 22ms * var(--word-index) );
+
+  }
+
+  &[data-scroll="out"] .word {
+    opacity: 0.1;
+    transform: translateX( 2em );
+  }
+}

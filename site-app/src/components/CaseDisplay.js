@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
 import ReactMarkdown from "react-markdown";
+import { Link } from "react-router-dom";
 
 /**
  * @description Creates a page in the Case Study format from a specific Id as provided by the link
@@ -26,8 +27,6 @@ import ReactMarkdown from "react-markdown";
 
 const CaseDisplay = () => {
   let params = useParams();
-  // const slug = "vaesen-system-for-foundry-vtt";
-  // eslint-disable-next-line
   const [cases, setCases] = useState(null);
   const useSlug = params.id;
 
@@ -70,7 +69,7 @@ const CaseDisplay = () => {
             <h4>Other Case Studies</h4>
             <ul>
               {cases.map((data) => (
-                <>{data.slug.current !== useSlug && <li>{data.title}</li>}</>
+                <>{data.slug.current !== useSlug && <li><Link to={data.slug.current}>{data.title}</Link></li>}</>
               ))}
             </ul>
           </div>

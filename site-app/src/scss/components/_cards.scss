@@ -2,21 +2,22 @@
 
 .hero {
     max-width: 100%;
+    @include mqMax("small"){
+        max-width: 100%;
 
+
+    }
+ 
 }
 
 .side-kick {
     max-width: calc(50% - 2.5rem);
     @include mqMax("small"){
         max-width: 100%;
-        transform: rotateZ(0);
+        
 
     }
-    transform: rotateZ(1deg);
-    transition: transform 300ms;
-    &:hover{
-        transform: rotateZ(0);
-    }
+
 }
 
 
@@ -53,12 +54,9 @@
         display: block;
         object-fit: cover;
         width: 100%;
-        filter: saturate(50%) hue-rotate(200deg);
+       
     }
 
-    img:hover {
-        filter: saturate(90%) hue-rotate(0deg);
-    }
 
     position: relative;
 }
@@ -89,4 +87,6 @@
     margin: 1em 1em 0 0;
     background-color: $magenta-1;
 
+
+    
   }
