@@ -67,6 +67,7 @@ const CardContainer = () => {
 
   if (deck != null) {
     return deck.map((data, index) => (
+      
       <>
         <div
           className={"card flex-col glow-border " + data.cardType}
@@ -77,7 +78,7 @@ const CardContainer = () => {
 
           <div className={"card-content flex-row space-between"}>
             <div className="card-summary">
-              <h2 data-splitting>{data.name}</h2>
+              <h2 className="title" data-splitting>{data.name}</h2>
 
               <p className="tag-cloud flex-row wrap">
                 {data.tags.map((tag) => (
