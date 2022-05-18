@@ -74,7 +74,7 @@ const Content = () => {
               weekend.
             </p>
             <p className="blog-text">
-              You can see some of the <a href="#work">projects</a> I have worked
+              You can see some of the <a className="ul-link-l-to-r blog-link" href="#work">projects</a> I have worked
               on above. Most recently I have been working with Free League
               Publishing on converting thier Vaesen and Tales from the Loop game
               books to Foundry VTT modules. The process of taking a beautifully

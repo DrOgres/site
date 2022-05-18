@@ -35,7 +35,7 @@ class Menu extends Component {
           <li className="nav-item">
             <NavLink
               to="/#home"
-              className="nav-link btn middle"
+              className="nav-link btn ul-link-l-to-r"
               
             >
               home
@@ -44,7 +44,7 @@ class Menu extends Component {
           <li className="nav-item">
             <NavLink 
             to="/#work" 
-            className="nav-link btn middle">
+            className="nav-link btn ul-link-l-to-r">
               projects
             </NavLink>
           </li>
@@ -52,7 +52,7 @@ class Menu extends Component {
           <li className="nav-item">
             <NavLink
               to="/#about"
-              className="nav-link btn middle"
+              className="nav-link btn ul-link-l-to-r"
             
             >
               about
@@ -62,7 +62,7 @@ class Menu extends Component {
           <li className="nav-item">
             <NavLink
               to="/#contact"
-              className="nav-link btn middle"
+              className="nav-link btn ul-link-l-to-r"
              
             >
               contact
