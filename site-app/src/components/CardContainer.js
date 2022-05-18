@@ -4,8 +4,6 @@ import imageUrlBuilder from "@sanity/image-url";
 import * as reactRouterDom from "react-router-dom";
 import { PortableText } from "@portabletext/react";
 import Splitting from "splitting";
-import "splitting/dist/splitting.css";
-import "splitting/dist/splitting-cells.css";
 import ScrollOut from "scroll-out";
 
 
@@ -78,7 +76,10 @@ const CardContainer = () => {
 
           <div className={"card-content flex-row space-between"}>
             <div className="card-summary">
-              <h2 className="title" data-splitting>{data.name}</h2>
+              <h2 className="title" 
+              data-splitting>
+                {data.name}
+                </h2>
 
               <p className="tag-cloud flex-row wrap">
                 {data.tags.map((tag) => (
