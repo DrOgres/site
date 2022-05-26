@@ -18,7 +18,8 @@
     "scroll-out": "^2.2.12",
     "source-map-loader": "^3.0.1",
     "splitting": "^1.0.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "eventsource": ">=2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
