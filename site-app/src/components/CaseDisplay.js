@@ -31,13 +31,7 @@ const CaseDisplay = () => {
   const useSlug = params.id;
 
   useEffect(() => {
-    //This is a dirty little hack that
-    // stops the set interval on the cursor to prevent it
-    //from getting new timers when we navigate back to root
-    for (let i = 0; i < 100; i++) {
-      window.clearInterval(i);
-    }
-
+   
     sanityClient
       .fetch(
         `*[_type == "case"]{ 
