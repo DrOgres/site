@@ -105,6 +105,21 @@ section{
   clip-path: url(#myCurve);
   height: 8rem;
  }
+
+ .tutorial{
+   
+  width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1rem;
+    margin-bottom: -.02rem;
+    background-color: $neutral-3;
+    & .content{
+        max-width: 55ch;
+        margin: 0 auto;
+        
+    }
+
+}
  
 
 .work{
@@ -126,7 +141,7 @@ section{
     padding-top: 2em;
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
-    background-color: $neutral-3;
+    background-color: $neutral-2;
     & .content{
         max-width: 55ch;
         margin: 0 auto;
@@ -139,7 +154,7 @@ section{
     width: 100%;
     padding-top: 2em;
     padding-bottom: 1rem;
-    background-color: $neutral-2;
+    background-color: $neutral-3;
     & .content{
         max-width: 55ch;
         margin: 0 auto;

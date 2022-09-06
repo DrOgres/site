@@ -51,6 +51,16 @@ class Menu extends Component {
 
           <li className="nav-item">
             <NavLink
+              to="/#tutorial"
+              className="nav-link btn ul-link-l-to-r"
+            
+            >
+              tutorials
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <NavLink
               to="/#about"
               className="nav-link btn ul-link-l-to-r"
             

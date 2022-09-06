@@ -1,10 +1,13 @@
 import DeckBox from "./DeckBox";
+import Tutorial from "./Tutorial";
 import ContactForm from "./ContactForm";
 import Quotes from "./Quotes";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import ScrollOut from "scroll-out";
+
+// TODO - redo about section - add a tldr list of skills at the top
 
 /**
  * @description The main component rendered at site index with anchors for the nav links.
@@ -54,7 +57,17 @@ const Content = () => {
           <DeckBox />
         </div>
       </section>
-      <div className="break-2" id="about"></div>
+      <div className="break-2" id="tutorial"></div>
+      <section className="tutorial auto-center">
+        <div className="content flex-row wrap gap">
+          <div className="section-head flex-col">
+            <h2 data-splitting>Tutorials</h2>
+            <h3 data-splitting>How to's and code snippets for you to use!</h3>
+          </div>
+          <Tutorial />
+        </div>
+      </section>
+      <div className="break-3" id="about"></div>
       <section className="about auto-center">
         <div className="content">
           <div className="section-head flex-col">
@@ -108,7 +121,7 @@ const Content = () => {
           </div>
         </div>
       </section>
-      <div className="break-3" id="contact"></div>
+      <div className="break-2" id="contact"></div>
       <section className="contact auto-center">
         <div className="content">
           <div className="section-head flex-col">

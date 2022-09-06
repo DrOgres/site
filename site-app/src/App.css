@@ -74,7 +74,6 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
 *::before,
 *::after {
@@ -455,6 +454,18 @@ section {
   height: 8rem;
 }
 
+.tutorial {
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 1rem;
+  margin-bottom: -0.02rem;
+  background-color: hsl(210deg, 12%, 50%);
+}
+.tutorial .content {
+  max-width: 55ch;
+  margin: 0 auto;
+}
+
 .work {
   padding-top: 2em;
   padding-bottom: 1rem;
@@ -470,7 +481,7 @@ section {
   padding-top: 2em;
   padding-bottom: 1rem;
   margin-bottom: -0.02rem;
-  background-color: hsl(210deg, 12%, 50%);
+  background-color: hsl(210deg, 12%, 30%);
 }
 .about .content {
   max-width: 55ch;
@@ -481,7 +492,7 @@ section {
   width: 100%;
   padding-top: 2em;
   padding-bottom: 1rem;
-  background-color: hsl(210deg, 12%, 30%);
+  background-color: hsl(210deg, 12%, 50%);
 }
 .contact .content {
   max-width: 55ch;
