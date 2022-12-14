@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .blog-block{
+    position: relative;
     border-radius: 12px;
     padding: 2em;
     margin-top: 3em;

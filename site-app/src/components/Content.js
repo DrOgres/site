@@ -74,7 +74,7 @@ const Content = () => {
             <h2 data-splitting>A bit about me</h2>
             <h3 data-splitting>Ask me about music and cheese.</h3>
           </div>
-          <div className="blog-block glow-border">
+          <div className="crt blog-block">
             <h4 data-splitting>Code</h4>
             <p className="blog-text">
               I've been coding since I was a wee tot. I enjoy the problem
