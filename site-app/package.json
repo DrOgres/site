@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@portabletext/react": "^1.0.6",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
@@ -10,6 +14,7 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "bulma": "^0.9.3",
+    "eventsource": ">=2.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-markdown": "^8.0.3",
@@ -18,8 +23,7 @@
     "scroll-out": "^2.2.12",
     "source-map-loader": "^3.0.1",
     "splitting": "^1.0.6",
-    "web-vitals": "^2.1.4",
-    "eventsource": ">=2.0.2"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
