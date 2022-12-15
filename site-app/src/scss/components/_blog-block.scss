@@ -10,3 +10,33 @@
 
    
 }
+
+.long-block{
+    height: fit-content;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.short-block{
+    position: relative;
+    height: 5rem;
+    margin-bottom: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.short-block:hover{
+    cursor: pointer;
+}
+
+.short-block::after{
+    content: ' read more...';
+    font-size: large;
+    font-weight: 900;
+    color: $neutral-2;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 1em;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%);
+}

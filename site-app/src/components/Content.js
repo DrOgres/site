@@ -90,14 +90,18 @@ const Content = () => {
           </div>
           <div className='crt blog-block'>
             <h4 data-splitting>Code</h4>
-            <h5 className='blog-text'>
-              TLDR; <FontAwesomeIcon icon={faHtml5} size='3x' title='HTML 5' />
-              <FontAwesomeIcon icon={faCss3Alt} size='3x' title='CSS 3' />{" "}
-              <FontAwesomeIcon icon={faSass} size='3x' title='SASS' />{" "}
-              <FontAwesomeIcon icon={faJsSquare} size='3x' title='JavaScript' />{" "}
-              <FontAwesomeIcon icon={faReact} size='3x' title='React' />{" "}
-              <FontAwesomeIcon icon={faNodeJs} size='3x' title='Node.js' />
-            </h5>
+            <h4 className='blog-text'>
+              TLDR; <FontAwesomeIcon icon={faHtml5} size='2x' title='HTML 5' />
+              <FontAwesomeIcon icon={faCss3Alt} size='2x' title='CSS 3' />{" "}
+              <FontAwesomeIcon icon={faSass} size='2x' title='SASS' />{" "}
+              <FontAwesomeIcon icon={faJsSquare} size='2x' title='JavaScript' />{" "}
+              <FontAwesomeIcon icon={faReact} size='2x' title='React' />{" "}
+              <FontAwesomeIcon icon={faNodeJs} size='2x' title='Node.js' />
+            </h4>
+            <div className="short-block" id="code-text" onClick={()=>{
+              document.getElementById("code-text").classList.toggle("long-block");
+              document.getElementById("code-text").classList.toggle("short-block");
+            }}>
             <p className='blog-text'>
               I've been coding since I was a wee tot. I enjoy the problem
               solving aspects of it and there is just nothing like the rush when
@@ -119,10 +123,15 @@ const Content = () => {
               a beautifully designed book and capturing the same look and feel
               in code has been a fun challenge.
             </p>
+            </div>
             <h4 data-splitting>Design</h4>
-            <h5 className='blog-text'>
-              TLDR; <FontAwesomeIcon icon={faFigma} size='3x' title='Figma' />{" "}
-            </h5>
+            <h4 className='blog-text'>
+              TLDR; <FontAwesomeIcon icon={faFigma} size='2x' title='Figma' />{" "}
+            </h4>
+            <div className="short-block" id="design-text" onClick={()=>{
+              document.getElementById("design-text").classList.toggle("long-block");
+              document.getElementById("design-text").classList.toggle("short-block");
+            }}>
             <p className='blog-text'>
               From simple and modern to complex and ornate I have a good eye for
               design. I have worked with a number of clients to create logos,
@@ -132,7 +141,13 @@ const Content = () => {
               I like to start on paper with a pencil but I am also comfortable
               with digital tools like Figma and Adobe XD.
             </p>
+            </div>
             <h4 data-splitting>Art</h4>
+            
+            <div className="short-block" id="art-text" onClick={()=>{
+              document.getElementById("art-text").classList.toggle("long-block");
+              document.getElementById("art-text").classList.toggle("short-block");
+            }}>
             <p className='blog-text'>
               I draw and paint both with both digital and traditional media. A
               pencil to paper is a great way to get the brain in motion. I went
@@ -144,7 +159,13 @@ const Content = () => {
               thinking through a project as a visual puzzle is key to making
               things that are useful and useable
             </p>
+            </div>
+           
             <h4 data-splitting>Music</h4>
+            <div className="short-block" id="music-text" onClick={()=>{
+              document.getElementById("music-text").classList.toggle("long-block");
+              document.getElementById("music-text").classList.toggle("short-block");
+            }}>
             <p className='blog-text'>
               I have often said that music is perhaps the most important thing
               humans have ever achieved. That bit of hyperbole is my way of
@@ -156,6 +177,7 @@ const Content = () => {
               sound. I love finding new music and can be found digging through
               the deep recesses of bandcamp fairly often.
             </p>
+            </div>
           </div>
         </div>
       </section>
