@@ -19,21 +19,21 @@ function App() {
   });
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className='App'>
         <Header />
-        <div className="container flex-col">
+        <div className='container flex-col'>
           <AnchorScroller>
             <Routes>
-              <Route path="/" element={<Content />} />
-              <Route path="pages" element={<CaseDisplay />}>
-                <Route path=":id" element={<CaseDisplay />} />
+              <Route path='/' element={<Content />} />
+              <Route path='pages' element={<CaseDisplay />}>
+                <Route path=':id' element={<CaseDisplay />} />
               </Route>
             </Routes>
           </AnchorScroller>
         </div>
         <Footer />
       </div>
-      <span className="cursor" id="cursor" style={{ opacity: 0 }}></span>
+      <span className='cursor' id='cursor' style={{ opacity: 0 }}></span>
     </BrowserRouter>
   );
 }

@@ -188,7 +188,7 @@ const Content = () => {
             <h2 data-splitting>Contact</h2>
             <h3 data-splitting>I would love to hear about your project!</h3>
           </div>
-          <div className='form-container flex-col nowrap gap glow-border'>
+          <div className='crt form-container flex-col nowrap gap glow-border'>
             <ContactForm />
           </div>
         </div>

@@ -65,15 +65,12 @@ const CardContainer = () => {
 
   if (deck != null) {
     return deck.map((data, index) => (
-      
-      <>
         <div
-          className={"card flex-col glow-border " + data.cardType}
-          key={data._id}
+          className={"crt card flex-col glow-border " + data.cardType}
+          key={data._id+ data.name + index}
           value={index}
         >
           <img src={urlFor(data.image).url()} alt={data.title} />
-
           <div className={"card-content flex-row space-between"}>
             <div className="card-summary">
               <h2 className="title" 
@@ -83,7 +80,6 @@ const CardContainer = () => {
 
               <p className="tag-cloud flex-row wrap">
                 {data.tags.map((tag) => (
-                  <>
                     <span
                       className="tag"
                       key={data._id + tag}
@@ -91,7 +87,6 @@ const CardContainer = () => {
                     >
                       {tag}
                     </span>
-                  </>
                 ))}{" "}
               </p>
 
@@ -126,7 +121,7 @@ const CardContainer = () => {
             </div>
           </div>
         </div>
-      </>
+      
     ));
   }
 
