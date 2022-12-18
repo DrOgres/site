@@ -381,7 +381,8 @@ body {
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .crt h4, .crt h2 {
+  .crt h4,
+.crt h2 {
     -webkit-animation: textShadow 15s infinite;
             animation: textShadow 15s infinite;
   }
