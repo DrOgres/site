@@ -7,7 +7,7 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import ScrollOut from "scroll-out";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import {
   faHtml5,
   faCss3Alt,
@@ -18,7 +18,6 @@ import {
   faGithub,
   faLinkedin,
   faSass,
-  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 // TODO - redo about section - add a tldr list of skills at the top
@@ -43,8 +42,9 @@ const Content = () => {
   });
   return (
     <>
-      <section className='home auto-center' id='home'>
-        <div className='content rotated flex-col'>
+      <section className='home auto-center grid col-auto-flow align-items-center gap' id='home'>
+        <div className="content"> <h2>Projects Tutorials About Contact</h2></div>
+        <div className='content rotated flex-col '>
           <h1 data-splitting className='medalion'>
             Dr.
             <br />
@@ -89,6 +89,7 @@ const Content = () => {
             <h3 data-splitting>Ask me about music and cheese.</h3>
           </div>
           <div className='crt blog-block'>
+            <h4 data-splitting>TLDR; <a  href="/assets/David Rogers - Resume - Front End Developer.pdf" download target={"_blank"}>Resume <FontAwesomeIcon icon={faFilePdf} size='2x' title="download a PDF copy of my resume" /></a></h4>
             <h4 data-splitting>Code</h4>
             <h4 className='blog-text'>
               TLDR; <FontAwesomeIcon icon={faHtml5} size='2x' title='HTML 5' />

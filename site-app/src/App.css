@@ -726,6 +726,19 @@ section {
   min-height: 55vh;
 }
 
+.col-auto-flow {
+  grid-auto-flow: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-top {
+  align-items: flex-start;
+  align-items: start;
+}
+
 .break-1 {
   margin: 0 auto;
   margin-bottom: -2rem;
