@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap");
+@font-face {
+  font-family: "Neon";
+  src: url("assets/NEON____.TTF");
+}
 /* media query mixin */
 /* media query mixin for max-width */
 /* Start of text3d mixin */
@@ -476,6 +480,11 @@ a:visited {
   color: hsl(33deg, 100%, 70%);
 }
 
+.caption {
+  font-family: "Neon", sans-serif;
+  font-size: var(--fs-200);
+}
+
 .card h2 {
   color: hsl(314deg, 56%, 15%);
   font-size: var(--fs-500);
@@ -526,7 +535,9 @@ a:visited {
 }
 
 .quote-text {
-  font-size: var(--fs-200);
+  font-family: "Neon", sans-serif;
+  text-shadow: 0 0 3px hsl(313deg, 56%, 50%);
+  font-size: var(--fs-400);
   color: hsl(33deg, 100%, 70%);
   justify-content: start;
   background-color: transparent;

@@ -53,7 +53,7 @@ const Content = () => {
           <Quotes />
           <div className='flex-row center nowrap '>
             <div
-              className='quote-text grow nowrap'
+              className='quote-text grow nowrap caption'
               id='witty-quote-container'
             ></div>
           </div>
