@@ -371,6 +371,10 @@ a.ul-link-l-to-r:hover:before {
   flex-direction: column;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .flex-center {
   justify-content: center;
 }
@@ -445,7 +449,7 @@ section {
 
 .home {
   max-width: 55ch;
-  min-height: 55vh;
+  min-height: 60vh;
 }
 
 .col-auto-flow {
@@ -647,6 +651,10 @@ nav ul {
   }
 }
 
+.subtitle {
+  align-self: end;
+}
+
 .subtitle h3 {
   color: hsl(252deg, 86%, 65%);
   margin: 0 auto;
@@ -657,6 +665,8 @@ nav ul {
 }
 
 .site-link {
+  font-size: var(--fs-600);
+  line-height: var(--fs-600);
   color: hsl(344deg, 66%, 47%);
   border: none;
 }
@@ -668,11 +678,14 @@ nav ul {
 }
 
 .link-info {
-  text-align: justify;
   width: 100%;
   color: hsl(33deg, 67%, 51%);
   font-size: var(--fs-400);
   font-weight: 600;
+}
+
+.navigation p {
+  text-align: justify;
 }
 
 .btn {
