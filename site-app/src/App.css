@@ -625,6 +625,7 @@ nav ul {
   }
 }
 .home .navigation {
+  background-color: hsl(252deg, 86%, 90%);
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -686,6 +687,38 @@ nav ul {
 
 .navigation p {
   text-align: justify;
+}
+
+.parallax {
+  width: 100%;
+  height: 100vh;
+  background: url("assets/oni4.webp");
+  background-size: cover;
+  background-position: bottom -218px right -76px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.content-div {
+  width: 100%;
+  height: 200vh;
+}
+
+.title {
+  position: fixed;
+  top: 2vh;
+  width: 100%;
+}
+
+.mask {
+  -webkit-mask: url("assets/mask-mask.webp");
+          mask: url("assets/mask-mask.webp");
+  mask-size: cover;
+  -webkit-mask: url("assets/mask-mask.webp");
+  -webkit-mask-size: cover;
+  background-size: cover;
+  background-position: bottom -218px right -76px;
+  background-repeat: no-repeat;
 }
 
 .btn {

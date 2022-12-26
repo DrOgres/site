@@ -1,6 +1,7 @@
 export default function Home() {
   return (
-    <section className="home" id="home">
+    <section className="parallax">
+    <div className="home" id="home">
       <div className="content auto-center">
         <h1 data-splitting className="rotated medalion">
           Dr.
@@ -30,6 +31,7 @@ export default function Home() {
             <span>{" "}Get in touch</span>
           </p>
        
+      </div>
       </div>
     </section>
   );
