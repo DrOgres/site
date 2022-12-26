@@ -1,5 +1,9 @@
 @use '../abstracts/' as *;
 
+.App{
+  margin: 0 auto;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -37,6 +41,10 @@
   .gap {
     gap: var(--gap, 3rem);
   }
+
+  .gap-sm {
+    gap: var(--gap-sm, 1rem);
+  }
   
   .center {
     align-content: center;
@@ -46,6 +54,13 @@
     margin: 0 auto;
   }
   
+  .items-base{
+    align-items: baseline;
+  }
+
+  .items-end{
+    align-items: flex-end;
+  }
   .items-center {
     align-items: center;
   }
@@ -92,42 +107,12 @@ section{
 
 
 
-
-.break-1{
-    margin: 0 auto;
-    margin-bottom: -2rem;
-    width: 100%;
-    background-color: $neutral-1;
-    clip-path: url(#myCurve);
-    height: 8rem;
-
-}
-
-.break-2{
-   
-    width: 100%;
-    background-color: $neutral-2;
-    margin-bottom: -2rem;
-    clip-path: url(#myCurve);
-    height: 8rem;
-
-}
-
-.break-3{
-  width: 100%;
-  background-color: $neutral-3;
-  margin-bottom: -2rem;
-  clip-path: url(#myCurve);
-  height: 8rem;
- }
-
  .tutorial{
-   
   width: 100%;
     padding-top: 2em;
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
-    background-color: $neutral-3;
+
     & .content{
         max-width: 55ch;
         margin: 0 auto;
@@ -142,7 +127,6 @@ section{
     padding-top: 2em;
     padding-bottom: 1rem;
     width: 100%;
-    background-color: $neutral-2;
    
     & .content{
         margin: 0 auto;    
@@ -156,7 +140,6 @@ section{
     padding-top: 2em;
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
-    background-color: $neutral-2;
     & .content{
         max-width: 55ch;
         margin: 0 auto;
@@ -169,7 +152,6 @@ section{
     width: 100%;
     padding-top: 2em;
     padding-bottom: 1rem;
-    background-color: $neutral-3;
     & .content{
         max-width: 55ch;
         margin: 0 auto;

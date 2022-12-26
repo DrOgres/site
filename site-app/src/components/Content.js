@@ -1,7 +1,6 @@
 import DeckBox from "./DeckBox";
 import Tutorial from "./Tutorial";
 import ContactForm from "./ContactForm";
-import Quotes from "./Quotes";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
@@ -19,6 +18,7 @@ import {
   faLinkedin,
   faSass,
 } from "@fortawesome/free-brands-svg-icons";
+import Home from "./Home";
 
 // TODO - redo about section - add a tldr list of skills at the top
 
@@ -42,23 +42,7 @@ const Content = () => {
   });
   return (
     <>
-      <section className='home auto-center grid col-auto-flow align-items-center gap' id='home'>
-        <div className="content"> <h2>Projects Tutorials About Contact</h2></div>
-        <div className='content rotated flex-col '>
-          <h1 data-splitting className='medalion'>
-            Dr.
-            <br />
-            Ogres
-          </h1>
-          <Quotes />
-          <div className='flex-row center nowrap '>
-            <div
-              className='quote-text grow nowrap caption'
-              id='witty-quote-container'
-            ></div>
-          </div>
-        </div>
-      </section>
+      <Home />
       <div className='break-1' id='work'></div>
       <section className='work auto-center'>
         <div className='content flex-row wrap gap'>

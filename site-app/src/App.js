@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Header />
-        <div className='container flex-col'>
+        <div className='container flex-col auto-center center'>
           <AnchorScroller>
             <Routes>
               <Route path='/' element={<Content />} />
@@ -33,7 +33,7 @@ function App() {
         </div>
         <Footer />
       </div>
-      <span className='cursor' id='cursor' style={{ opacity: 0 }}></span>
+      
     </BrowserRouter>
   );
 }

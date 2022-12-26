@@ -1,0 +1,72 @@
+@use '../abstracts/' as *;
+
+.home{
+    margin: 0 auto;
+
+    @include mqMax("small"){
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: .5rem;
+    }
+
+
+    & .navigation{
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        @include mqMax("small"){
+           text-align: justify;
+           
+        }
+    }
+}
+
+.medalion {
+    color: $orange-3;
+    font-size: var(--fs-800);
+    margin-left: -.5rem;
+    padding: 2rem;
+    position: relative;
+    -webkit-text-stroke: 2px $magenta-3;
+  
+    @include mqMax("small") {
+      padding: .5rem;
+    }
+   
+    line-height: 64%;
+    text-shadow: 2px 2px 4px $neutral-1;
+    background: border-box radial-gradient(circle, $purple-3 0%, rgba(110, 9, 121, 0.175) 35%, rgba(0, 0, 0, 0) 60%);
+  
+  }
+
+  .subtitle h3{
+    color: $purple-3;
+    margin: 0 auto;
+    text-align: center;
+    font-size: var(--fs-400);
+    line-height: 1;
+    margin-block: 0;
+    
+  }
+
+
+  .site-link{
+    color: $magenta-3;
+    border: none;
+  }
+
+  .site-link:hover{
+    cursor: pointer;
+    color: $magenta-4;
+    border-bottom: 2px solid $magenta-4;
+  }
+
+  .link-info{
+    text-align: justify;
+    width: 100%;
+    color: $orange-3;
+    font-size: var(--fs-400);
+    font-weight: 600;
+  }

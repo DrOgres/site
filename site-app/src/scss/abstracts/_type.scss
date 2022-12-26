@@ -12,13 +12,13 @@
 $type-scale: (
     small:(
         100: .5rem,
-        200: .8rem,
-        300: 1rem,
-        400: 1.125rem,
+        200: 1rem,
+        300: 1.1rem,
+        400: 1.25rem,
         500: 1.5rem,
-        600: 1.9rem,
+        600: 2rem,
         700: 3rem,
-        800: 4rem
+        800: 7rem
     ),
     medium:(
         100: .6rem,
@@ -38,5 +38,5 @@ $type-scale: (
         500: 2rem,
         600: 3rem,
         700: 4rem,
-        800: 5.5rem)
+        800: 8.5rem)
     );
