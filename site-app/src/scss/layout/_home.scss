@@ -76,6 +76,8 @@
   }
 
   .site-link{
+    text-align: justify;
+    font-family: 'Kanit', sans-serif;
     font-size: var(--fs-600);
     line-height: var(--fs-600);
     color: $magenta-3;
@@ -85,20 +87,30 @@
   .site-link:hover{
   
     cursor: pointer;
-    color: $magenta-4;
-    border-bottom: 2px solid $magenta-4;
+    text-decoration: underline;
+   
   }
 
   .link-info{
-
+  
+   
+    font-family: 'PT Sans Caption', sans-serif;
+    font-style: normal;
+    font-weight: 700;
     width: 100%;
     color: $orange-3;
-    font-size: var(--fs-400);
-    font-weight: 600;
+    font-size: var(--fs-200);
+    
   }
 
   .navigation p{
-    text-align: justify;
+    
+    display: flex;
+    flex-direction: row;
+
+    gap: .25rem;
+    justify-content: space-between;
+ 
   }
 
 

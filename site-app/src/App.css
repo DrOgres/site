@@ -460,6 +460,26 @@ section {
   align-items: start;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-basis {
+  flex-basis: auto;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.margin-top-sm {
+  margin-top: 0.5rem;
+}
+
 .tutorial {
   width: 100%;
   padding-top: 2em;
@@ -679,6 +699,8 @@ nav ul {
 }
 
 .site-link {
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
   font-size: var(--fs-600);
   line-height: var(--fs-600);
   color: hsl(344deg, 66%, 47%);
@@ -687,19 +709,23 @@ nav ul {
 
 .site-link:hover {
   cursor: pointer;
-  color: hsl(344deg, 66%, 70%);
-  border-bottom: 2px solid hsl(344deg, 66%, 70%);
+  text-decoration: underline;
 }
 
 .link-info {
+  font-family: "PT Sans Caption", sans-serif;
+  font-style: normal;
+  font-weight: 700;
   width: 100%;
   color: hsl(33deg, 67%, 51%);
-  font-size: var(--fs-400);
-  font-weight: 600;
+  font-size: var(--fs-200);
 }
 
 .navigation p {
-  text-align: justify;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  justify-content: space-between;
 }
 
 .content-div {

@@ -18,21 +18,24 @@ export default function Home() {
           <div className="navigation flex-col">
             <p className="link-info">
               <span className="site-link">Projects</span>
-              <span> I've worked on</span>
+              <span > I've worked on</span>
             </p>
             <p className="link-info">
+              <span>Some </span>
               <span className="site-link">Tutorials</span>
-              <span> How to do stuff</span>
+              <span> for you</span>
             </p>
             <p className="link-info">
+            <span>A Little </span>
               <span className="site-link">About</span>
-              <span> My skills and stuff</span>
+              <span> me and my skills</span>
             </p>
             <p className="link-info">
+            <span>An easy way to </span>
               <span className="site-link">Contact</span>
-              <span> Get in touch</span>
+              <span> me</span>
             </p>
-            <div className="auto-center">
+            <div className="auto-center margin-top-sm">
               <FontAwesomeIcon icon={faGithub} className={"site-link"} />{" "}
               <FontAwesomeIcon icon={faLinkedin} className={'site-link'}/>
             </div>
