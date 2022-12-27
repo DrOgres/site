@@ -14,13 +14,11 @@ import {
   faReact,
   faNodeJs,
   faFigma,
-  faGithub,
-  faLinkedin,
   faSass,
 } from "@fortawesome/free-brands-svg-icons";
 import Home from "./Home";
 
-// TODO - redo about section - add a tldr list of skills at the top
+
 
 /**
  * @description The main component rendered at site index with anchors for the nav links.
