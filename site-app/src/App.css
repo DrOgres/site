@@ -447,11 +447,6 @@ section {
   max-width: 75ch;
 }
 
-.home {
-  max-width: 55ch;
-  min-height: 60vh;
-}
-
 .col-auto-flow {
   grid-auto-flow: column;
 }
@@ -613,19 +608,31 @@ nav ul {
   color: hsl(210deg, 12%, 15%);
 }
 
+.site-header {
+  background-image: url("assets/oni4.webp");
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 135vh;
+  position: relative;
+}
+
 .home {
+  max-width: 55ch;
+  min-height: 70vh;
+  width: 100%;
   margin: 0 auto;
+  position: fixed;
 }
 @media only screen and (max-width: 40em) {
   .home {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 0.5rem;
+    grid-template-rows: auto var(--fs-600) auto;
+    gap: 1rem;
   }
 }
 .home .navigation {
-  background-color: hsl(252deg, 86%, 90%);
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -635,7 +642,12 @@ nav ul {
   }
 }
 
+.home-container {
+  position: relative;
+}
+
 .medalion {
+  justify-self: center;
   color: hsl(33deg, 67%, 51%);
   font-size: var(--fs-800);
   margin-left: -0.5rem;
@@ -653,7 +665,8 @@ nav ul {
 }
 
 .subtitle {
-  align-self: end;
+  justify-self: center;
+  align-self: center;
 }
 
 .subtitle h3 {
@@ -661,7 +674,7 @@ nav ul {
   margin: 0 auto;
   text-align: center;
   font-size: var(--fs-400);
-  line-height: 1;
+  line-height: var(--fs-400);
   margin-block: 0;
 }
 
@@ -689,30 +702,25 @@ nav ul {
   text-align: justify;
 }
 
-.parallax {
-  width: 100%;
-  height: 100vh;
-  background: url("assets/oni4.webp");
-  background-size: cover;
-  background-position: bottom -218px right -76px;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
 .content-div {
   width: 100%;
   height: 200vh;
 }
 
 .mask {
+  position: absolute;
+  inset: 0;
+  -webkit-mask: url("assets/mask-mask.webp");
+  -webkit-mask-position: center bottom;
+  -webkit-mask-size: 100%;
   -webkit-mask: url("assets/mask-mask.webp");
           mask: url("assets/mask-mask.webp");
-  mask-size: cover;
-  -webkit-mask: url("assets/mask-mask.webp");
+  -webkit-mask-position: bottom;
+          mask-position: bottom;
   -webkit-mask-size: cover;
-  background-size: cover;
-  background-position: bottom -218px right -76px;
-  background-repeat: no-repeat;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 
 .btn {
