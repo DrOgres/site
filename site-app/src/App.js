@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Header />
-        <div className='container flex-col auto-center center'>
+        <article className='container flex-col auto-center center scroll-snap'>
           <AnchorScroller>
             <Routes>
               <Route path='/' element={<Content />} />
@@ -30,7 +30,7 @@ function App() {
               </Route>
             </Routes>
           </AnchorScroller>
-        </div>
+        </article>
         <Footer />
       </div>
       

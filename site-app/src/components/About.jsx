@@ -1,10 +1,3 @@
-import DeckBox from "./DeckBox";
-import Tutorial from "./Tutorial";
-import ContactForm from "./ContactForm";
-import Splitting from "splitting";
-import "splitting/dist/splitting.css";
-import "splitting/dist/splitting-cells.css";
-import ScrollOut from "scroll-out";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -16,61 +9,10 @@ import {
   faFigma,
   faSass,
 } from "@fortawesome/free-brands-svg-icons";
-import Home from "./Home";
 
-
-
-/**
- * @description The main component rendered at site index with anchors for the nav links.
- *
- * @returns The full html template for the main page.
- */
-
-const Content = () => {
-  Splitting({
-    /* target: String selector, Element, Array of Elements, or NodeList */
-    target: "[data-splitting]",
-    /* by: String of the plugin name */
-    by: "chars",
-    /* key: Optional String to prefix the CSS variables */
-    key: null,
-  });
-  ScrollOut({
-    targets: "[data-splitting]",
-  });
-  return (
-    <>
-      <Home />
-      <div className='break-1' id='work'></div>
-      <section className='work auto-center'>
-        <div className='content flex-row wrap gap'>
-          <div className='section-head flex-col'>
-            <h2 data-splitting>Projects</h2>
-            <h3 data-splitting>
-              Personal and Professional maybe your project next!
-            </h3>
-          </div>
-          <DeckBox />
-        </div>
-      </section>
-      <div className='break-2' id='tutorial'></div>
-      <section className='tutorial auto-center'>
-        <div className='content flex-row wrap gap'>
-          <div className='section-head flex-col'>
-            <h2 data-splitting>Tutorials</h2>
-            <h3 data-splitting>How to's and code snippets for you to use!</h3>
-          </div>
-          <Tutorial />
-        </div>
-      </section>
-      <div className='break-3' id='about'></div>
-      <section className='about auto-center'>
-        <div className='content'>
-          <div className='section-head flex-col'>
-            <h2 data-splitting>A bit about me</h2>
-            <h3 data-splitting>Ask me about music and cheese.</h3>
-          </div>
-          <div className='crt blog-block'>
+export default function About() {
+    return (
+        <div className='crt blog-block'>
             <h4 data-splitting>TLDR; <a  href="/assets/David Rogers - Resume - Front End Developer.pdf" download target={"_blank"}>Resume <FontAwesomeIcon icon={faFilePdf} size='2x' title="download a PDF copy of my resume" /></a></h4>
             <h4 data-splitting>Code</h4>
             <h4 className='blog-text'>
@@ -162,37 +104,5 @@ const Content = () => {
             </p>
             </div>
           </div>
-        </div>
-      </section>
-      <div className='break-2' id='contact'></div>
-      <section className='contact auto-center'>
-        <div className='content'>
-          <div className='section-head flex-col'>
-            <h2 data-splitting>Contact</h2>
-            <h3 data-splitting>I would love to hear about your project!</h3>
-          </div>
-          <div className='crt form-container flex-col nowrap gap glow-border'>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-
-      <svg width='0' height='0'>
-        <defs>
-          <clipPath id='myCurve' clipPathUnits='objectBoundingBox'>
-            <path
-              d='M 0, 0.8
-            L 0, 0
-            L 1, 0
-            L 1, 0.8
-            C 0.65 1, 0.35 1, 0 0.8
-									Z'
-            />
-          </clipPath>
-        </defs>
-      </svg>
-    </>
-  );
-};
-
-export default Content;
+    )
+}
