@@ -3,8 +3,6 @@ import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import * as reactRouterDom from "react-router-dom";
 import { PortableText } from "@portabletext/react";
-import Splitting from "splitting";
-import ScrollOut from "scroll-out";
 
 
 const builder = imageUrlBuilder(sanityClient);
@@ -25,14 +23,7 @@ const CardContainer = () => {
    *
    */
 
-   Splitting({
-    target: "[data-splitting]",
-    by: "words",
-    key: null
-  });
-  ScrollOut({
-    targets: "[data-splitting]",
-  });
+
 
   const [deck, setDeck] = useState(null);
 
@@ -66,15 +57,14 @@ const CardContainer = () => {
   if (deck != null) {
     return deck.map((data, index) => (
         <div
-          className={"crt card flex-col glow-border " + data.cardType}
+          className={"card flex-col" + ' ' + data.cardType}
           key={data._id+ data.name + index}
           value={index}
         >
           <img src={urlFor(data.image).url()} alt={data.title} />
           <div className={"card-content flex-row space-between"}>
             <div className="card-summary">
-              <h2 className="title" 
-              data-splitting>
+              <h2 className="card-title" >
                 {data.name}
                 </h2>
 
@@ -90,7 +80,7 @@ const CardContainer = () => {
                 ))}{" "}
               </p>
 
-              <div className="card-text">
+              <div className="card-text short-block">
                 <PortableText value={data.text} />
               </div>
 

@@ -1,15 +1,6 @@
 @use "../abstracts/" as *;
 
 .site-header {
-  background-image: url("assets/oni-4.svg");
-  background-position: bottom center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-
-  // add media query to change this based on heigt of screen
-  // min-height: 120vh; for tall screens 135vh for short screens
-
   @include mqHeight("tall") {
     min-height: 120vh;
   }
@@ -27,12 +18,11 @@
   width: 100%;
 
   margin: 0 auto;
-  position: fixed;
+  
   @include mqMax("small") {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto var(--fs-600) auto;
-    gap: 1rem;
+    
   }
 
   & .navigation {
@@ -74,6 +64,7 @@
 .subtitle {
   justify-self: center;
   align-self: center;
+  margin-top: 3.5rem;
 }
 
 .subtitle h3 {

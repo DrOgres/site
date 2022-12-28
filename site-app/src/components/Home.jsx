@@ -2,9 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
+
+
+
   return (
-    <section className="site-header">
-      <div className="mask">
+    <section className="site-header" id="header">
+     
         <div className="home content" id="home">
           <h1 className="rotated medalion">
             Dr.
@@ -40,8 +43,12 @@ export default function Home() {
               <FontAwesomeIcon icon={faLinkedin} className={'site-link'}/>
             </div>
           </div>
+          <div className="oni">
+          <img src="assets/oni-4.svg" alt="oni" />
         </div>
-      </div>
+        </div>
+        
+      
     </section>
   );
 }

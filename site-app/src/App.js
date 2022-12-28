@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Header />
-        <article className='container flex-col auto-center center scroll-snap'>
+        <article className='container flex-col auto-center center scroll-snap-y'>
           <AnchorScroller>
             <Routes>
               <Route path='/' element={<Content />} />

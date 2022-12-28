@@ -1,9 +1,9 @@
 @use '../abstracts/'as *;
 
 .hero {
-    max-width: 100%;
+    width: calc(100% - 1rem);
     @include mqMax("small"){
-        max-width: 100%;
+        width: 100vw;
 
 
     }
@@ -11,9 +11,9 @@
 }
 
 .side-kick {
-    max-width: calc(50% - 2.5rem);
+    width: calc(50% - 2.5rem);
     @include mqMax("small"){
-        max-width: 100%;
+        width: 100vw;
         
 
     }
@@ -22,45 +22,73 @@
 
 
 .card {
+    
+
+    width: 95%;
     background-color: $neutral-5;
-    margin-inline: .5rem;
-    overflow: hidden;
-
-    border: {
-        radius: 12px;
-    }
-
-
+    margin-inline: 1rem;
+    border: 2px solid $orange-3;
+    border-radius: 10px;
 
     .card-text {
         max-width: 60ch;
         padding: .1em;
         margin-top: .5em;
         line-height: 1.7rem;
+        word-break: break-all; 
     }
 
     .card-content {
         padding: {
             top: 0.5em;
-            bottom: 1em;
-            left: 3em;
+            bottom: 2em;
+            left: 2em;
             right: 0;
         }
+        @include mqMax("small"){
+            padding: {
+                top: 0.5em;
+                bottom: 2em;
+                left: .1em;
+                right: 0;
+            }
+        }
+
     }
 
     
 
     img {
         display: block;
-        object-fit: cover;
+        object-fit: none;
+        object-position: left top;
         width: 100%;
-       
+       border-radius: 10px 10px 0 0;
     }
 
 
     position: relative;
+
+
 }
 
+
+.deck-box{
+    padding: 0;
+    margin: .2rem;
+    white-space: nowrap;
+    display: inline-flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: .2rem;
+}
+
+.card-summary {
+    max-width: 75vw;
+    @include mq("small"){
+        max-width: 65vw;
+    }
+}
 
 .card-sidebar{
     min-width: 15vw;
@@ -72,12 +100,16 @@
 
 
   .tag{
-    color: $magenta-1;
-    padding-inline: 1em;
-    padding-block: .2em;
-    margin-inline: .2em;
-    background-color: $magenta-5;
-    border-radius: 12px;
+    // TODO add media query
+    color: $purple-3;
+    padding-inline: .2rem;
+    padding-block: .1rem;
+    margin-inline: .05rem;
+    background-color: $orange-3;
+    border-radius: 2px;
+    font-size: var(--fs-100);
+    font-weight: 800;
+
   }
 
   .card-cta {
@@ -90,3 +122,5 @@
 
     
   }
+
+

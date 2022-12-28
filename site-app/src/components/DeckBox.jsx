@@ -1,6 +1,4 @@
 import CardContainer from "./CardContainer";
-import Splitting from "splitting";
-import ScrollOut from "scroll-out";
 
 
 /**
@@ -14,17 +12,9 @@ import ScrollOut from "scroll-out";
 
 const DeckBox = () => {
 
-  Splitting({
-    target: "[data-splitting]",
-    by: "words",
-    key: null
-  });
-  ScrollOut({
-    targets: "[data-splitting]",
-  });
 
   return (
-    <div className="deck-box content flex-row wrap gap">
+    <div className="deck-box flex-row no-wrap scroll-snap-x overflow-x-scroll">
       <CardContainer />
     </div>
   );

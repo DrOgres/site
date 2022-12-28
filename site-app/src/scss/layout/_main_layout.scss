@@ -41,6 +41,10 @@
   .full{
    width: 100%;
   }
+
+  .vh100{
+    height: 100vh;
+  }
   
   .gap {
     gap: var(--gap, 3rem);
@@ -82,7 +86,8 @@
   }
 
 section{
-    min-height: 50vh;
+
+    min-height: 100vh;
 }
 
 .content{
@@ -144,8 +149,7 @@ section{
  
 
 .work{
-   
-    padding-top: 2em;
+
     padding-bottom: 1rem;
     width: 100%;
    
@@ -188,13 +192,6 @@ section{
 
 }
 
-.glow-border{
-    
-    box-shadow:
-
-    0 0 0.15em 0.04em $magenta-5
-  
-}
 
 
   

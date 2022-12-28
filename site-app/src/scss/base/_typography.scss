@@ -9,9 +9,10 @@ h1 {
 h2 {
   font-size: var(--fs-600);
   line-height: var(--fs-600);
-  color: $orange-4;
+  color: $magenta-3;
   text-transform: uppercase;
-  border-bottom: 2px solid $orange-3;
+  margin-inline: 1rem;
+
 }
 
 h3 {
@@ -46,19 +47,24 @@ a:visited {
 
 .card {
   h2 {
-    color: $magenta-1;
-    font-size: var(--fs-500);
-    line-height: var(--fs-500);
-    border-bottom: 2px solid $magenta-5;
+    color: $purple-2;
+    font-size: var(--fs-400);
+    line-height: var(--fs-400);
+    @include mqMax("small") {
+      font-size: var(--fs-300);
+      line-height: var(--fs-300);
+    }
+ 
+    margin-inline: 0;
   }
 
 
   h3 {
     font-size: var(--fs-300);
     line-height: var(--fs-200);
-    color: $magenta-1;
+    color: $magenta-3;
     text-transform: uppercase;
-    border-bottom: 2px solid $magenta-4;
+    border-bottom: 2px solid $magenta-3;
   }
 }
 
@@ -81,6 +87,7 @@ a:visited {
   font-size: var(--fs-200);
   color: $neutral-2;
   margin-bottom: 1rem;
+  white-space: normal;
 }
 
 .tag {
