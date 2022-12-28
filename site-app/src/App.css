@@ -498,6 +498,10 @@ section {
   flex-shrink: 1;
 }
 
+.flex-no-shrink {
+  flex-shrink: 0;
+}
+
 .flex-basis {
   flex-basis: auto;
 }
@@ -888,7 +892,6 @@ nav ul {
   margin: 0.2rem;
   white-space: nowrap;
   display: inline-flex;
-  overflow-x: auto;
   overflow-y: hidden;
   padding: 0.2rem;
 }

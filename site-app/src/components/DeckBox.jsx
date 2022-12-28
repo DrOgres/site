@@ -14,7 +14,7 @@ const DeckBox = () => {
 
 
   return (
-    <div className="deck-box flex-row no-wrap scroll-snap-x overflow-x-scroll">
+    <div className="deck-box flex-row no-wrap scroll-snap-x ">
       <CardContainer />
     </div>
   );

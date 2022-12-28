@@ -57,7 +57,7 @@ const CardContainer = () => {
   if (deck != null) {
     return deck.map((data, index) => (
         <div
-          className={"card flex-col" + ' ' + data.cardType}
+          className={"card flex-col flex-no-shrink" + ' ' + data.cardType}
           key={data._id+ data.name + index}
           value={index}
         >
