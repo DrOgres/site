@@ -1,14 +1,23 @@
 @use '../abstracts/' as *;
 
 .site-header {
-  background-image: url("assets/oni4.webp");
-  
+  background-image: url("assets/oni-4.svg");
   background-position: bottom center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   // background-attachment: fixed;
 
-  min-height: 135vh;
+  // add media query to change this based on heigt of screen
+  // min-height: 120vh; for tall screens 135vh for short screens
+ 
+  @include mqHeight("tall") {
+    min-height: 120vh;
+  }
+ 
+  @include mqHeight("short") {
+    min-height: 135vh;
+  }
+
   position: relative;
 }
 

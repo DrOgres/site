@@ -103,6 +103,8 @@ select {
   --bp-small: 40em;
   --bp-medium: 65em;
   --bp-large: 100em;
+  --bp-tall: 2000px;
+  --bp-short: 675px;
 }
 @media only screen and (min-width: 40em) {
   :root {
@@ -629,12 +631,21 @@ nav ul {
 }
 
 .site-header {
-  background-image: url("assets/oni4.webp");
+  background-image: url("assets/oni-4.svg");
   background-position: bottom center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  min-height: 135vh;
   position: relative;
+}
+@media only screen and (max-height: 2000px) {
+  .site-header {
+    min-height: 120vh;
+  }
+}
+@media only screen and (max-height: 675px) {
+  .site-header {
+    min-height: 135vh;
+  }
 }
 
 .home {

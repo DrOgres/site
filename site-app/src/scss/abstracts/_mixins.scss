@@ -9,6 +9,13 @@
     }
 }
 
+@mixin mqHeight($key){
+	$size: map-get($breakpoints, $key );
+	@media only screen and (max-height: $size){
+		@content;
+	}
+}
+
 
 /* media query mixin for max-width */
 @mixin mqMax($key){
