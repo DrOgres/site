@@ -45,6 +45,13 @@
   .vh100{
     height: 100vh;
   }
+  .max-h-90vh{
+    max-height: 90vh;
+  }
+
+  .overflow-scroll{
+    overflow: scroll;
+  }
   
   .gap {
     gap: var(--gap, 3rem);

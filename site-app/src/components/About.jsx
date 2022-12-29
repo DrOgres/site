@@ -12,7 +12,7 @@ import {
 
 export default function About() {
     return (
-        <div className='crt blog-block'>
+        <div className='crt card hero overflow-scroll max-h-90vh'>
             <h4 data-splitting>TLDR; <a  href="/assets/David Rogers - Resume - Front End Developer.pdf" download target={"_blank"}>Resume <FontAwesomeIcon icon={faFilePdf} size='2x' title="download a PDF copy of my resume" /></a></h4>
             <h4 data-splitting>Code</h4>
             <h4 className='blog-text'>
