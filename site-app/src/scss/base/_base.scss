@@ -80,3 +80,11 @@ body {
   visibility: hidden;
 }
 
+.carosel-control{
+  display: none;
+  @include mqMax(small) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+

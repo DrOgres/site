@@ -167,6 +167,16 @@ body {
   visibility: hidden;
 }
 
+.carosel-control {
+  display: none;
+}
+@media only screen and (max-width: 40em) {
+  .carosel-control {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 h1 {
   font-size: var(--fs-800);
   line-height: var(--fs-700);

@@ -26,6 +26,7 @@ const Content = () => {
             <h2>Projects</h2>
           </div>
           <DeckBox />
+          <div className='no-wrap carosel-control'> back and forth</div>
         </div>
       </section>
 
