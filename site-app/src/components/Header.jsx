@@ -27,6 +27,7 @@ const Header = (props) => {
           
           props.scrollPos > 100 && (
             <button
+              className="scroll-to-top"
               onClick={() =>
                 article.scrollTo({ top: 0, left: 0, behavior: "smooth" })
               }
