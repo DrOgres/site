@@ -148,7 +148,7 @@ body {
 }
 
 .scroll-snap-x div {
-  scroll-snap-align: end;
+  scroll-snap-align: start;
 }
 
 .overflow-x-hidden {
@@ -849,11 +849,12 @@ nav ul {
 }
 
 .hero {
+  gap: var(--gap-sm);
   width: calc(100% - 1rem);
 }
 @media only screen and (max-width: 40em) {
   .hero {
-    width: 100vw;
+    width: 98vw;
   }
 }
 
@@ -867,9 +868,8 @@ nav ul {
 }
 
 .card {
-  width: 95%;
   background-color: hsl(0deg, 0%, 85%);
-  margin-inline: 1rem;
+  margin-right: 1rem;
   border: 2px solid hsl(32deg, 95%, 58%);
   border-radius: 10px;
   position: relative;
