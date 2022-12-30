@@ -1,39 +1,39 @@
 import "./App.css";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
 import CaseDisplay from "./components/CaseDisplay";
 import AnchorScroller from "./components/AnchorScroller.tsx";
-import Splitting from "splitting";
-import "splitting/dist/splitting.css";
-import "splitting/dist/splitting-cells.css";
-import ScrollOut from "scroll-out";
-
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  Splitting();
-  ScrollOut({
-    targets: "[data-splitting]",
-  });
+  const [scrollY, setScrollY] = useState(0);
+
   return (
     <BrowserRouter>
-      <div className='App'>
+      <div className="App">
         <Header />
-        <article className='container flex-col auto-center center scroll-snap-y'>
+        <article
+          className="container flex-col auto-center center scroll-snap-y"
+          // on scroll get the y position of the scroll and pass it to the state
+          onScroll={(e) => {
+            console.log(e.target.scrollTop);
+            setScrollY(e.target.scrollTop);
+            console.log('scrollY ', scrollY);
+          }}
+        >
           <AnchorScroller>
             <Routes>
-              <Route path='/' element={<Content />} />
-              <Route path='pages' element={<CaseDisplay />}>
-                <Route path=':id' element={<CaseDisplay />} />
+              <Route path="/" element={<Content />} />
+              <Route path="pages" element={<CaseDisplay />}>
+                <Route path=":id" element={<CaseDisplay />} />
               </Route>
             </Routes>
           </AnchorScroller>
+          <Footer />
         </article>
-        <Footer />
       </div>
-      
     </BrowserRouter>
   );
 }
