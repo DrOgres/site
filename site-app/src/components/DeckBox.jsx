@@ -58,14 +58,13 @@ const DeckBox = () => {
     const visibleCard = document.getElementById(cardIndex);
     visibleCard.scrollIntoView({
       behavior: "smooth",
-      inline: "center",
     });
 
   }
 
   return (
     <>
-      <div className='deck-box flex-row no-wrap scroll-snap-x ' id='card-list'>
+      <div className='deck-box scroll-snap-x gap-sm' id='card-list'>
         <CardContainer setDeck={setDeck} deck={deck} />
       </div>
       <div className='no-wrap carosel-control'>

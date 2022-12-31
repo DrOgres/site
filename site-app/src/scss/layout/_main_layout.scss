@@ -102,7 +102,9 @@ section{
   
 }
 
-
+.col-1-1fr{
+  grid-template-columns: 1fr;
+}
 
 .col-auto-flow{
   grid-auto-flow: column;

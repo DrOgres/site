@@ -238,17 +238,6 @@ a:visited {
   border-bottom: 2px solid hsl(344deg, 66%, 47%);
 }
 
-.side-kick h2 {
-  font-size: var(--fs-400);
-  line-height: var(--fs-300);
-}
-.side-kick a {
-  color: hsl(344deg, 66%, 30%);
-}
-.side-kick a:visited {
-  color: hsl(0deg, 0%, 50%);
-}
-
 .card-text {
   font-size: var(--fs-200);
   color: hsl(0deg, 0%, 30%);
@@ -493,6 +482,10 @@ section {
 
 .content {
   max-width: 75ch;
+}
+
+.col-1-1fr {
+  grid-template-columns: 1fr;
 }
 
 .col-auto-flow {
@@ -859,11 +852,12 @@ nav ul {
 }
 
 .side-kick {
+  gap: var(--gap-sm);
   width: calc(50% - 2.5rem);
 }
 @media only screen and (max-width: 40em) {
   .side-kick {
-    width: 100vw;
+    width: 98vw;
   }
 }
 
@@ -872,62 +866,80 @@ nav ul {
   margin-right: 1rem;
   border: 2px solid hsl(32deg, 95%, 58%);
   border-radius: 10px;
+  flex-shrink: 0;
   position: relative;
 }
 .card .card-text {
   max-width: 60ch;
-  padding: 0.1em;
-  margin-top: 0.5em;
+  padding: 0.1rem;
+  margin-top: 0.5rem;
   line-height: 1.7rem;
-  word-break: break-all;
+  word-break: break-word;
 }
 .card .card-content {
-  padding-top: 0.5em;
-  padding-bottom: 2em;
-  padding-left: 2em;
+  display: grid;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
   padding-right: 0;
+}
+@media only screen and (min-width: 40em) {
+  .card .card-content {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 @media only screen and (max-width: 40em) {
   .card .card-content {
-    padding-top: 0.5em;
-    padding-bottom: 2em;
-    padding-left: 0.1em;
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 40em) {
+  .card .card-content {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    padding-left: 0.1rem;
     padding-right: 0;
   }
 }
-.card img {
-  display: block;
-  -o-object-fit: none;
-     object-fit: none;
+.card .image-container {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+.card .image-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: left top;
      object-position: left top;
-  width: 100%;
-  border-radius: 10px 10px 0 0;
 }
 
 .deck-box {
-  padding: 0;
-  margin: 0.2rem;
   white-space: nowrap;
-  display: inline-flex;
-  overflow-y: hidden;
-  padding: 0.2rem;
+  display: flex;
+  flex-direction: row;
 }
 
-.card-summary {
-  max-width: 75vw;
+.deck-box > .card {
+  width: 80vw;
+  margin-right: 1rem;
 }
-@media only screen and (min-width: 40em) {
-  .card-summary {
-    max-width: 65vw;
+@media only screen and (max-width: 40em) {
+  .deck-box > .card {
+    margin-right: 0;
   }
 }
 
 .card-sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   min-width: 15vw;
 }
 @media only screen and (min-width: 40em) {
   .card-sidebar {
+    flex-direction: column;
     min-width: 5vw;
   }
 }
@@ -944,13 +956,13 @@ nav ul {
 }
 
 .card-cta {
-  border-radius: 12px;
+  border-radius: 10px;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
   padding: 0.5em 1em;
   margin: 1em 1em 0 0;
-  background-color: hsl(344deg, 66%, 15%);
+  background-color: hsl(252deg, 86%, 65%);
 }
 
 .blog-block {
