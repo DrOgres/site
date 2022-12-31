@@ -19,10 +19,7 @@ function App() {
           id="article"
           // on scroll get the y position of the scroll and pass it to the state
           onScroll={(e) => {
-            console.log(e.target.scrollTop);
-            setScrollY(e.target.scrollTop);
-            console.log('scrollY ', scrollY);
-            
+            setScrollY(e.target.scrollTop);            
           }}
         >
           <AnchorScroller>

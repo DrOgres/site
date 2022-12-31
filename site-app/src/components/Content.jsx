@@ -1,8 +1,6 @@
 import DeckBox from "./DeckBox";
 import Tutorial from "./Tutorial";
 import ContactForm from "./ContactForm";
-
-
 import Home from "./Home";
 import About from "./About";
 
@@ -16,6 +14,9 @@ import About from "./About";
 
 const Content = () => {
 
+
+
+
   return (
     <>
       <Home />
@@ -26,7 +27,6 @@ const Content = () => {
             <h2>Projects</h2>
           </div>
           <DeckBox />
-          <div className='no-wrap carosel-control'> back and forth</div>
         </div>
       </section>
 

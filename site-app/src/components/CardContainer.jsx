@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import * as reactRouterDom from "react-router-dom";
@@ -11,7 +11,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const CardContainer = () => {
+const CardContainer = (props) => {
   /**
    * @description Cycles through all cards described in the sanity database
    * pulls the pertinent information into a template for a card on the
@@ -25,41 +25,15 @@ const CardContainer = () => {
 
 
 
-  const [deck, setDeck] = useState(null);
+  // const [deck, setDeck] = useState(null);
 
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "card"] | order(name) { 
-                name,
-                _id,
-                gitRef,
-                image,
-                cardType,
-                logoImage{
-                    asset ->{
-                        _id,
-                        url
-                    },
-                    altText
-                },
-                
-                page,
-                projectRef,
-                tags,
-                text
-            }`
-      )
-      .then((data) => setDeck(data))
-      .catch(console.error);
-  }, []);
-
-  if (deck != null) {
-    return deck.map((data, index) => (
+  if (props.deck != null) {
+    return props.deck.map((data, index) => (
         <div
           className={"card flex-col flex-no-shrink" + ' ' + data.cardType}
           key={data._id+ data.name + index}
           value={index}
+          id={index}
         >
           <img src={urlFor(data.image).url()} alt={data.title} />
           <div className={"card-content flex-row space-between"}>
