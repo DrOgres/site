@@ -4,7 +4,7 @@
     gap: var(--gap-sm);
     width: calc(100% - 1rem);
     @include mqMax("small"){
-        width: 98vw;
+        width: 80vw;
 
 
     }
@@ -26,7 +26,6 @@
     margin-right: 1rem;
     border: 2px solid $orange-3;
     border-radius: 10px;
-    
     flex-shrink: 0;
 
     .card-text {
@@ -80,6 +79,7 @@
     white-space: nowrap;
     display: flex;
     flex-direction: row;
+    width: 81vw;
 }
 
 .deck-box > .card{

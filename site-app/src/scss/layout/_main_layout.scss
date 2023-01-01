@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
 .App{
+  position: relative;
   margin: 0 auto;
 }
 
@@ -38,9 +39,6 @@
     flex-shrink: 2;
   }
   
-  .full{
-   width: 100%;
-  }
 
   .vh100{
     height: 100vh;
@@ -147,7 +145,7 @@ section{
 
 
  .tutorial{
-  width: 100%;
+
     padding-top: 2em;
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
@@ -161,11 +159,18 @@ section{
 }
  
 
+.top-button{
+  position: absolute;
+  bottom: 120px;
+  right: 20px;
+  z-index: 9999;
+
+}
+
 .work{
 
     padding-bottom: 1rem;
-    width: 100%;
-   
+       
     & .content{
         margin: 0 auto;    
     }
@@ -174,7 +179,7 @@ section{
 
 
 .about{
-    width: 100%;
+
     padding-top: 2em;
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
@@ -187,7 +192,7 @@ section{
 }
 
 .contact{
-    width: 100%;
+
     padding-top: 2em;
     padding-bottom: 1rem;
     & .content{
@@ -199,7 +204,7 @@ section{
 }
 
 .footer{
-    width: 100%;
+
     margin-block: 1rem;
 
 

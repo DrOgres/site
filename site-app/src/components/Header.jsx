@@ -18,7 +18,7 @@ const Header = (props) => {
         <MenuContainer />
       </header>
 
-      <div>
+      <div className="top-button">
         {" "}
         {
           /* visible only if scrillPos > 100  */

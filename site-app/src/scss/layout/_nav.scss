@@ -45,7 +45,7 @@
   
 
   
-  @media (max-width: 40em) {  
+ @include mqMax("small") {  
     .nav-list[data-visible="true"] {
       transform: translateX(0%);
     }

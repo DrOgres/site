@@ -21,10 +21,10 @@ const Content = () => {
       </section>
 
       <section className='tutorial auto-center vh100' id='tutorial'>
-        <div className='content flex-row wrap'>
-          <div className='section-head flex-col'>
+        <div className='content flex-col wrap'>
+          
             <h2>Tutorials</h2>
-          </div>
+          
           <Tutorial />
         </div>
       </section>
@@ -41,7 +41,7 @@ const Content = () => {
           <div className='section-head flex-col'>
             <h2>Contact</h2>
           </div>
-          <div className='crt form-container flex-col nowrap gap glow-border'>
+          <div className='crt card hero flex-col nowrap gap glow-border'>
             <ContactForm />
           </div>
         </div>
