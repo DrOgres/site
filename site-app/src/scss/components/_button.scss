@@ -18,6 +18,27 @@
 }
 
 
+.scroll-to-top :hover{
+    cursor: pointer;
+}
+
+#up-arrow {
+    fill: $orange-3;
+    stroke: $magenta-3;
+    stroke-width: 3;
+}
+
+
+.carosel-control-button{
+    fill: $orange-3;
+    stroke: $magenta-3;
+    stroke-width: 3;
+    background-color: transparent;
+    padding: 0 ;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 
 .hamburger {

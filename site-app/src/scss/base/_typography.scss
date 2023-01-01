@@ -12,6 +12,7 @@ h2 {
   color: $magenta-3;
   text-transform: uppercase;
   margin-inline: 1rem;
+  text-shadow: 2px 2px 1px $neutral-1;
 
 }
 
@@ -30,13 +31,13 @@ h4 {
 }
 
 a {
-  
+  color: $magenta-3;
   text-decoration: none;
   padding-bottom: 0;
 }
 
 a:visited {
-  color: $orange-4;
+  color: $purple-1;
 }
 
 .caption{
@@ -47,12 +48,14 @@ a:visited {
 
 .card {
   h2 {
-    color: $purple-2;
+    color: $blue-2;
     font-size: var(--fs-400);
     line-height: var(--fs-400);
+    text-shadow: none;
     @include mqMax("small") {
       font-size: var(--fs-300);
       line-height: var(--fs-300);
+      white-space: normal;
     }
  
     margin-inline: 0;
@@ -66,12 +69,16 @@ a:visited {
     text-transform: uppercase;
     border-bottom: 2px solid $magenta-3;
   }
+
+  h4{
+    color: $blue-2;
+  }
 }
 
 
 .card-text {
   font-size: var(--fs-200);
-  color: $neutral-2;
+  color: $blue-2;
   margin-bottom: 1rem;
   white-space: normal;
 }
@@ -120,17 +127,16 @@ a:visited {
 
 
 .blog-text {
-  color: $magenta-1;
+  color: $blue-2;
   max-width: 45ch;
   margin-left: 2ch;
-  text-align: justify;
-  text-justify: inter-word;
+  padding-inline: var(--fs-100);
 }
 
 label {
   text-transform: uppercase;
   font-weight: 600;
-  color: $magenta-1;
+  color: $blue-2;
 }
 
 button[type="submit"] {

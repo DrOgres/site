@@ -27,14 +27,15 @@ textarea{
   }
 
   button[type=submit] {
-    background-color: $magenta-1;
+    background-color: $magenta-3;
     color: $neutral-5;
     padding: .5em 1em;
     border: none;
-    border-radius: 12px;
+    border-radius: 5px;
     cursor: pointer;
     float: right;
     margin-block: 5px;
+    margin-right: 10px;
 
   }
 

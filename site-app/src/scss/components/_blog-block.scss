@@ -30,13 +30,13 @@
 }
 
 .short-block::after{
-    content: ' read more...';
+    content: ' more...';
     font-size: large;
     font-weight: 900;
-    color: $neutral-2;
+    color: $magenta-3;
     position: absolute;
     right: 0;
     bottom: 0;
-    padding-left: 1em;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%);
+    padding-inline: 1em;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(230,230,230,1) 15%);
 }

@@ -120,7 +120,7 @@ select {
 }
 
 body {
-  background: linear-gradient(to bottom, hsla(208deg, 12%, 30%, 0), hsla(208deg, 12%, 5%, 0.75) 5%, hsla(208deg, 12%, 0%, 0.9) 100vh), url(assets/bg-kumiko.png), hsla(0deg, 1%, 39%, 0.85);
+  background: linear-gradient(to bottom, hsla(208deg, 12%, 20%, 0.1) 0, hsla(208deg, 12%, 5%, 0.75) 50%, hsla(208deg, 12%, 0%, 0.9) 100vh), url(assets/bg-kumiko.png), hsla(0deg, 1%, 39%, 0.85);
   background-blend-mode: normal, overlay, normal;
   background-size: auto auto, 102px 118px, auto auto;
   font-family: "Kanit", "sans-serif";
@@ -132,6 +132,7 @@ body {
 .scroll-snap-y {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--fs-400);
   overflow-y: scroll;
   height: 100vh;
 }
@@ -173,6 +174,7 @@ body {
   .carosel-control {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 
@@ -187,6 +189,7 @@ h2 {
   color: hsl(344deg, 66%, 47%);
   text-transform: uppercase;
   margin-inline: 1rem;
+  text-shadow: 2px 2px 1px hsl(0deg, 0%, 15%);
 }
 
 h3 {
@@ -204,12 +207,13 @@ h4 {
 }
 
 a {
+  color: hsl(344deg, 66%, 47%);
   text-decoration: none;
   padding-bottom: 0;
 }
 
 a:visited {
-  color: hsl(32deg, 95%, 70%);
+  color: hsl(252deg, 86%, 15%);
 }
 
 .caption {
@@ -221,12 +225,14 @@ a:visited {
   color: hsl(248deg, 49%, 37%);
   font-size: var(--fs-400);
   line-height: var(--fs-400);
+  text-shadow: none;
   margin-inline: 0;
 }
 @media only screen and (max-width: 40em) {
   .card h2 {
     font-size: var(--fs-300);
     line-height: var(--fs-300);
+    white-space: normal;
   }
 }
 .card h3 {
@@ -236,10 +242,13 @@ a:visited {
   text-transform: uppercase;
   border-bottom: 2px solid hsl(344deg, 66%, 47%);
 }
+.card h4 {
+  color: hsl(248deg, 49%, 37%);
+}
 
 .card-text {
   font-size: var(--fs-200);
-  color: hsl(0deg, 0%, 30%);
+  color: hsl(248deg, 49%, 37%);
   margin-bottom: 1rem;
   white-space: normal;
 }
@@ -283,17 +292,16 @@ a:visited {
 }
 
 .blog-text {
-  color: hsl(344deg, 66%, 15%);
+  color: hsl(248deg, 49%, 37%);
   max-width: 45ch;
   margin-left: 2ch;
-  text-align: justify;
-  text-justify: inter-word;
+  padding-inline: var(--fs-100);
 }
 
 label {
   text-transform: uppercase;
   font-weight: 600;
-  color: hsl(344deg, 66%, 15%);
+  color: hsl(248deg, 49%, 37%);
 }
 
 button[type=submit] {
@@ -521,7 +529,6 @@ section {
 }
 
 .tutorial {
-  padding-top: 2em;
   padding-bottom: 1rem;
   margin-bottom: -0.02rem;
 }
@@ -532,7 +539,7 @@ section {
 
 .top-button {
   position: absolute;
-  bottom: 120px;
+  bottom: 20px;
   right: 20px;
   z-index: 9999;
 }
@@ -545,7 +552,6 @@ section {
 }
 
 .about {
-  padding-top: 2em;
   padding-bottom: 1rem;
   margin-bottom: -0.02rem;
 }
@@ -555,7 +561,6 @@ section {
 }
 
 .contact {
-  padding-top: 2em;
   padding-bottom: 1rem;
 }
 .contact .content {
@@ -752,6 +757,9 @@ nav ul {
 }
 
 .link-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-family: "PT Sans Caption", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -759,6 +767,7 @@ nav ul {
   font-size: var(--fs-200);
   text-align: justify;
   margin-inline: 0.2rem;
+  padding-inline: var(--fs-200);
 }
 
 .content-div {
@@ -798,6 +807,27 @@ nav ul {
   transform: translateY(-0.25em);
 }
 
+.scroll-to-top :hover {
+  cursor: pointer;
+}
+
+#up-arrow {
+  fill: hsl(32deg, 95%, 58%);
+  stroke: hsl(344deg, 66%, 47%);
+  stroke-width: 3;
+}
+
+.carosel-control-button {
+  fill: hsl(32deg, 95%, 58%);
+  stroke: hsl(344deg, 66%, 47%);
+  stroke-width: 3;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .hamburger {
   position: fixed;
   padding: 0;
@@ -814,7 +844,7 @@ nav ul {
     bottom: 2rem;
     left: 1rem;
     background-position: center;
-    background-color: hsl(228deg, 60%, 90%);
+    background-color: hsl(248deg, 49%, 90%);
     background-image: url(assets/hamburger.svg);
     width: 2rem;
     aspect-ratio: 1;
@@ -946,13 +976,13 @@ nav ul {
 }
 
 .card-cta {
-  border-radius: 10px;
+  border-radius: 5px;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
   padding: 0.5em 1em;
   margin: 1em 1em 0 0;
-  background-color: hsl(252deg, 86%, 65%);
+  background-color: hsl(344deg, 66%, 47%);
 }
 
 .blog-block {
@@ -985,15 +1015,15 @@ nav ul {
 }
 
 .short-block::after {
-  content: " read more...";
+  content: " more...";
   font-size: large;
   font-weight: 900;
-  color: hsl(0deg, 0%, 30%);
+  color: hsl(344deg, 66%, 47%);
   position: absolute;
   right: 0;
   bottom: 0;
-  padding-left: 1em;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 10%);
+  padding-inline: 1em;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(230, 230, 230) 15%);
 }
 
 input[type=text], [type=email], select, textarea {
@@ -1020,14 +1050,15 @@ label {
 }
 
 button[type=submit] {
-  background-color: hsl(344deg, 66%, 15%);
+  background-color: hsl(344deg, 66%, 47%);
   color: hsl(0deg, 0%, 85%);
   padding: 0.5em 1em;
   border: none;
-  border-radius: 12px;
+  border-radius: 5px;
   cursor: pointer;
   float: right;
   margin-block: 5px;
+  margin-right: 10px;
 }
 
 .form-container {

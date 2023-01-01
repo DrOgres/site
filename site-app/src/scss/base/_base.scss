@@ -27,8 +27,8 @@
 body {
   background: linear-gradient(
       to bottom,
-      hsla(208, 12%, 30%, 0),
-      hsla(208, 12%, 5%, 0.75) 5%,
+      hsla(208, 12%, 20%, 0.1) 0,
+      hsla(208, 12%, 5%, 0.75) 50%,
       hsla(208, 12%, 0%, 0.9) 100vh
     ),
     url(assets/bg-kumiko.png), hsla(0, 1%, 39%, 0.85);
@@ -43,6 +43,7 @@ body {
 
 .scroll-snap-y {
   scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--fs-400);
   overflow-y: scroll;
   height: 100vh;
 
@@ -50,6 +51,7 @@ body {
 
 .scroll-snap-y section{
   scroll-snap-align: start;
+
 
 }
 
@@ -85,6 +87,7 @@ body {
   @include mqMax(small) {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 

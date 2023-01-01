@@ -91,6 +91,9 @@
 }
 
 .link-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-family: "PT Sans Caption", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -99,6 +102,7 @@
   font-size: var(--fs-200);
   text-align: justify;
   margin-inline: .2rem;
+  padding-inline: var(--fs-200);
 }
 
 
