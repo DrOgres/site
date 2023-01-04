@@ -41,8 +41,10 @@ const Content = () => {
           <div className='section-head flex-col'>
             <h2>Contact</h2>
           </div>
-          <div className='crt card hero flex-col nowrap gap glow-border'>
+          <div className='crt card glow-border'>
+            <div className="about-group">
             <ContactForm />
+            </div>
           </div>
         </div>
       </section>

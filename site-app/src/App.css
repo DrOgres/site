@@ -477,6 +477,11 @@ a.ul-link-l-to-r:hover:before {
 .overflow-scroll {
   overflow: scroll;
 }
+@media only screen and (min-width: 40em) {
+  .overflow-scroll {
+    overflow: visible;
+  }
+}
 
 .gap {
   gap: var(--gap, 3rem);
@@ -578,6 +583,12 @@ section .content {
   bottom: 20px;
   right: 20px;
   z-index: 9999;
+}
+
+.about-group {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .grid {
@@ -897,7 +908,6 @@ nav ul {
 
 .card {
   background-color: hsl(0deg, 0%, 85%);
-  margin-right: 1rem;
   border: 2px solid hsl(32deg, 95%, 58%);
   border-radius: 10px;
   flex-shrink: 0;
@@ -1128,6 +1138,12 @@ button[type=submit] {
   float: left;
   width: 75%;
   margin-top: 6px;
+}
+
+@media only screen and (min-width: 40em) {
+  .form-row {
+    width: 50ch;
+  }
 }
 
 .form-row:after {

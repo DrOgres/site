@@ -46,29 +46,24 @@ body {
   scroll-padding-top: var(--fs-400);
   overflow-y: scroll;
   height: 100vh;
-
 }
 
-.scroll-snap-y section{
+.scroll-snap-y section {
   scroll-snap-align: start;
-
-
 }
 
 .scroll-snap-x {
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
-
 }
 
-.scroll-snap-x div{
+.scroll-snap-x div {
   scroll-snap-align: start;
 }
 
-
 ::-webkit-scrollbar {
   width: 1rem;
-  height: .5rem;
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -88,7 +83,6 @@ body {
   display: block;
   background-color: $orange-3;
   border: 1px solid $magenta-3;
-
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
@@ -101,14 +95,11 @@ body {
   border-color: $orange-2 transparent transparent transparent;
 }
 
-
-
-@supports (scrollbar-color: red blue){
+@supports (scrollbar-color: red blue) {
   * {
     scrollbar-color: $orange-3 $magenta-3;
   }
 }
-
 
 .overflow-x-hidden {
   overflow-x: hidden;
@@ -126,7 +117,7 @@ body {
   visibility: hidden;
 }
 
-.carosel-control{
+.carosel-control {
   display: none;
   @include mqMax(small) {
     display: flex;
@@ -134,4 +125,3 @@ body {
     justify-content: space-around;
   }
 }
-

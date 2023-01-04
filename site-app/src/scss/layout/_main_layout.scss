@@ -49,6 +49,9 @@
 
   .overflow-scroll{
     overflow: scroll;
+    @include mq("small"){
+        overflow: visible;
+    }
   }
   
   .gap {
@@ -158,6 +161,12 @@ section{
 
 }
 
+
+.about-group{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
 
 
 

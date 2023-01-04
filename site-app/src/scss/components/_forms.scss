@@ -45,6 +45,8 @@ textarea{
     padding: 20px;
     margin-block: 1em;
   }
+
+  
   
   .col-25 {
     float: left;
@@ -56,6 +58,12 @@ textarea{
     float: left;
     width: 75%;
     margin-top: 6px;
+  }
+
+  .form-row{
+    @include mq("small"){
+        width: 50ch;
+    }
   }
 
   .form-row:after {
