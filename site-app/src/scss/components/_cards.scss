@@ -2,7 +2,8 @@
 
 .hero {
     gap: var(--gap-sm);
-    width: calc(100% - 1rem);
+   
+    grid-column: span 2;
     @include mqMax("small"){
         width: 80vw;
 
@@ -13,7 +14,7 @@
 
 .side-kick {
     gap: var(--gap-sm);
-    width: calc(50% - 2.5rem);
+    width: 100% ;
     @include mqMax("small"){
         width: 98vw;
     }
@@ -28,6 +29,8 @@
     border-radius: 10px;
     flex-shrink: 0;
 
+
+
     .card-text {
         max-width: 60ch;
         padding: .1rem;
@@ -39,21 +42,38 @@
     .card-content {
         display: grid;
         @include mq("small"){
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 4fr 1fr;
         }
         @include mqMax("small"){
             grid-template-columns: 1fr;
         }
         padding: {
             top: 0.5rem;
-            bottom: 2rem;
             left: 2rem;
             right: 0;
+            bottom: .3rem;
         }
         @include mqMax("small"){
             padding: {
                 top: 0.5rem;
-                bottom: 2rem;
+                left: .1rem;
+                right: 0;
+            }
+        }
+    }
+
+    .card-condensed {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: {
+            top: 0.5rem;
+            left: 1rem;
+            right: 1rem;
+            bottom: .3rem;
+        }
+        @include mqMax("small"){
+            padding: {
+                top: 0.5rem;
                 left: .1rem;
                 right: 0;
             }
@@ -63,9 +83,13 @@
     .image-container {
         position: relative;
         width: 100%;
-        height: 10rem;
         border-radius: 10px 10px 0 0;
         overflow: hidden;
+
+        @include mqMax("small"){
+            height: 10rem;
+        }
+
         img {
             object-fit: cover;
             object-position: left top;
@@ -80,26 +104,48 @@
     display: flex;
     flex-direction: row;
     width: 81vw;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+
+    @include mq("small"){
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        flex-direction: column;
+        scroll-snap-type: none;
+        overflow-x: visible;
+    }
+
+
+        
+      
 }
 
-.deck-box > .card{
-    width: 80vw;
+.deck-box div{
+    scroll-snap-align: start;
+  }
 
-    margin-right: 1rem;
+.deck-box > .card{
+    margin-right: 0;
+   
     @include mqMax("small"){
-        margin-right: 0;
+        width: 80vw;
+        margin-right: 1rem;
     }
 }
 
 .card-sidebar{
+
+    
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    min-width: 15vw;
-    @include mq('small'){
-        flex-direction: column;
-        min-width: 5vw;
-    }    
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 48px;
+
+    @include mqMax("small"){
+        display: none;
+        min-width: 0px;
+    }
+  
 }
 
 

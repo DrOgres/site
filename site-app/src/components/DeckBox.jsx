@@ -61,7 +61,7 @@ const DeckBox = () => {
 
   return (
     <>
-      <div className='deck-box scroll-snap-x gap-sm' id='card-list'>
+      <div className='deck-box gap-sm' id='card-list'>
         <CardContainer setDeck={setDeck} deck={deck} />
       </div>
       <div className='no-wrap carosel-control'>

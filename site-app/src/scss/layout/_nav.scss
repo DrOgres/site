@@ -3,6 +3,12 @@
 
 
 .nav-list {
+   display: none;
+
+  @include mqMax("small"){
+    display: flex;
+  }
+
     position: fixed;
     margin: -.1em;
     top: 0;
@@ -46,6 +52,9 @@
 
   
  @include mqMax("small") {  
+
+
+
     .nav-list[data-visible="true"] {
       transform: translateX(0%);
     }

@@ -24,7 +24,10 @@ const CardContainer = (props) => {
   // const [deck, setDeck] = useState(null);
 
   if (props.deck != null) {
-    return props.deck.map((data, index) => (
+    return props.deck.map((data, index) => {
+      let  contentClass = "";
+      if(data.gitRef != null || data.projectRef !=null){ contentClass = "card-content"} else { contentClass = "card-condensed"};
+      return(
       <div
         className={"card flex-col " + data.cardType}
         key={data._id + data.name + index}
@@ -34,7 +37,7 @@ const CardContainer = (props) => {
         <div className='image-container'>
           <img src={urlFor(data.image).url()} alt={data.title} />
         </div>
-        <div className={"card-content"}>
+        <div className={contentClass} >
           <div className='card-summary'>
             <h2 className='card-title'>{data.name}</h2>
 
@@ -62,6 +65,7 @@ const CardContainer = (props) => {
               </div>
             )}
           </div>
+          { data.gitRef != null || data.projectRef != null ? (
           <div className='card-sidebar'>
             <div className='card-link raise'>
               {data.gitRef != null && (
@@ -79,9 +83,10 @@ const CardContainer = (props) => {
               )}
             </div>
           </div>
+          ) : null}
         </div>
       </div>
-    ));
+    )});
   }
 
   return <>Data failed to Load</>;
