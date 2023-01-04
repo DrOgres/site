@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
             <span> me</span>
           </p>
           <div className="auto-center margin-top-sm">
-            <FontAwesomeIcon icon={faGithub} className={"site-link"} />{" "}
+            <FontAwesomeIcon icon={faSquareGithub} className={"site-link"} />{" "}
             <FontAwesomeIcon icon={faLinkedin} className={"site-link"} />
           </div>
         </div>

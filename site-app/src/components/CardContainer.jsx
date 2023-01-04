@@ -78,7 +78,7 @@ const CardContainer = (props) => {
             <div className='card-link raise'>
               {data.projectRef != null && (
                 <a href={data.projectRef} target='_blank' rel='noreferrer'>
-                  <i className='fa-solid fa-globe'></i>
+                  <i className='fa-regular fa-window-maximize'></i>
                 </a>
               )}
             </div>

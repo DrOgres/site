@@ -66,6 +66,50 @@ body {
 }
 
 
+::-webkit-scrollbar {
+  width: 1rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $magenta-3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $orange-3;
+  border: 1px solid $magenta-3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $orange-2;
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: block;
+  background-color: $orange-3;
+  border: 1px solid $magenta-3;
+
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent $orange-2 transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 12px 8px 0px 8px;
+  border-color: $orange-2 transparent transparent transparent;
+}
+
+
+
+@supports (scrollbar-color: red blue){
+  * {
+    scrollbar-color: $orange-3 $magenta-3;
+  }
+}
+
+
 .overflow-x-hidden {
   overflow-x: hidden;
 }

@@ -1,6 +1,7 @@
 @use "../abstracts/" as *;
 
 .site-header {
+
   @include mqHeight("tall") {
     min-height: 120vh;
   }
@@ -8,6 +9,7 @@
   @include mqHeight("short") {
     min-height: 135vh;
   }
+
 
   position: relative;
 }
@@ -97,7 +99,7 @@
   font-family: "PT Sans Caption", sans-serif;
   font-style: normal;
   font-weight: 700;
-
+  align-items: baseline;
   color: $orange-3;
   font-size: var(--fs-200);
   text-align: justify;
