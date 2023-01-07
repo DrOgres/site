@@ -24,6 +24,7 @@ const CardContainer = (props) => {
   // const [deck, setDeck] = useState(null);
 
   if (props.deck != null) {
+     const type = props.cardType;
     return props.deck.map((data, index) => {
       let  contentClass = "";
       if(data.gitRef != null || data.projectRef !=null){ contentClass = "card-content"} else { contentClass = "card-condensed"};
@@ -32,7 +33,7 @@ const CardContainer = (props) => {
         className={"card flex-col " + data.cardType}
         key={data._id + data.name + index}
         value={index}
-        id={index}
+        id={type+index}
       >
         <div className='image-container'>
           <img src={urlFor(data.image).url()} alt={data.title} />

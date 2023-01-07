@@ -886,12 +886,12 @@ nav ul {
   background-image: url(assets/hamburger-close.svg);
 }
 
-.hero {
+.hero, .tutorial {
   gap: var(--gap-sm);
   grid-column: span 2;
 }
 @media only screen and (max-width: 40em) {
-  .hero {
+  .hero, .tutorial {
     width: 80vw;
   }
 }

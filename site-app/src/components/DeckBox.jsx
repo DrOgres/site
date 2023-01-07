@@ -8,14 +8,47 @@ import sanityClient from "../client";
  *
  */
 
-const DeckBox = () => {
+//TODO toggle buttons on carosel to active/inactive based on current card i.e. if current card is 0, disable prev button
+
+const DeckBox = ( props ) => {
   const [deck, setDeck] = useState(null);
   const [currentCard, setCurrentCard] = useState(0);
 
   useEffect(() => {
+
+    if(props.group === 'tutorials'){
+      // set the deck to only tutorials
+
+      sanityClient
+      .fetch(
+        `*[_type == "card" && cardType == 'tutorial'] | order(name) {
+
+                name,
+                _id,
+                gitRef,
+                image,
+                cardType,
+                logoImage{
+                    asset ->{
+                        _id,
+                        url
+                    },
+                    altText
+                },
+
+                page,
+                projectRef,
+                tags,
+                text
+            }`
+      )
+      .then((data) => setDeck(data))
+      .catch(console.error);
+
+    } else if (props.group === 'projects'){
     sanityClient
       .fetch(
-        `*[_type == "card"] | order(name) { 
+        `*[_type == "card" && cardType != 'tutorial'] | order(name) { 
                 name,
                 _id,
                 gitRef,
@@ -37,6 +70,7 @@ const DeckBox = () => {
       )
       .then((data) => setDeck(data))
       .catch(console.error);
+          }
   }, []);
 
   function handleScroll(direction) {
@@ -52,8 +86,8 @@ const DeckBox = () => {
         setCurrentCard(cardIndex);
       }
     }
-    console.log(cardIndex);
-    const visibleCard = document.getElementById(cardIndex);
+    console.log(cardIndex, 'group ', props.group);
+    const visibleCard = document.getElementById(props.group+cardIndex);
     visibleCard.scrollIntoView({
       behavior: "smooth",
     });
@@ -62,8 +96,9 @@ const DeckBox = () => {
   return (
     <>
       <div className='deck-box gap-sm' id='card-list'>
-        <CardContainer setDeck={setDeck} deck={deck} />
+        <CardContainer setDeck={setDeck} deck={deck} cardType={props.group} />
       </div>
+      {deck && deck.length > 1 && (
       <div className='no-wrap carosel-control'>
        
         <button
@@ -93,6 +128,7 @@ const DeckBox = () => {
           </svg>
         </button>
       </div>
+      )}
     </>
   );
 };

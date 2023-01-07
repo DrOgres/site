@@ -1,5 +1,5 @@
 import DeckBox from "./DeckBox";
-import Tutorial from "./Tutorial";
+
 import ContactForm from "./ContactForm";
 import Home from "./Home";
 import About from "./About";
@@ -17,16 +17,16 @@ const Content = () => {
 
       <section className='work auto-center' id='work'>
         <h2>Projects</h2>
-        <DeckBox />
+        <DeckBox group={'projects'} />
       </section>
 
       <section className='tutorial auto-center vh100' id='tutorial'>
-        <div className='content flex-col wrap'>
+       
           
             <h2>Tutorials</h2>
-          
-          <Tutorial />
-        </div>
+          <DeckBox group={'tutorials'} />         
+         
+       
       </section>
       <section className='about auto-center vh100' id='about'>
         <div className='content'>

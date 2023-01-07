@@ -1,6 +1,6 @@
 @use '../abstracts/'as *;
 
-.hero {
+.hero, .tutorial {
     gap: var(--gap-sm);
    
     grid-column: span 2;
