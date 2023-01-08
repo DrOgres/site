@@ -322,13 +322,35 @@ a:visited {
 }
 
 .nav-item {
-  text-transform: uppercase;
+  text-transform: capitalize;
+  color: hsl(248deg, 49%, 37%);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: hsl(32deg, 95%, 58%);
+  text-shadow: -2px -2px 0 hsl(32deg, 95%, 58%), 2px -2px 0 hsl(32deg, 95%, 58%), -2px 2px 0 hsl(32deg, 95%, 58%), 2px 2px 0 hsl(32deg, 95%, 58%);
+  font-size: var(--fs-700);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 105.5%;
 }
 @media only screen and (max-width: 40em) {
   .nav-item {
-    align-self: end;
+    align-self: flex-start;
     padding-left: min(5%, 4rem);
   }
+}
+.nav-item > a {
+  color: hsl(248deg, 49%, 37%);
+  text-decoration: none;
+  padding-bottom: 0;
+}
+.nav-item > a:visited {
+  color: hsl(248deg, 49%, 37%);
+}
+.nav-item > a:hover, .nav-item > a:focus {
+  color: hsl(32deg, 95%, 58%);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: hsl(248deg, 49%, 37%);
+  text-shadow: -1px -1px 0 hsl(248deg, 49%, 37%), 1px -1px 0 hsl(248deg, 49%, 37%), -1px 1px 0 hsl(248deg, 49%, 37%), 1px 1px 0 hsl(248deg, 49%, 37%);
 }
 
 .blog-text {
@@ -602,11 +624,12 @@ section .content {
 
 .nav-list {
   display: none;
-  position: fixed;
-  margin: -0.1em;
-  top: 0;
-  padding: 1em 3em;
-  background-color: hsla(210deg, 12%, 25%, 0.875);
+  position: absolute;
+  top: 0.25rem;
+  left: 0.3rem;
+  padding: 1rem 1rem;
+  width: clamp(200px, 80%, 400px);
+  background-color: hsla(32deg, 56%, 67%, 0.51);
   -webkit-backdrop-filter: blur(0.8rem);
           backdrop-filter: blur(0.8rem);
   z-index: 1000;
@@ -618,14 +641,14 @@ section .content {
 }
 @media only screen and (max-width: 40em) {
   .nav-list {
-    inset: 0 50% 0 0;
     flex-direction: column;
-    padding: min(20vh, 6rem) 2em;
+    padding: min(20vh, 2rem) 2em;
     margin-bottom: 0;
     overflow-y: auto;
-    background: hsla(210deg, 12%, 15%, 0.875);
+    background: hsla(32deg, 56%, 67%, 0.51);
     border-right: 1px solid hsl(32deg, 95%, 58%);
-    transform: translateX(-100%);
+    transform-origin: top left;
+    transform: scaleX(0) scaleY(0);
     transition: transform 350ms ease-out;
   }
 }
@@ -633,22 +656,23 @@ section .content {
 @supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
   .nav-list {
     border-right: none;
-    background: hsla(0deg, 0%, 100%, 0.1);
-    -webkit-backdrop-filter: blur(0.8rem);
-            backdrop-filter: blur(0.8rem);
+    background: hsla(32deg, 56%, 67%, 0.51);
+    -webkit-backdrop-filter: blur(13px);
+            backdrop-filter: blur(13px);
   }
   @media only screen and (max-width: 40em) {
     .nav-list {
       border-right: none;
-      background: hsla(0deg, 0%, 100%, 0.1);
-      -webkit-backdrop-filter: blur(0.8rem);
-              backdrop-filter: blur(0.8rem);
+      background: hsla(32deg, 56%, 67%, 0.51);
+      -webkit-backdrop-filter: blur(13px);
+              backdrop-filter: blur(13px);
     }
   }
 }
 @media only screen and (max-width: 40em) {
   .nav-list[data-visible=true] {
-    transform: translateX(0%);
+    transform-origin: top left;
+    transform: scaleX(100%) scaleY(100%);
   }
 }
 nav {

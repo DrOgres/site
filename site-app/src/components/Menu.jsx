@@ -1,5 +1,6 @@
-import { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+
 // import { HashLink as AnchorLink } from "react-router-hash-link";
 
 /**
@@ -13,66 +14,52 @@ import { NavLink } from "react-router-dom";
  *
  */
 
-class Menu extends Component {
-  render() {
-    let visible = "false";
-    // let activeClassName="selected"
-    // let activeStyle = {
-    //   textDecoration: "underline",
-    // };
+//TODO close menu when link is clicked or when user clicks outside of menu
 
-    if (this.props.menuVisibility) {
-      visible = "true";
-    }
+const Menu = (props) =>  {
 
     return (
       <nav className="flex-row items-center justify-start">
         <ul
-          className="nav-list flex-row items-center justify-start gap"
+          className="nav-list flex-row items-center justify-start "
           id="navigation"
-          data-visible={visible}
+          data-visible={props.menuVisibility}
         >
-          <li className="nav-item">
-            <NavLink
-              to="/#home"
-              className="nav-link btn ul-link-l-to-r"
-              
-            >
-              home
-            </NavLink>
-          </li>
-          <li className="nav-item">
+         
+          <li className="nav-item"  onClick={props.handleMouseDown}  >
             <NavLink 
             to="/#work" 
-            className="nav-link btn ul-link-l-to-r">
+            className="nav-link  ul-link-l-to-r"
+           
+            >
               projects
             </NavLink>
           </li>
 
-          <li className="nav-item">
+          <li className="nav-item" onClick={props.handleMouseDown} >
             <NavLink
               to="/#tutorial"
-              className="nav-link btn ul-link-l-to-r"
+              className="nav-link  ul-link-l-to-r"
             
             >
               tutorials
             </NavLink>
           </li>
 
-          <li className="nav-item">
+          <li className="nav-item" onClick={props.handleMouseDown} >
             <NavLink
               to="/#about"
-              className="nav-link btn ul-link-l-to-r"
+              className="nav-link  ul-link-l-to-r"
             
             >
               about
             </NavLink>
           </li>
 
-          <li className="nav-item">
+          <li className="nav-item" onClick={props.handleMouseDown} >
             <NavLink
               to="/#contact"
-              className="nav-link btn ul-link-l-to-r"
+              className="nav-link  ul-link-l-to-r"
              
             >
               contact
@@ -82,6 +69,6 @@ class Menu extends Component {
       </nav>
     );
   }
-}
+
 
 export default Menu;

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { useState } from "react";
 import MenuToggle from "./MenuToggle";
 import Menu from "./Menu";
 
@@ -9,42 +9,29 @@ import Menu from "./Menu";
  *
  */
 
-class MenuContainer extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      visible: false,
-    };
+const MenuContainer = (props) => {
+  
+  const [visible, setVisible] = useState(false);
 
-    this.handleMouseDown = this.handleMouseDown.bind(this);
-    this.toggleMenu = this.toggleMenu.bind(this);
+  function handleMouseDown(e) {
+    e.preventDefault(); 
+    setVisible(!visible);
   }
 
-  toggleMenu() {
-    this.setState({
-      visible: !this.state.visible,
-    });
-  }
 
-  handleMouseDown(e) {
-    this.toggleMenu();
-    e.stopPropagation();
-  }
-
-  render() {
     return (
       <>
         <MenuToggle
-          handleMouseDown={this.handleMouseDown}
-          menuVisibility={this.state.visible}
+          handleMouseDown={handleMouseDown}
+          menuVisibility={visible}
         />
         <Menu
-          handleMouseDown={this.handleMouseDown}
-          menuVisibility={this.state.visible}
+          handleMouseDown={handleMouseDown}
+          menuVisibility={visible}
         />
       </>
     );
   }
-}
+
 
 export default MenuContainer;
