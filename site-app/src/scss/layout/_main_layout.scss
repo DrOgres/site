@@ -95,9 +95,7 @@
 
 section{
 
-    @include mqMax("small"){
-        min-height: 100vh;
-    }
+ 
 
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
@@ -163,10 +161,20 @@ section{
 
 
 .about-group{
+  margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: .5rem;
   white-space: normal;
+  background-color: hsl(0deg, 0%, 85%);
+  border: 2px solid hsl(32deg, 95%, 58%);
+  border-radius: 10px;
+  flex-shrink: 0;
+  position: relative;
+
+  @include mqMax("small"){
+    width: 81vw;
+  }
 }
 
 .contact { 

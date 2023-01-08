@@ -14,7 +14,7 @@ export default function About() {
   return (
     <div className='deck-box'>
       
-        <div className='card about-group'>
+        <div className='about-group'>
           <h4>
             TLDR;{" "}
             <a
