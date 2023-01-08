@@ -1,80 +1,50 @@
-@use '../abstracts' as *;
-
-
+@use "../abstracts" as *;
 
 .nav-list {
-   display: none;
+  display: flex;
 
-  @include mqMax("small"){
-    display: flex;
+  position: absolute;
+
+  top: 0.25rem;
+  left: 0.3rem;
+  padding: 1rem 1rem;
+  width: clamp(200px, 80%, 400px);
+  background-color: hsl(32 56% 67% / 0.51);
+
+  backdrop-filter: blur(0.8rem);
+  z-index: 1000;
+
+  flex-direction: column;
+  padding: min(20vh, 2rem) 2em;
+
+  margin-bottom: 0;
+  overflow-y: auto;
+
+  background: hsl(32 56% 67% / 0.51);
+  border-right: 1px solid $orange-3;
+  transform-origin: top left;
+  transform: scaleX(0) scaleY(0);
+  transition: transform 350ms ease-out;
+}
+
+@supports (backdrop-filter: blur(1em)) {
+  .nav-list {
+    border-right: none;
+    background: hsl(32 56% 67% / 0.51);
+    backdrop-filter: blur(13px);
   }
+}
 
-    position: absolute;
-    
-    top: .25rem;
-    left: .3rem;
-    padding: 1rem 1rem;
-    width: clamp(200px, 80%,  400px);
-    background-color: hsl(32 56% 67% / .51);
-    // background: hsl(0 0% 100% / 0.1);
-    backdrop-filter: blur(.8rem);
-    z-index: 1000;
-    @include mqMax("small"){
-     
-  
-      flex-direction: column;
-      padding: min(20vh, 2rem) 2em;
-  
-      margin-bottom: 0;
-      overflow-y: auto;
-     
-  
-  
-      background: hsl(32 56% 67% / .51);
-      border-right: 1px solid $orange-3;
-      transform-origin: top left;
-      transform: scaleX(0) scaleY(0);
-      transition: transform 350ms ease-out;
-    }
+.nav-list[data-visible="true"] {
+  transform-origin: top left;
+  transform: scaleX(100%) scaleY(100%);
+}
+
+nav {
+  padding: 0;
+  margin: 0;
+
+  & ul {
+    text-decoration: none;
   }
-  
-  @supports(backdrop-filter: blur(1em)) {
-    .nav-list {
-      border-right: none;
-      background: hsl(32 56% 67% / 0.51);
-      backdrop-filter: blur(13px);
-      @include mqMax("small"){
-        border-right: none;
-        background: hsl(32 56% 67% / 0.51);
-        backdrop-filter: blur(13px);
-      }
-    }
-  }
-  
-
-  
- @include mqMax("small") {  
-
-
-
-    .nav-list[data-visible="true"] {
-      transform-origin: top left;
-      transform: scaleX(100%) scaleY(100%);
-    }
-  }
-  
-  
-  
-  nav {
-    padding: 0;
-    margin: 0;
-  
-  
-    & ul {
-      text-decoration: none;
-    }
-
-    
-  }
-
- 
+}

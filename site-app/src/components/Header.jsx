@@ -13,7 +13,7 @@ const Header = (props) => {
   return (
     <>
       <header className='App-header flex-col justify-start'>
-        <MenuContainer />
+        <MenuContainer scrollPos={props.scrollPos}/>
       </header>
 
       <div className='top-button'>

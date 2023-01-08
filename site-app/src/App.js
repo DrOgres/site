@@ -24,7 +24,7 @@ function App() {
         >
           <AnchorScroller>
             <Routes>
-              <Route path="/" element={<Content />} />
+              <Route path="/" element={<Content />} scrollPos={scrollY} />
               <Route path="pages" element={<CaseDisplay />}>
                 <Route path=":id" element={<CaseDisplay />} />
               </Route>

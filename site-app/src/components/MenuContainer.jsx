@@ -24,6 +24,7 @@ const MenuContainer = (props) => {
         <MenuToggle
           handleMouseDown={handleMouseDown}
           menuVisibility={visible}
+          scrollPos={props.scrollPos}
         />
         <Menu
           handleMouseDown={handleMouseDown}

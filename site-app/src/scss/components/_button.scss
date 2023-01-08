@@ -1,15 +1,14 @@
-@use '../abstracts'as *;
+@use "../abstracts" as *;
 
 .btn {
-    font-weight: 600;
-    color: $orange-3;
-    padding: 0.6rem 2rem 0.6rem;
-    text-shadow: 1px 1px $neutral-1;
+  font-weight: 600;
+  color: $orange-3;
+  padding: 0.6rem 2rem 0.6rem;
+  text-shadow: 1px 1px $neutral-1;
 }
 
-
 .raise {
-    transition: 0.25s;
+  transition: 0.25s;
 }
 .raise:hover,
 .raise:focus {
@@ -17,59 +16,53 @@
   transform: translateY(-0.25em);
 }
 
-
-.scroll-to-top :hover{
-    cursor: pointer;
+.scroll-to-top :hover {
+  cursor: pointer;
 }
 
 #up-arrow {
-    fill: $orange-3;
-    stroke: $magenta-3;
-    stroke-width: 3;
+  fill: $orange-3;
+  stroke: $magenta-3;
+  stroke-width: 3;
 }
 
-
-.carosel-control-button{
-    fill: $orange-3;
-    stroke: $magenta-3;
-    stroke-width: 3;
-    background-color: transparent;
-    padding: 0 ;
-    border: none;
-    margin-left: 5px;
-    margin-right: 5px;
+.carosel-control-button {
+  fill: $orange-3;
+  stroke: $magenta-3;
+  stroke-width: 3;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
 
 .hamburger {
-    position: fixed;
-    padding: 0;
-    display: none;
-    background-repeat: no-repeat;
-    // makes the hamburger menu visible at small screem sizes using the max width media query
-    @include mqMax("small"){
-        cursor: pointer;
-        padding: 0;
-        display: block;
-        height: 37.5px;
-        top: .25rem;
-        bottom: 2rem;
-        left: .25rem;
-        background-position: center;
-        background-color: transparent;
-        background-image: url(assets/hamburger.svg);
-     
-        aspect-ratio: 1;
-        z-index: 9999;
-        border: none;
-    
-
-    }
+  position: fixed;
+  padding: 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0;
+  height: 37.5px;
+  top: 0.25rem;
+  bottom: 2rem;
+  left: 0.25rem;
+  background-position: center;
+  background-color: transparent;
+  background-image: url(assets/hamburger.svg);
+  aspect-ratio: 1;
+  z-index: 9999;
+  border: none;
 }
 
-
-.hamburger[aria-expanded="true"]{
-        
-    background-image: url(assets/hamburger-close.svg)
+.hamburger[aria-expanded="true"] {
+  background-image: url(assets/hamburger-close.svg);
 }
-
