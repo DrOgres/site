@@ -302,6 +302,16 @@ a:visited {
   font-size: 0.2rem;
 }
 
+.subtitle h3 {
+  color: hsl(252deg, 39%, 62%);
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--fs-400);
+  line-height: var(--fs-400);
+  margin-block: 0;
+  -webkit-text-stroke: 1px hsl(248deg, 49%, 37%);
+}
+
 .quote-text {
   font-family: "Neon", sans-serif;
   text-shadow: 0 0 3px hsl(344deg, 66%, 47%);
@@ -319,6 +329,21 @@ a:visited {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.site-link {
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
+  font-size: var(--fs-600);
+  line-height: var(--fs-600);
+  color: hsl(344deg, 66%, 47%);
+  border: none;
+  text-transform: capitalize;
+}
+
+.site-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .nav-item {
@@ -785,29 +810,6 @@ nav ul {
   justify-self: center;
   align-self: center;
   margin-top: 3.5rem;
-}
-
-.subtitle h3 {
-  color: hsl(252deg, 39%, 62%);
-  margin: 0 auto;
-  text-align: center;
-  font-size: var(--fs-400);
-  line-height: var(--fs-400);
-  margin-block: 0;
-}
-
-.site-link {
-  text-align: justify;
-  font-family: "Kanit", sans-serif;
-  font-size: var(--fs-600);
-  line-height: var(--fs-600);
-  color: hsl(344deg, 66%, 47%);
-  border: none;
-}
-
-.site-link:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
 .link-info {

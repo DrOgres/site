@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -16,27 +17,33 @@ export default function Home() {
         </div>
         <div className="navigation flex-col">
           <p className="link-info">
-            <span className="site-link">Projects</span>
+          <NavLink 
+            to="/#work" 
+            className="site-link ul-link-l-to-r"
+           
+            >
+              projects
+            </NavLink>
             <span> I've worked on</span>
           </p>
           <p className="link-info">
             <span>Some </span>
-            <span className="site-link">Tutorials</span>
+            <NavLink to="/#tutorial" className="site-link">Tutorials</NavLink>
             <span> for you</span>
           </p>
           <p className="link-info">
             <span>A Little </span>
-            <span className="site-link">About</span>
+            <NavLink to="/#about" className="site-link">About</NavLink>
             <span> me and my skills</span>
           </p>
           <p className="link-info">
             <span>An easy way to </span>
-            <span className="site-link">Contact</span>
+            <NavLink to="/#contact" className="site-link">Contact</NavLink>
             <span> me</span>
           </p>
           <div className="auto-center margin-top-sm">
-            <FontAwesomeIcon icon={faSquareGithub} className={"site-link"} />{" "}
-            <FontAwesomeIcon icon={faLinkedin} className={"site-link"} />
+          <a href={"https://github.com/DrOgres"} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faSquareGithub} className={"site-link"} /></a>{" "}
+          <a href={"https://www.linkedin.com/in/david-rogers-122bb04/"} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faLinkedin} className={"site-link"} /></a>
           </div>
         </div>
         <div className="oni">

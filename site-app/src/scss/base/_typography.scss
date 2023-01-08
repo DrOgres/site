@@ -89,6 +89,17 @@ a:visited {
   font-size: 0.2rem;
 }
 
+.subtitle h3 {
+  color: $purple-3;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--fs-400);
+  line-height: var(--fs-400);
+  margin-block: 0;
+
+  -webkit-text-stroke: 1px $blue-2;
+}
+
 .quote-text {
   font-family: "Neon", sans-serif;
   text-shadow: 0 0 3px $magenta-3;
@@ -106,10 +117,27 @@ a:visited {
   max-width: fit-content;
 }
 
+
+
+.site-link {
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
+  font-size: var(--fs-600);
+  line-height: var(--fs-600);
+  color: $magenta-3;
+  border: none;
+  text-transform: capitalize;
+}
+
+.site-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .nav-item {
   text-transform: capitalize;
   color: $blue-2;
-  
+
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: $orange-3;
   text-shadow: -2px -2px 0 $orange-3, 2px -2px 0 $orange-3, -2px 2px 0 $orange-3,
