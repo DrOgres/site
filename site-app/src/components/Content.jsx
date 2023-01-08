@@ -17,36 +17,20 @@ const Content = () => {
 
       <section className='work auto-center' id='work'>
         <h2>Projects</h2>
-        <DeckBox group={'projects'} />
+        <DeckBox group={"projects"} />
       </section>
 
-      <section className='tutorial auto-center vh100' id='tutorial'>
-       
-          
-            <h2>Tutorials</h2>
-          <DeckBox group={'tutorials'} />         
-         
-       
+      <section className='tutorial auto-center' id='tutorial'>
+        <h2>Tutorials</h2>
+        <DeckBox group={"tutorials"} />
       </section>
-      <section className='about auto-center vh100' id='about'>
-        <div className='content'>
-          <div className='section-head flex-col'>
-            <h2>A bit about me</h2>
-          </div>
-          <About />
-        </div>
+      <section className='about auto-center' id='about'>
+        <h2>A bit about me</h2>
+        <About />
       </section>
-      <section className='contact auto-center vh100' id='contact'>
-        <div className='content'>
-          <div className='section-head flex-col'>
-            <h2>Contact</h2>
-          </div>
-          <div className='crt card glow-border'>
-            <div className="about-group">
-            <ContactForm />
-            </div>
-          </div>
-        </div>
+      <section className='contact auto-center' id='contact'>
+        <h2>Contact</h2>
+        <ContactForm />
       </section>
     </>
   );

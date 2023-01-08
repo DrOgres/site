@@ -589,6 +589,11 @@ section .content {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  white-space: normal;
+}
+
+.contact {
+  margin-top: 6rem;
 }
 
 .grid {
@@ -865,20 +870,16 @@ nav ul {
     cursor: pointer;
     padding: 0;
     display: block;
-    height: 6rem;
-    top: 0rem;
+    height: 37.5px;
+    top: 0.25rem;
     bottom: 2rem;
-    left: 1rem;
+    left: 0.25rem;
     background-position: center;
-    background-color: hsl(248deg, 49%, 90%);
+    background-color: transparent;
     background-image: url(assets/hamburger.svg);
-    width: 2rem;
     aspect-ratio: 1;
     z-index: 9999;
     border: none;
-    filter: drop-shadow(0.001em 0.001em 1px crimson);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
   }
 }
 
@@ -886,12 +887,14 @@ nav ul {
   background-image: url(assets/hamburger-close.svg);
 }
 
-.hero, .tutorial {
+.hero,
+.tutorial {
   gap: var(--gap-sm);
   grid-column: span 2;
 }
 @media only screen and (max-width: 40em) {
-  .hero, .tutorial {
+  .hero,
+.tutorial {
     width: 80vw;
   }
 }
@@ -975,6 +978,22 @@ nav ul {
      object-fit: cover;
   -o-object-position: left top;
      object-position: left top;
+}
+
+.content-group {
+  white-space: normal;
+  width: 81vw;
+  overflow-x: visible;
+}
+@media only screen and (min-width: 40em) {
+  .content-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    flex-direction: column;
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+    overflow-x: visible;
+  }
 }
 
 .deck-box {

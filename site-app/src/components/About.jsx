@@ -12,9 +12,9 @@ import {
 
 export default function About() {
   return (
-    <div className='crt card overflow-scroll max-h-90vh'>
+    <div className='deck-box'>
       
-        <div className='about-group'>
+        <div className='card about-group'>
           <h4>
             TLDR;{" "}
             <a
