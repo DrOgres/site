@@ -49,36 +49,36 @@ const CaseDisplay = () => {
       <div className="case-content">
         <section className="case auto-center grid-3-col gap" id="home">
           <div className="case-list sidebar">
-            <div className="flex-row items-center justify-start">
-              <ul
-                className="flex-col items-center justify-start "
-                id="navigation"
-              >
+            <div className="flex-row justify-start">
+              <ul className="flex-col justify-start " id="navigation">
                 <li className="sidebar-nav">
-                  <NavLink to="/#" className="nav-link  ul-link-l-to-r">
+                  <NavLink to="/#" className="site-link  ul-link-l-to-r">
                     Home
                   </NavLink>
                 </li>
                 <li className="sidebar-nav">
-                  <NavLink to="/#work" className="nav-link  ul-link-l-to-r">
+                  <NavLink to="/#work" className="site-link  ul-link-l-to-r">
                     projects
                   </NavLink>
                 </li>
 
                 <li className="sidebar-nav">
-                  <NavLink to="/#tutorial" className="nav-link  ul-link-l-to-r">
+                  <NavLink
+                    to="/#tutorial"
+                    className="site-link  ul-link-l-to-r"
+                  >
                     tutorials
                   </NavLink>
                 </li>
 
                 <li className="sidebar-nav">
-                  <NavLink to="/#about" className="nav-link  ul-link-l-to-r">
+                  <NavLink to="/#about" className="site-link  ul-link-l-to-r">
                     about
                   </NavLink>
                 </li>
 
                 <li className="sidebar-nav">
-                  <NavLink to="/#contact" className="nav-link  ul-link-l-to-r">
+                  <NavLink to="/#contact" className="site-link  ul-link-l-to-r">
                     contact
                   </NavLink>
                 </li>
@@ -87,17 +87,16 @@ const CaseDisplay = () => {
             <div className="list-group card">
               <h4>Other Case Studies</h4>
               <ul>
-                {cases.map((data) => (
-                  <>
-                    {data.slug.current !== useSlug && (
-                      <li>
+                {cases.map(
+                  (data) =>
+                    data.slug.current !== useSlug && (
+                      <li key={data._id} value={data._id}>
                         <Link className="ul-link-l-to-r" to={data.slug.current}>
                           {data.title}
                         </Link>
                       </li>
-                    )}
-                  </>
-                ))}
+                    )
+                )}
               </ul>
             </div>
           </div>

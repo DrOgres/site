@@ -252,7 +252,7 @@ a {
 }
 
 a:visited {
-  color: hsl(252deg, 86%, 15%);
+  color: hsl(252deg, 39%, 62%);
 }
 
 .caption {
@@ -417,20 +417,6 @@ button[type=submit] {
   color: hsl(0deg, 0%, 85%);
 }
 .card-cta a:hover {
-  color: hsl(32deg, 95%, 90%);
-}
-
-.sidebar h4 {
-  font-size: var(--fs-200);
-  margin: 0 auto;
-  color: hsl(32deg, 67%, 51%);
-}
-.sidebar a {
-  color: hsl(32deg, 95%, 70%);
-  text-align: center;
-  margin: 0 auto;
-}
-.sidebar a:hover {
   color: hsl(32deg, 95%, 90%);
 }
 
@@ -735,9 +721,6 @@ nav ul {
 
 .case-list {
   padding: 1rem;
-  background: rgb(169, 179, 188);
-  background: linear-gradient(180deg, rgb(169, 179, 188) 0%, rgba(120, 118, 118, 0.2413340336) 76%, rgba(0, 0, 0, 0) 100%);
-  color: hsl(0deg, 0%, 15%);
 }
 
 .site-header {
