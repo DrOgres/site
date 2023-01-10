@@ -120,11 +120,11 @@ select {
 }
 
 body {
-  background: linear-gradient(to bottom, hsla(208deg, 12%, 20%, 0.1) 0, hsla(208deg, 12%, 5%, 0.75) 50%, hsla(208deg, 12%, 0%, 0.9) 100vh), url(assets/bg-kumiko.png), hsla(0deg, 1%, 39%, 0.85);
+  background: linear-gradient(to bottom, hsla(208deg, 12%, 20%, 0.1) 0, hsla(208deg, 12%, 5%, 0.75) 40%, hsla(208deg, 12%, 0%, 0.9) 100vh), url(assets/bg-kumiko.png), hsla(0deg, 1%, 39%, 0.85);
   background-blend-mode: normal, overlay, normal;
   background-size: auto auto, 102px 118px, auto auto;
   font-family: "Kanit", "sans-serif";
-  color: hsl(0deg, 0%, 70%);
+  color: hsl(248deg, 49%, 37%);
   min-height: 100vh;
   margin: 0;
 }
@@ -579,6 +579,11 @@ section .content {
   margin: 0 auto;
 }
 
+.grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
 .col-1-1fr {
   grid-template-columns: 1fr;
 }
@@ -697,8 +702,7 @@ nav ul {
 }
 
 .case {
-  max-width: 1000px;
-  margin-top: 8rem;
+  margin-top: 1rem;
 }
 .case h2 {
   padding-top: 1rem;
@@ -730,7 +734,6 @@ nav ul {
 }
 
 .case-list {
-  margin-inline: 3rem;
   padding: 1rem;
   background: rgb(169, 179, 188);
   background: linear-gradient(180deg, rgb(169, 179, 188) 0%, rgba(120, 118, 118, 0.2413340336) 76%, rgba(0, 0, 0, 0) 100%);

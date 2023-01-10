@@ -105,7 +105,10 @@ section{
 }
 
 
-
+.grid-3-col{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
 
 .col-1-1fr{
   grid-template-columns: 1fr;

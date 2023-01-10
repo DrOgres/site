@@ -48,18 +48,9 @@ const CaseDisplay = () => {
   if (cases) {
     return (
       <div className="case-content">
-        <section className="case auto-center flex-row" id="home">
-          {cases.map((data) => (
-            <div>
-              {data.slug.current === useSlug && (
-                <div className="case-body" key={data._id} value={data._id}>
-                  <h2>{data.title}</h2>
-                  <ReactMarkdown children={data.text} />
-                </div>
-              )}
-            </div>
-          ))}
-          <div className="case-list sidebar">
+        <section className="case auto-center grid-3-col gap" id="home">
+
+        <div className="case-list sidebar">
             <h4>Other Case Studies</h4>
             <ul>
               {cases.map((data) => (
@@ -67,6 +58,18 @@ const CaseDisplay = () => {
               ))}
             </ul>
           </div>
+
+          {cases.map((data) => (
+              data.slug.current === useSlug && (
+                <div className="overflow-scroll ">
+                <div className="card case-body" key={data._id} value={data._id}>
+                  <h2>{data.title}</h2>
+                  <ReactMarkdown children={data.text} />
+                </div>
+                </div>
+              )
+          ))}
+          
         </section>
       </div>
     );

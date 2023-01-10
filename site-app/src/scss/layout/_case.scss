@@ -1,8 +1,8 @@
 @use '../abstracts/' as *;
 
 .case{
-    max-width: 1000px;
-    margin-top: 8rem;
+
+    margin-top: 1rem;
 
     h2{
         padding-top: 1rem;
@@ -43,7 +43,7 @@
 }
 
 .case-list{
-    margin-inline: 3rem;
+   
     padding: 1rem;
     background: rgb(169,179,188);
     background: linear-gradient(180deg, rgba(169,179,188,1) 0%, rgba(120,118,118,0.2413340336134454) 76%, rgba(0,0,0,0) 100%);
