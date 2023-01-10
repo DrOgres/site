@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
 import ReactMarkdown from "react-markdown";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 /**
  * @description Creates a page in the Case Study format from a specific Id as provided by the link
@@ -31,7 +31,6 @@ const CaseDisplay = () => {
   const useSlug = params.id;
 
   useEffect(() => {
-   
     sanityClient
       .fetch(
         `*[_type == "case"]{ 
@@ -49,27 +48,75 @@ const CaseDisplay = () => {
     return (
       <div className="case-content">
         <section className="case auto-center grid-3-col gap" id="home">
+          <div className="case-list sidebar">
+            <div className="flex-row items-center justify-start">
+              <ul
+                className="flex-col items-center justify-start "
+                id="navigation"
+              >
+                <li className="sidebar-nav">
+                  <NavLink to="/#" className="nav-link  ul-link-l-to-r">
+                    Home
+                  </NavLink>
+                </li>
+                <li className="sidebar-nav">
+                  <NavLink to="/#work" className="nav-link  ul-link-l-to-r">
+                    projects
+                  </NavLink>
+                </li>
 
-        <div className="case-list sidebar">
-            <h4>Other Case Studies</h4>
-            <ul>
-              {cases.map((data) => (
-                <>{data.slug.current !== useSlug && <li><Link className="ul-link-l-to-r" to={data.slug.current}>{data.title}</Link></li>}</>
-              ))}
-            </ul>
+                <li className="sidebar-nav">
+                  <NavLink to="/#tutorial" className="nav-link  ul-link-l-to-r">
+                    tutorials
+                  </NavLink>
+                </li>
+
+                <li className="sidebar-nav">
+                  <NavLink to="/#about" className="nav-link  ul-link-l-to-r">
+                    about
+                  </NavLink>
+                </li>
+
+                <li className="sidebar-nav">
+                  <NavLink to="/#contact" className="nav-link  ul-link-l-to-r">
+                    contact
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            <div className="list-group card">
+              <h4>Other Case Studies</h4>
+              <ul>
+                {cases.map((data) => (
+                  <>
+                    {data.slug.current !== useSlug && (
+                      <li>
+                        <Link className="ul-link-l-to-r" to={data.slug.current}>
+                          {data.title}
+                        </Link>
+                      </li>
+                    )}
+                  </>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {cases.map((data) => (
+          {cases.map(
+            (data) =>
               data.slug.current === useSlug && (
                 <div className="overflow-scroll ">
-                <div className="card case-body" key={data._id} value={data._id}>
-                  <h2>{data.title}</h2>
-                  <ReactMarkdown children={data.text} />
-                </div>
+                  <div
+                    className="card case-body"
+                    key={data._id}
+                    value={data._id}
+                  >
+                    <h2>{data.title}</h2>
+                    <ReactMarkdown children={data.text} />
+                  </div>
                 </div>
               )
-          ))}
-          
+          )}
         </section>
       </div>
     );
