@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function Home() {
   return (
     <section className="site-header" id="header">
-      <div className="home content" id="home">
+      <div className="home" id="home">
         <h1 className="rotated medalion">
           Dr.
           <br />

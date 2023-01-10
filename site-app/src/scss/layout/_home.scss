@@ -15,7 +15,9 @@
 }
 
 .home {
-  max-width: 55ch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
   min-height: 70vh;
 
 

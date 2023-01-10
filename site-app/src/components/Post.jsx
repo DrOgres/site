@@ -4,7 +4,7 @@
  * @returns
  */
 
-const Post = ({ cases, params, handleDelete }) => {
+const Post = ({ cases }) => {
   return (
     <div className="post-list auto-center">
       {cases.map((post) => (
