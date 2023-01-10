@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <section className="site-header" id="header">
       <div className="home" id="home">
+        <div className="medalion-group">
         <h1 className="rotated medalion">
           Dr.
           <br />
@@ -14,6 +15,7 @@ export default function Home() {
 
         <div className="subtitle">
           <h3>Code - Design - Music - Art</h3>
+        </div>
         </div>
         <div className="navigation flex-col">
           <p className="link-info">
@@ -41,11 +43,12 @@ export default function Home() {
             <NavLink to="/#contact" className="site-link">Contact</NavLink>
             <span> me</span>
           </p>
-          <div className="auto-center margin-top-sm">
+          
+        </div>
+        <div className="social-links auto-center margin-top-sm">
           <a href={"https://github.com/DrOgres"} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faSquareGithub} className={"site-link"} /></a>{" "}
           <a href={"https://www.linkedin.com/in/david-rogers-122bb04/"} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faLinkedin} className={"site-link"} /></a>
           </div>
-        </div>
         <div className="oni">
           <img src="assets/oni-4.svg" alt="oni" />
         </div>
