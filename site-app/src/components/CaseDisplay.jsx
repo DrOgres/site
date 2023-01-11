@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
+import imageUrlBuilder from "@sanity/image-url";
 import ReactMarkdown from "react-markdown";
 import { Link, NavLink } from "react-router-dom";
+
+const builder = imageUrlBuilder(sanityClient);
 
 /**
  * @description Creates a page in the Case Study format from a specific Id as provided by the link
@@ -35,6 +38,7 @@ const CaseDisplay = () => {
       .fetch(
         `*[_type == "case"]{ 
             _id,
+            image,
             title,
             text,
             slug   
@@ -43,6 +47,10 @@ const CaseDisplay = () => {
       .then((data) => setCases(data))
       .catch(console.error);
   }, []);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
 
   if (cases) {
     return (
@@ -91,7 +99,10 @@ const CaseDisplay = () => {
                   (data) =>
                     data.slug.current !== useSlug && (
                       <li key={data._id} value={data._id}>
-                        <Link className='ul-link-l-to-r side-link' to={data.slug.current}>
+                        <Link
+                          className='ul-link-l-to-r side-link'
+                          to={data.slug.current}
+                        >
                           {data.title}
                         </Link>
                       </li>
@@ -105,9 +116,18 @@ const CaseDisplay = () => {
             (data) =>
               data.slug.current === useSlug && (
                 <div key={data._id}>
-                  <div className='card case-body' value={data._id}>
-                    <h2>{data.title}</h2>
-                    <ReactMarkdown children={data.text} />
+                  <div className='card' value={data._id}>
+                    {data.image && (
+                      <img
+                        src={urlFor(data.image).url()}
+                        alt={data.title}
+                        className='case-image'
+                      />
+                    )}
+                    <div className='case-body'>
+                      <h2>{data.title}</h2>
+                      <ReactMarkdown children={data.text} />
+                    </div>
                   </div>
                 </div>
               )

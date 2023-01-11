@@ -34,8 +34,21 @@
 }
 
 .case-body{
-    padding: 1rem;
+    padding: 1.5rem;
     max-width: 65ch;
+    margin: 0 auto;
+
+    h2{
+        padding-bottom: 1rem;
+        margin-left: -1rem;
+        font-size: var(--fs-400);
+        color: $magenta-3;
+        
+    }
+}
+
+.case-image{
+    border-radius: 10px 10px 0 0;
 }
 
 .case-content{
