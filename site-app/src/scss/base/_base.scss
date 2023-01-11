@@ -41,9 +41,8 @@ body {
   margin: 0;
 }
 
-.scroll-snap-y {
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: var(--fs-400);
+.scroll-y {
+
   overflow-y: scroll;
   height: 100vh;
 }

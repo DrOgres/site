@@ -108,6 +108,11 @@ section{
 .grid-3-col{
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+
+  @include mqMax("small"){
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .col-1-1fr{
@@ -154,7 +159,7 @@ section{
 
 
 .top-button{
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 9999;

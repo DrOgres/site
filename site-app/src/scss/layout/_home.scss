@@ -37,21 +37,23 @@
 }
 
 .oni {
+
+  margin: 0 auto;
   @include mq("small") {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
+    padding: 3rem;
+   > img {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
   }
 }
 
 .home {
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-  
-  min-height: 70vh;
-
-
+  max-width: 1300px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   
   @include mqMax("small") {
     display: grid;
@@ -115,6 +117,7 @@
   font-family: "PT Sans Caption", sans-serif;
   font-style: normal;
   font-weight: 700;
+  line-height: 3rem;
   align-items: baseline;
   color: $orange-3;
   font-size: var(--fs-200);
@@ -124,11 +127,17 @@
 }
 
 .social-links{
+  position: fixed;
+  top: 3rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   gap: .5rem;
 
   @include mqMax("small") {
+    position: relative;
+    top: unset;
+    right: unset;
     flex-direction: row;
     gap: 1rem;
   }

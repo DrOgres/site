@@ -15,9 +15,14 @@
 }
 
 .sidebar{
-    min-width: 30%;
+    display: none;
     max-height: 400px;
     border-radius: 12px;
+
+    @include mq('small'){
+        display: block;
+    
+}
     
     ul{
         padding: 0;
@@ -29,6 +34,7 @@
 }
 
 .case-body{
+    padding: 1rem;
     max-width: 65ch;
 }
 
@@ -46,4 +52,10 @@
    
     padding: 1rem;
     
+}
+
+.list-group{
+    background-color: rgba(61, 48, 140, 0.42);
+border: 1px solid rgba(250, 157, 48, 0.8);
+border-radius: 10px;
 }

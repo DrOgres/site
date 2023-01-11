@@ -1,9 +1,13 @@
 @use "../abstracts" as *;
 
+.nav {
+  margin-bottom: 2rem;
+}
+
 .nav-list {
   display: flex;
 
-  position: absolute;
+  position: fixed;
 
   top: 0.25rem;
   left: 0.3rem;

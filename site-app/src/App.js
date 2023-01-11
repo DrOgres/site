@@ -12,21 +12,21 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header scrollPos={scrollY}/>
-        <article
-          className="container flex-col auto-center center scroll-snap-y"
-          id="article"
-          // on scroll get the y position of the scroll and pass it to the state
-          onScroll={(e) => {
-            setScrollY(e.target.scrollTop);            
-          }}
-        >
+      <div
+        className='App scroll-y'
+        id='article'
+        // on scroll get the y position of the scroll and pass it to the state
+        onScroll={(e) => {
+          setScrollY(e.target.scrollTop);
+        }}
+      >
+        <Header scrollPos={scrollY} />
+        <article className='container flex-col auto-center center'>
           <AnchorScroller>
             <Routes>
-              <Route path="/" element={<Content />} scrollPos={scrollY} />
-              <Route path="pages" element={<CaseDisplay />}>
-                <Route path=":id" element={<CaseDisplay />} />
+              <Route path='/' element={<Content />} scrollPos={scrollY} />
+              <Route path='pages' element={<CaseDisplay />}>
+                <Route path=':id' element={<CaseDisplay />} />
               </Route>
             </Routes>
           </AnchorScroller>

@@ -112,7 +112,7 @@ select {
     --fs-200: 1rem;
     --fs-300: 1.2rem;
     --fs-400: 1.4rem;
-    --fs-500: 2rem;
+    --fs-500: 2.8rem;
     --fs-600: 3rem;
     --fs-700: 4rem;
     --fs-800: 8.5rem;
@@ -129,10 +129,7 @@ body {
   margin: 0;
 }
 
-.scroll-snap-y {
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-  scroll-padding-top: var(--fs-400);
+.scroll-y {
   overflow-y: scroll;
   height: 100vh;
 }
@@ -253,6 +250,7 @@ a {
 
 a:visited {
   color: hsl(252deg, 39%, 62%);
+  -webkit-text-stroke: 2px hsl(248deg, 49%, 37%);
 }
 
 .caption {
@@ -306,10 +304,11 @@ a:visited {
   color: hsl(252deg, 39%, 62%);
   margin: 0 auto;
   text-align: center;
-  font-size: var(--fs-400);
-  line-height: var(--fs-400);
+  font-size: var(--fs-500);
+  line-height: var(--fs-600);
   margin-block: 0;
   -webkit-text-stroke: 1px hsl(248deg, 49%, 37%);
+  text-shadow: 2px 2px 1px hsl(0deg, 0%, 15%);
 }
 
 .quote-text {
@@ -335,13 +334,33 @@ a:visited {
   text-align: justify;
   font-family: "Kanit", sans-serif;
   font-size: var(--fs-600);
-  line-height: var(--fs-600);
+  font-weight: 700;
+  line-height: var(--fs-700);
   color: hsl(344deg, 66%, 47%);
   border: none;
   text-transform: capitalize;
+  text-shadow: 2px 2px 1px hsl(0deg, 0%, 15%);
 }
 
 .site-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.side-link {
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
+  font-size: var(--fs-300);
+  font-weight: 700;
+  line-height: var(--fs-300);
+  color: hsl(344deg, 66%, 47%);
+  border: none;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 1px hsl(0deg, 0%, 15%);
+  padding-inline: 1rem;
+}
+
+.side-link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -427,6 +446,17 @@ button[type=submit] {
   color: hsl(32deg, 95%, 70%);
   text-transform: capitalize;
   text-indent: var(--fs-300);
+}
+
+.list-group > h4 {
+  color: hsl(32deg, 95%, 58%);
+  font-weight: 700;
+  font-size: var(--fs-400);
+  letter-spacing: 0.05em;
+  line-height: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+  padding-block: var(--fs-200);
 }
 
 a.blog-link {
@@ -569,6 +599,11 @@ section .content {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
+@media only screen and (max-width: 40em) {
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+}
 
 .col-1-1fr {
   grid-template-columns: 1fr;
@@ -612,7 +647,7 @@ section .content {
 }
 
 .top-button {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 9999;
@@ -644,9 +679,13 @@ section .content {
   display: grid;
 }
 
+.nav {
+  margin-bottom: 2rem;
+}
+
 .nav-list {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0.25rem;
   left: 0.3rem;
   padding: 1rem 1rem;
@@ -698,9 +737,14 @@ nav ul {
 }
 
 .sidebar {
-  min-width: 30%;
+  display: none;
   max-height: 400px;
   border-radius: 12px;
+}
+@media only screen and (min-width: 40em) {
+  .sidebar {
+    display: block;
+  }
 }
 .sidebar ul {
   padding: 0;
@@ -708,6 +752,7 @@ nav ul {
 }
 
 .case-body {
+  padding: 1rem;
   max-width: 65ch;
 }
 
@@ -721,6 +766,12 @@ nav ul {
 
 .case-list {
   padding: 1rem;
+}
+
+.list-group {
+  background-color: rgba(61, 48, 140, 0.42);
+  border: 1px solid rgba(250, 157, 48, 0.8);
+  border-radius: 10px;
 }
 
 .site-header {
@@ -757,19 +808,24 @@ nav ul {
   }
 }
 
+.oni {
+  margin: 0 auto;
+}
 @media only screen and (min-width: 40em) {
   .oni {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
+    padding: 3rem;
+  }
+  .oni > img {
+    max-width: 1300px;
+    margin: 0 auto;
   }
 }
 
 .home {
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-  min-height: 70vh;
+  max-width: 1300px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 @media only screen and (max-width: 40em) {
   .home {
@@ -824,6 +880,7 @@ nav ul {
   font-family: "PT Sans Caption", sans-serif;
   font-style: normal;
   font-weight: 700;
+  line-height: 3rem;
   align-items: baseline;
   color: hsl(32deg, 95%, 58%);
   font-size: var(--fs-200);
@@ -833,12 +890,18 @@ nav ul {
 }
 
 .social-links {
+  position: fixed;
+  top: 3rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 @media only screen and (max-width: 40em) {
   .social-links {
+    position: relative;
+    top: unset;
+    right: unset;
     flex-direction: row;
     gap: 1rem;
   }

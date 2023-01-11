@@ -14,7 +14,6 @@ const Content = () => {
   return (
     <>
       <Home />
-
       <section className='work auto-center' id='work'>
         <h2>Projects</h2>
         <DeckBox group={"projects"} />
