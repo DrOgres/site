@@ -1,14 +1,24 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
+
+
+@font-face {
+    font-family: "Neon";
+    src: url("assets/NEON____.TTF");
+  }
+
+
 $type-scale: (
     small:(
-        100: .5rem,
-        200: .8rem,
-        300: 1rem,
-        400: 1.125rem,
+        100: .53rem,
+        200: 1rem,
+        300: 1.1rem,
+        400: 1.25rem,
         500: 1.5rem,
-        600: 1.9rem,
+        600: 2rem,
         700: 3rem,
-        800: 4rem
+        800: 6.5rem
     ),
     medium:(
         100: .6rem,
@@ -23,10 +33,10 @@ $type-scale: (
     large:(
         100: .7rem,
         200: 1rem,
-        300: 1.2rem,
-        400: 1.4rem,
-        500: 2rem,
+        300: 1.5rem,
+        400: 2rem,
+        500: 2.8rem,
         600: 3rem,
         700: 4rem,
-        800: 5.5rem)
+        800: 8.5rem)
     );

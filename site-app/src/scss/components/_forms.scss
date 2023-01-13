@@ -27,14 +27,15 @@ textarea{
   }
 
   button[type=submit] {
-    background-color: $magenta-1;
+    background-color: $magenta-3;
     color: $neutral-5;
     padding: .5em 1em;
     border: none;
-    border-radius: 12px;
+    border-radius: 5px;
     cursor: pointer;
     float: right;
     margin-block: 5px;
+    margin-right: 10px;
 
   }
 
@@ -44,6 +45,8 @@ textarea{
     padding: 20px;
     margin-block: 1em;
   }
+
+  
   
   .col-25 {
     float: left;
@@ -55,6 +58,12 @@ textarea{
     float: left;
     width: 75%;
     margin-top: 6px;
+  }
+
+  .form-row{
+    @include mq("small"){
+        width: 50ch;
+    }
   }
 
   .form-row:after {

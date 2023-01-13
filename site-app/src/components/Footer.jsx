@@ -7,9 +7,9 @@
 const Footer = () => {
   return (
     <>
-      <div className="footer flex-row ">
-        <div className="auto-center">
-          <p className="tag">powered by Ogres</p>
+      <div className='footer flex-row '>
+        <div className='auto-center'>
+          <p className='tag'>powered by Ogres</p>
         </div>
       </div>
     </>

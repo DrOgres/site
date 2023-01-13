@@ -1,5 +1,10 @@
 @use '../abstracts/' as *;
 
+.App{
+  position: relative;
+  margin: 0 auto;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -8,6 +13,10 @@
   .flex-col {
     display: flex;
     flex-direction: column;
+  }
+
+  .text-justify{
+    text-align: justify;
   }
   
   .flex-center{
@@ -30,12 +39,27 @@
     flex-shrink: 2;
   }
   
-  .full{
-   width: 100%;
+
+  .vh100{
+    height: 100vh;
+  }
+  .max-h-90vh{
+    max-height: 90vh;
+  }
+
+  .overflow-scroll{
+    overflow: scroll;
+    @include mq("small"){
+        overflow: visible;
+    }
   }
   
   .gap {
     gap: var(--gap, 3rem);
+  }
+
+  .gap-sm {
+    gap: var(--gap-sm, 1rem);
   }
   
   .center {
@@ -46,6 +70,13 @@
     margin: 0 auto;
   }
   
+  .items-base{
+    align-items: baseline;
+  }
+
+  .items-end{
+    align-items: flex-end;
+  }
   .items-center {
     align-items: center;
   }
@@ -63,120 +94,101 @@
   }
 
 section{
-    min-height: 50vh;
-}
-
-.content{
-    max-width: 75ch;
-  
-}
-
-.home{
-    max-width: 55ch;
-    min-height: 55vh;
-}
-
-
-
-.break-1{
-    margin: 0 auto;
-    margin-bottom: -2rem;
-    width: 100%;
-    background-color: $neutral-1;
-    clip-path: url(#myCurve);
-    height: 8rem;
-
-}
-
-.break-2{
-   
-    width: 100%;
-    background-color: $neutral-2;
-    margin-bottom: -2rem;
-    clip-path: url(#myCurve);
-    height: 8rem;
-
-}
-
-.break-3{
-  width: 100%;
-  background-color: $neutral-3;
-  margin-bottom: -2rem;
-  clip-path: url(#myCurve);
-  height: 8rem;
- }
-
- .tutorial{
-   
-  width: 100%;
-    padding-top: 2em;
     padding-bottom: 1rem;
     margin-bottom: -.02rem;
-    background-color: $neutral-3;
+
     & .content{
         max-width: 55ch;
         margin: 0 auto;
         
     }
+}
+
+
+.grid-3-col{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  @include mqMax("small"){
+    grid-template-columns: 1fr;
+  }
 
 }
+
+.col-1-1fr{
+  grid-template-columns: 1fr;
+}
+
+.col-auto-flow{
+  grid-auto-flow: column;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.align-items-top{
+  align-items: flex-start;
+  align-items: start;
  
+}
 
-.work{
-   
-    padding-top: 2em;
-    padding-bottom: 1rem;
-    width: 100%;
-    background-color: $neutral-2;
-   
-    & .content{
-        margin: 0 auto;    
-    }
+
+.flex-grow{
+  flex-grow: 1;
+}
+
+.flex-shrink{
+  flex-shrink: 1;
+}
+
+.flex-no-shrink{
+  flex-shrink: 0;
+}
+
+.flex-basis{
+  flex-basis: auto;
+}
+
+.span-2{
+  grid-column: span 2;
+}
+.margin-top-sm{
+  margin-top: .5rem;
+}
+
+
+.top-button{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
 
 }
 
 
-.about{
-    width: 100%;
-    padding-top: 2em;
-    padding-bottom: 1rem;
-    margin-bottom: -.02rem;
-    background-color: $neutral-2;
-    & .content{
-        max-width: 55ch;
-        margin: 0 auto;
-        
-    }
+.about-group{
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  white-space: normal;
+  background-color: hsl(0deg, 0%, 85%);
+  border: 2px solid hsl(32deg, 95%, 58%);
+  border-radius: 10px;
+  flex-shrink: 0;
+  position: relative;
 
+  @include mqMax("small"){
+    width: 81vw;
+  }
 }
 
-.contact{
-    width: 100%;
-    padding-top: 2em;
-    padding-bottom: 1rem;
-    background-color: $neutral-3;
-    & .content{
-        max-width: 55ch;
-        margin: 0 auto;
-      
-    }
-
+.contact { 
+  margin-top: 6rem;
 }
 
-.footer{
-    width: 100%;
-    margin-block: 1rem;
 
-
-}
-
-.glow-border{
-    
-    box-shadow:
-
-    0 0 0.15em 0.04em $magenta-5
-  
-}
 
 
   

@@ -1,77 +1,126 @@
-@use '../abstracts'as *;
+@use "../abstracts" as *;
 
 :root {
+  --gap: 2rem;
+  --gap-sm: 1rem;
 
-  @each $screen-size,
-  $font-size in $type-scale {
+  @each $screen-size, $font-size in $type-scale {
     @if $screen-size==small {
-
-      @each $size,
-      $value in $font-size {
+      @each $size, $value in $font-size {
         --fs-#{$size}: #{$value};
       }
-    }
-
-    @else if $screen-size==medium {}
-
-    @else {
+    } @else if $screen-size==medium {
+    } @else {
       @include mq(small) {
-
-        @each $size,
-        $value in $font-size {
+        @each $size, $value in $font-size {
           --fs-#{$size}: #{$value};
         }
       }
     }
   }
 
-
-  @each $screen-size,
-  $value in $breakpoints {
-
+  @each $screen-size, $value in $breakpoints {
     --bp-#{$screen-size}: #{$value};
-
   }
 }
 
 body {
-  background-color: $neutral-1;
+  background: linear-gradient(
+      to bottom,
+      hsla(208, 12%, 20%, 0.1) 0,
+      hsla(208, 12%, 5%, 0.75) 40%,
+      hsla(208, 12%, 0%, 0.9) 100vh
+    ),
+    url(assets/bg-kumiko.png), hsla(0, 1%, 39%, 0.85);
+
+  background-blend-mode: normal, overlay, normal;
+  background-size: auto auto, 102px 118px, auto auto;
   font-family: "Kanit", "sans-serif";
-  color: $neutral-4;
+  color: $blue-2;
   min-height: 100vh;
   margin: 0;
 }
 
+.scroll-y {
+
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.scroll-snap-y section {
+  scroll-snap-align: start;
+}
+
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.scroll-snap-x div {
+  scroll-snap-align: start;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $magenta-3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $orange-3;
+  border: 1px solid $magenta-3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $orange-2;
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: block;
+  background-color: $orange-3;
+  border: 1px solid $magenta-3;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent $orange-2 transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 12px 8px 0px 8px;
+  border-color: $orange-2 transparent transparent transparent;
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: $orange-3 $magenta-3;
+  }
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
 
 .sr-only {
   visibility: hidden;
 }
 
-.splitting {
-
-
- 
-  .char {
-    
-    transition: transform .3s cubic-bezier(.3, 0, .3, 1), opacity .3s linear;
-    transition-delay: calc( 20ms * var(--char-index) );
-
-  }
-
-  &[data-scroll="out"] .char {
-    opacity: 0.1;
-    transform: translateY( .25em );
-  }
-
-  .word {
-    
-    transition: transform .6s cubic-bezier(.6, 0, .6, 2), opacity .8s linear;
-    transition-delay: calc( 22ms * var(--word-index) );
-
-  }
-
-  &[data-scroll="out"] .word {
-    opacity: 0.1;
-    transform: translateX( 2em );
+.carosel-control {
+  display: none;
+  @include mqMax(small) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

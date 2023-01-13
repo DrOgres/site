@@ -1,8 +1,4 @@
-@use '../abstracts' as *;
-
-
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
+@use "../abstracts" as *;
 
 h1 {
   font-size: var(--fs-800);
@@ -12,9 +8,10 @@ h1 {
 h2 {
   font-size: var(--fs-600);
   line-height: var(--fs-600);
-  color: $orange-4;
+  color: $magenta-3;
   text-transform: uppercase;
-  border-bottom: 2px solid $orange-3;
+  margin-inline: 1rem;
+  text-shadow: 2px 2px 1px $neutral-1;
 }
 
 h3 {
@@ -32,86 +29,90 @@ h4 {
 }
 
 a {
-  
+  color: $magenta-3;
   text-decoration: none;
   padding-bottom: 0;
 }
 
 a:visited {
-  color: $orange-4;
+  color: $purple-3;
+  -webkit-text-stroke: 2px hsl(248deg, 49%, 37%);
 }
 
-
+.caption {
+  font-family: "Neon", sans-serif;
+  font-size: var(--fs-200);
+}
 
 .card {
   h2 {
-    color: $magenta-1;
-    font-size: var(--fs-500);
-    line-height: var(--fs-500);
-    border-bottom: 2px solid $magenta-5;
-  }
+    color: $blue-2;
+    font-size: var(--fs-400);
+    line-height: var(--fs-400);
+    text-shadow: none;
+    white-space: pre-wrap;
 
+    @include mqMax("small") {
+      font-size: var(--fs-300);
+      line-height: var(--fs-300);
+      white-space: normal;
+    }
+
+    margin-inline: 0;
+  }
 
   h3 {
     font-size: var(--fs-300);
     line-height: var(--fs-200);
-    color: $magenta-1;
+    color: $magenta-3;
     text-transform: uppercase;
-    border-bottom: 2px solid $magenta-4;
-  }
-}
-
-.side-kick {
-  h2 {
-    font-size: var(--fs-400);
-    line-height: var(--fs-300);
+    border-bottom: 2px solid $magenta-3;
   }
 
-  a{
-    color: $magenta-2;
-
-    &:visited{
-      color: $neutral-3;
-    }
+  h4 {
+    color: $blue-2;
   }
 }
 
 .card-text {
   font-size: var(--fs-200);
-  color: $neutral-2;
+  color: $blue-2;
   margin-bottom: 1rem;
+  white-space: normal;
 }
 
 .tag {
   text-transform: uppercase;
   font-size: var(--fs-100);
-
 }
-
-
 
 .sr-only {
-  font-size: .2rem;
+  font-size: 0.2rem;
 }
 
-.medalion {
-  padding: 2rem;
-  position: relative;
-  @include text3d($neutral-4);
-  -webkit-text-stroke: 2px $orange-4;
-  background: border-box radial-gradient(circle, rgba(255, 135, 253, 0.38) 0%, rgba(110, 9, 121, 0.175) 35%, rgba(0, 0, 0, 0) 60%);
+.subtitle h3 {
+  color: $purple-3;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--fs-500);
+  line-height: var(--fs-600);
+  margin-block: 0;
 
+  -webkit-text-stroke: 1px $blue-2;
+  text-shadow: 2px 2px 1px $neutral-1;
 }
 
 .quote-text {
-  font-size: var(--fs-200);
+  font-family: "Neon", sans-serif;
+  text-shadow: 0 0 3px $magenta-3;
+  font-size: var(--fs-400);
   color: $orange-4;
   justify-content: start;
   background-color: transparent;
 }
 
 .rotated {
-  padding-top: 10vh;
+  padding-top: 1rem;
   padding-bottom: 1em;
   margin-left: -20%;
   transform: rotate(-30deg);
@@ -119,29 +120,92 @@ a:visited {
 }
 
 
+
+.site-link {
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
+  font-size: var(--fs-600);
+  font-weight: 700;
+  line-height: var(--fs-700);
+  color: $magenta-3;
+  border: none;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 1px $neutral-1;
+}
+
+.site-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.side-link{
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
+  font-size: var(--fs-300);
+  font-weight: 700;
+  line-height: var(--fs-400);
+  color: $magenta-3;
+  border: none;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 1px $neutral-1;
+  padding-inline: 1rem;
+}
+
+.side-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .nav-item {
-  text-transform: uppercase;
+  text-transform: capitalize;
+  color: $blue-2;
+
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $orange-3;
+  text-shadow: -2px -2px 0 $orange-3, 2px -2px 0 $orange-3, -2px 2px 0 $orange-3,
+    2px 2px 0 $orange-3;
+
+  font-size: var(--fs-700);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 105.5%;
 
   @include mqMax("small") {
-    align-self: end;
+    align-self: flex-start;
     padding-left: min(5%, 4rem);
+  }
 
+  & > a {
+    color: $blue-2;
+    text-decoration: none;
+    padding-bottom: 0;
+  }
+
+  & > a:visited {
+    color: $blue-2;
+  }
+
+  & > a:hover,
+  & > a:focus {
+    color: $orange-3;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $blue-2;
+    text-shadow: -1px -1px 0 $blue-2, 1px -1px 0 $blue-2, -1px 1px 0 $blue-2,
+      1px 1px 0 $blue-2;
   }
 }
 
-
 .blog-text {
-  color: $magenta-1;
-  max-width: 45ch;
+  color: $blue-2;
+  max-width: 75ch;
   margin-left: 2ch;
-  text-align: justify;
-  text-justify: inter-word;
+  padding-inline: var(--fs-100);
 }
 
 label {
   text-transform: uppercase;
   font-weight: 600;
-  color: $magenta-1;
+  color: $blue-2;
 }
 
 button[type="submit"] {
@@ -149,16 +213,14 @@ button[type="submit"] {
   font-weight: 500;
 }
 
-
 .card-link {
   a {
-    color: $neutral-3;
+    color: $magenta-3;
   }
 
   a:hover,
   a:focus {
     border-bottom: none;
-    text-shadow: 0px 0px 3px $magenta-3;
   }
 
   font-size: var(--fs-500);
@@ -177,57 +239,48 @@ button[type="submit"] {
   a:hover {
     color: $orange-5;
   }
-
 }
 
-.sidebar{
-  h4{
+
+.case-body {
+  blockquote {
+    font-family: "PT Sans Caption", sans-serif;
     font-size: var(--fs-200);
-    margin: 0 auto;
-    color: $orange-2;
-  }
-  
-
-  a{
-    color: $orange-4;
-    text-align: center;
-    margin: 0 auto;
-    &:hover{
-      color:$orange-5;
-      
-    }
-  }
-
-}
-.case-body{
-  blockquote{
-    font-family: 'PT Sans Caption', sans-serif;
-    font-size: var(--fs-200);
-    font-weight: 100;
-    color: $orange-4;
-    text-transform: capitalize;
-    text-indent: var(--fs-300);
+    font-weight: 600;
+    color: $blue-1;
+    text-transform: uppercase;
+    text-indent: var(--fs-200);
   }
 }
 
-a.blog-link{
+.list-group > h4{
+  color: $orange-3;
+  font-weight: 700;
+  font-size: var(--fs-400);
+  letter-spacing: .05em;
+  line-height: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+  padding-block: var(--fs-200);
+}
+
+a.blog-link {
   font-weight: 200;
   color: $purple-1;
 }
 
-a.blog-link:visited{
+a.blog-link:visited {
   color: $magenta-2;
 }
 
-a.ul-link-l-to-r
-{
-    position: relative;
+a.ul-link-l-to-r {
+  position: relative;
 }
 
 a.ul-link-l-to-r:before {
   content: "";
   position: absolute;
-  width: 100%;
+
   height: 2px;
   bottom: 0;
   left: 0;

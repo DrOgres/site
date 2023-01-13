@@ -1,0 +1,152 @@
+@use "../abstracts/" as *;
+
+.site-header {
+
+  @include mqHeight("tall") {
+    min-height: 120vh;
+  }
+
+  @include mqHeight("short") {
+    min-height: 135vh;
+  }
+
+
+  position: relative;
+}
+
+.navigation {
+
+
+  @include mq("small") {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+    margin-top: 3rem;
+  }
+}
+
+.medalion-group{
+  @include mq("small") {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+  }
+}
+
+.oni {
+
+  margin: 0 auto;
+  @include mq("small") {
+    padding: 3rem;
+   > img {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+  }
+}
+
+.home {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  
+  @include mqMax("small") {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  }
+
+  & .navigation {
+    padding-left: 0;
+    padding-right: 0;
+  
+  
+
+    @include mqMax("small") {
+      text-align: justify;
+      padding-left: 1rem;
+      padding-right: 1rem;
+     
+    }
+  }
+}
+.home-container {
+  position: relative;
+}
+.medalion {
+  justify-self: center;
+  color: $orange-3;
+  font-size: var(--fs-800);
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  -webkit-text-stroke: 2px $magenta-3;
+
+  @include mqMax("small") {
+    padding: 0.5rem;
+  }
+
+  line-height: 64%;
+  text-shadow: 2px 2px 4px $neutral-1;
+  background: border-box
+    radial-gradient(
+      circle,
+      $purple-3 0%,
+      rgba(110, 9, 121, 0.175) 35%,
+      rgba(0, 0, 0, 0) 60%
+    );
+}
+
+.subtitle {
+  justify-self: center;
+  align-self: center;
+  margin-top: 3.5rem;
+}
+
+
+
+.link-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "PT Sans Caption", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3rem;
+  align-items: baseline;
+  color: $orange-3;
+  font-size: var(--fs-200);
+  text-align: justify;
+  margin-inline: .2rem;
+  padding-inline: var(--fs-200);
+}
+
+.social-links{
+  position: fixed;
+  top: 3rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  @include mqMax("small") {
+    position: relative;
+    top: unset;
+    right: unset;
+    flex-direction: row;
+    gap: 1rem;
+  }
+ 
+}
+
+
+.content-div {
+
+  height: 200vh;
+}
+

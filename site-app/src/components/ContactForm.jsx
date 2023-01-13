@@ -42,7 +42,8 @@ class ContactForm extends Component {
     if (!this.state.submitted) {
       const { name, email, message } = this.state;
       return (
-        <form onSubmit={this.handleSubmit} className="flex-col nowrap full">
+        <div className="content-group">
+        <form onSubmit={this.handleSubmit} className="card flex-col nowrap auto-center">
           <div className="form-row">
             <div className="col-25">
               <label htmlFor="name">Your Name:</label>
@@ -91,13 +92,16 @@ class ContactForm extends Component {
             <button className="raise" type="submit">Send</button>
           </p>
         </form>
+        </div>
       );
     }
 
     return (
-      <div className="response">
+      <div className="deck-box">
+      <div className="response card">
         <h4>Thanks for reaching out!</h4>
         <p>I will get back to you as soon as possible!</p>
+      </div>
       </div>
     );
   }
