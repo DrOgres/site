@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import CardContainer from "./CardContainer";
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
