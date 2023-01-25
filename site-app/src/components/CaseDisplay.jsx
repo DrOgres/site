@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import ReactMarkdown from "react-markdown";
+import remarkToc from "remark-toc";
 import { Link, NavLink } from "react-router-dom";
 
 const builder = imageUrlBuilder(sanityClient);
@@ -126,7 +127,7 @@ const CaseDisplay = () => {
                     )}
                     <div className='case-body'>
                       <h2>{data.title}</h2>
-                      <ReactMarkdown children={data.text} />
+                      <ReactMarkdown children={data.text} remarkPlugins={[remarkToc]} />
                     </div>
                   </div>
                 </div>
