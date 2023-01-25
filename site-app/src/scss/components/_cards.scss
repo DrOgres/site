@@ -3,8 +3,8 @@
 .hero,
 .tutorial {
   gap: var(--gap-sm);
-
   grid-column: span 2;
+  
   @include mqMax("small") {
     width: 80vw;
   }
