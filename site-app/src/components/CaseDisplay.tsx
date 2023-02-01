@@ -166,10 +166,11 @@ const CaseDisplay = () => {
                       <h2>{data.title}</h2>
                       <ReactMarkdown
                         components={MarkdownComponents}
-                        children={data.text}
                         remarkPlugins={[remarkToc]}
                         rehypePlugins={[rehypeHighlight]}
-                      />
+                      >
+                        {data.text}
+                      </ReactMarkdown>
                     </div>
                   </div>
                 </div>
