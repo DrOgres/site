@@ -1,11 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import ReactMarkdown from "react-markdown";
 import remarkToc from "remark-toc";
-import rehypeHighlight from 'rehype-highlight'
+import rehypeHighlight from "rehype-highlight";
 import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import generateAnchorText from "../utils/generateAnchorText";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -32,7 +35,7 @@ const builder = imageUrlBuilder(sanityClient);
 
 const CaseDisplay = () => {
   let params = useParams();
-  const [cases, setCases] = useState(null);
+  const [cases, setCases] = useState() as any;
   const useSlug = params.id;
 
   useEffect(() => {
@@ -49,6 +52,28 @@ const CaseDisplay = () => {
       .then((data) => setCases(data))
       .catch(console.error);
   }, []);
+
+  const MarkdownComponents: object = {
+    h3: (props: any) => {
+      const arr = props.children;
+      let heading = "";
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i]?.type !== undefined) {
+          for (let j = 0; j < arr[i].props.children.length; j++) {
+            heading += arr[i]?.props?.children[0];
+          }
+        } else heading += arr[i];
+      }
+
+      const slug = generateAnchorText(heading);
+      return (
+        <h3 id={slug}>
+          <a href={`#${slug}`} {...props}></a>
+        </h3>
+      );
+    },
+  };
 
   function urlFor(source) {
     return builder.image(source);
@@ -115,20 +140,36 @@ const CaseDisplay = () => {
           </div>
 
           {cases.map(
-            (data) =>
+            (data: {
+              slug: { current: string | undefined };
+              _id: React.Key | null | undefined;
+              image: any;
+              title:
+                | boolean
+                | React.ReactChild
+                | React.ReactFragment
+                | null
+                | undefined;
+              text: string;
+            }) =>
               data.slug.current === useSlug && (
                 <div key={data._id}>
-                  <div className='card' value={data._id}>
+                  <div className='card' data-value={data._id}>
                     {data.image && (
                       <img
                         src={urlFor(data.image).url()}
-                        alt={data.title}
+                        alt={data.title as string}
                         className='case-image'
                       />
                     )}
                     <div className='case-body'>
                       <h2>{data.title}</h2>
-                      <ReactMarkdown children={data.text} remarkPlugins={[remarkToc]}  rehypePlugins={[rehypeHighlight]}/>
+                      <ReactMarkdown
+                        components={MarkdownComponents}
+                        children={data.text}
+                        remarkPlugins={[remarkToc]}
+                        rehypePlugins={[rehypeHighlight]}
+                      />
                     </div>
                   </div>
                 </div>
