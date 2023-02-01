@@ -195,6 +195,12 @@ a:visited {
   }
 }
 
+h3 > a:visited{
+  color: $magenta-3;
+
+  
+}
+
 .blog-text {
   color: $blue-2;
   max-width: 75ch;
