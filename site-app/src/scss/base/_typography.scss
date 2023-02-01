@@ -195,10 +195,17 @@ a:visited {
   }
 }
 
-h3 > a:visited{
-  color: $magenta-3;
+h3 > a{
 
+:visited{
+  color: $magenta-3;
   
+}
+
+:hover{
+  cursor: default;
+}
+
 }
 
 .blog-text {
