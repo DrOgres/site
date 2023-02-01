@@ -197,12 +197,12 @@ a:visited {
 
 h3 > a{
 
-:visited{
+&:visited{
   color: $magenta-3;
   
 }
 
-:hover{
+&:hover{
   cursor: default;
 }
 

@@ -397,10 +397,10 @@ a:visited {
   text-shadow: -1px -1px 0 hsl(248deg, 49%, 37%), 1px -1px 0 hsl(248deg, 49%, 37%), -1px 1px 0 hsl(248deg, 49%, 37%), 1px 1px 0 hsl(248deg, 49%, 37%);
 }
 
-h3 > a :visited {
+h3 > a:visited {
   color: hsl(344deg, 66%, 47%);
 }
-h3 > a :hover {
+h3 > a:hover {
   cursor: default;
 }
 
