@@ -1,4 +1,4 @@
-const generateAnchorText = (str: string) => {
+export default function generateAnchorText (str: string) {
 
     str = str?.replace(/^\s+|\s+$/g, '')
     str = str?.toLowerCase()
@@ -16,4 +16,3 @@ const generateAnchorText = (str: string) => {
     return str
   }
   
-  export default generateAnchorText

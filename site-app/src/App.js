@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
-import CaseDisplay from "./components/CaseDisplay";
+import CaseDisplay from "./components/CaseDisplay.tsx";
 import AnchorScroller from "./components/AnchorScroller.tsx";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

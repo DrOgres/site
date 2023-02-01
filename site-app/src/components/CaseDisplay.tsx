@@ -8,7 +8,7 @@ import remarkToc from "remark-toc";
 import rehypeHighlight from "rehype-highlight";
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
-import generateAnchorText from "../utils/generateAnchorText";
+import generateAnchorText from "../utils/generateAnchorText.ts";
 
 const builder = imageUrlBuilder(sanityClient);
 
