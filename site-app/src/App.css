@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:wght@500&display=swap");
 @font-face {
   font-family: "Neon";
   src: url("assets/NEON____.TTF");
@@ -450,9 +451,85 @@ button[type=submit] {
   font-family: "PT Sans Caption", sans-serif;
   font-size: var(--fs-200);
   font-weight: 600;
-  color: hsl(248deg, 49%, 15%);
-  text-transform: uppercase;
+  color: hsl(252deg, 86%, 37%);
+  background-color: hsl(32deg, 95%, 70%);
+  padding-inline: 1rem;
+  padding-block: 0rem;
+  padding-top: 1rem;
+  margin: 0;
+  border-radius: 10px;
+  border: 3px solid hsl(32deg, 67%, 51%);
+}
+.case-body blockquote blockquote {
+  border: 0px solid transparent;
+  background-color: hsl(344deg, 66%, 47%);
+  color: hsl(32deg, 95%, 58%);
+}
+
+code {
+  color: #000;
+  font-family: "Source Code Pro", monospace;
+  font-size: var(--fs-200);
+  font-weight: 600;
+}
+
+pre {
+  font-family: "Source Code Pro", monospace;
+  font-size: var(--fs-200);
+  font-weight: 600;
+  background-color: hsl(248deg, 49%, 15%);
+  color: hsl(32deg, 95%, 58%);
   text-indent: var(--fs-200);
+  padding-inline: 0.5rem;
+  border-radius: 5px;
+}
+pre code {
+  white-space: pre-line;
+  color: inherit;
+}
+
+.hljs-keyword {
+  color: hsl(344deg, 66%, 90%);
+}
+
+.hljs-built_in {
+  color: hsl(344deg, 66%, 90%);
+}
+
+.hljs-title {
+  color: hsl(32deg, 95%, 70%);
+}
+
+.hljs-title.function_ {
+  color: hsl(300deg, 100%, 50%);
+}
+
+.hljs-params {
+  color: hsl(344deg, 66%, 47%);
+}
+
+.hljs-property {
+  color: hsl(344deg, 66%, 70%);
+}
+
+.hljs-attr {
+  color: hsl(252deg, 86%, 70%);
+}
+
+.hljs-string {
+  color: hsl(32deg, 95%, 90%);
+}
+
+.hljs-variable {
+  color: hsl(344deg, 66%, 47%);
+}
+
+.hljs-number {
+  color: hsl(300deg, 100%, 90%);
+}
+
+.hljs-comment {
+  color: hsl(248deg, 49%, 50%);
 }
 
 .list-group > h4 {
