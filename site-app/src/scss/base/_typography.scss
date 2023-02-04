@@ -149,6 +149,8 @@ a:visited {
   text-transform: capitalize;
   text-shadow: 2px 2px 1px $neutral-1;
   padding-inline: 1rem;
+  white-space: nowrap;
+  overflow: ellipsis;
 }
 
 .side-link:hover {
